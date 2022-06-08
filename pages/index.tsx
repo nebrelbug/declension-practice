@@ -26,10 +26,12 @@ export default function Home() {
             </a>
           </Link>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Slovak &rarr;</h3>
-            <p>Practice Slovak declensions</p>
-          </a>
+          <Link href="/slovak">
+            <a className={styles.card}>
+              <h3>Slovak &rarr;</h3>
+              <p>Practice Slovak declensions</p>
+            </a>
+          </Link>
         </div>
       </main>
 
