@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from '../styles/home.module.css';
+import styles from '../styles/quiz.module.css';
 import { useState } from 'react';
 import { generateSimpleSentences } from '../src/sentence-generators';
-import { useTweaks } from 'use-tweaks';
+import { useControls, Leva } from 'leva';
 
 let res = generateSimpleSentences();
 
@@ -24,12 +24,16 @@ export default function Home() {
     setChecked(!checked);
   };
 
-  const config = useTweaks('Spring', {
-    A: { value: 0, min: 0, max: 1 },
-    mass: { value: 1, min: 1, max: 10 },
-    tension: { value: 170, min: 1, max: 200 },
-    friction: { value: 26, min: 1, max: 30 },
-  });
+  const config = useControls(
+    'Spring',
+    {
+      A: { value: 0, min: 0, max: 1 },
+      mass: { value: 1, min: 1, max: 10 },
+      tension: { value: 170, min: 1, max: 200 },
+      friction: { value: 26, min: 1, max: 30 },
+    },
+    { collapsed: true }
+  );
 
   return (
     <div className={styles.container}>
@@ -37,7 +41,7 @@ export default function Home() {
         <title>Decline | Slovak</title>
       </Head>
 
-      <Checkbox label="My Value" value={checked} onChange={handleChange} />
+      <Leva titleBar={false}></Leva>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
@@ -55,12 +59,3 @@ export default function Home() {
     </div>
   );
 }
-
-const Checkbox = ({ label, value, onChange }) => {
-  return (
-    <label>
-      <input type="checkbox" checked={value} onChange={onChange} />
-      {label}
-    </label>
-  );
-};
