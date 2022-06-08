@@ -4,7 +4,7 @@ import type { declensionArray } from '../types';
 
 var všechnoArray: declensionArray = [
   [
-    ['všechen', 'všechen', 'všechno', 'všechna'],
+    ['všetok', 'všetok', 'všetko', 'všetka'],
     ['všeho', 'všeho', 'všeho', 'vší'],
     ['všemu', 'všemu', 'všemu', 'vší'],
     ['všeho', 'všechen', 'všechno', 'všechnu'],
