@@ -1,5 +1,10 @@
 import { prepositions } from '../prepositions';
-import { allNouns, basicAdjectives, to, všechno } from '../declension-patterns';
+import {
+  allNouns,
+  basicAdjectives,
+  to,
+  všechno,
+} from '../declension-patterns-czech';
 import { cartesian } from '../utilities';
 
 import {

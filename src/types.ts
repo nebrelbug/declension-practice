@@ -5,7 +5,7 @@ export type singleDeclensionArray = [
   singleDeclension,
   singleDeclension,
   singleDeclension,
-  singleDeclension,
+  singleDeclension | false,
   singleDeclension,
   singleDeclension
 ];
