@@ -1,13 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from '../styles/home.module.css';
 
 function Card({ title, description, link }) {
   return (
     <Link href={link}>
-      <a className={styles.card}>
-        <h3 className="font-bold">{title + ' '}&rarr;</h3>
-        <p>{description}</p>
+      <a className="m-4 p-6 text-left text-inherit no-underline border border-solid border-[#eaeaea] rounded-xl hover:ease-in hover:text-schnazzy-blue hover:border-schnazzy-blue">
+        <h3 className="font-bold mb-4 text-2xl">{title + ' '}&rarr;</h3>
+        <p className="m-0 text-lg">{description}</p>
       </a>
     </Link>
   );
@@ -25,29 +24,29 @@ export default function Home() {
           Welcome to <span className="text-schnazzy-blue">Decline</span>
         </h1>
 
-        <p className="text-center text-2xl">
+        <p className="text-center text-2xl mt-3">
           Your tool to practice Czech and Slovak declension patterns
         </p>
 
         <div className="grid gap-4 grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-2 mt-12">
           <Card
             title="Czech"
-            description="Practice Czech declensions"
+            description="Practice Czech declensions in quiz form"
             link="/czech"
           />
           <Card
             title="Slovak"
-            description="Practice Slovak declensions"
+            description="Practice Slovak declensions in quiz form"
             link="/slovak"
           />
           <Card
             title="Czech - Export"
-            description="Practice Czech declensions"
+            description="Export Czech declensions to a list"
             link="/czech-export"
           />
           <Card
             title="Slovak - Export"
-            description="Practice Czech declensions"
+            description="Export Slovak declensions to a list"
             link="slovak-export"
           />
         </div>
