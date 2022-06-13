@@ -60,7 +60,9 @@ function getAdjectiveDeclensions(adjectiveRoot: string, type: 'soft' | 'hard') {
     let newDeclensionArray = decArray.map(function (
       item: singleDeclension
     ): singleDeclension {
-      if (typeof item === 'string') {
+      if (typeof item === 'boolean') {
+        return item;
+      } else if (typeof item === 'string') {
         return adjectiveRoot + item;
       } else {
         return item.map(function (innerEnding: string): string {

@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
-import { generateSimpleSentences } from '../src/sentence-generators';
+import { generateSimpleSentences } from '../src/czech/sentence-generators';
 import { Leva, useControls, folder } from 'leva';
 import { PageLayout } from '../components/layout';
 import { Quiz } from '../components/quiz';
+import { shuffle } from '../src/utilities';
 
 let res = generateSimpleSentences();
 
@@ -64,7 +65,7 @@ export default function Home() {
 
   return (
     <PageLayout title="Decline Czech" suffix="Czech Quiz" center>
-      <Quiz arrayOfPairs={res} />
+      <Quiz arrayOfPairs={shuffle(res)} />
     </PageLayout>
   );
 }

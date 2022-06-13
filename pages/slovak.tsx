@@ -1,28 +1,12 @@
 import { useState } from 'react';
-import { generateSimpleSentences } from '../src/sentence-generators';
+import { generateSimpleSentences } from '../src/slovak/sentence-generators';
 import { useControls, Leva } from 'leva';
 import { PageLayout } from '../components/layout';
 import { Quiz } from '../components/quiz';
 
 let res = generateSimpleSentences();
 
-function arrayLoop(arr) {
-  return (
-    <>
-      {Object.keys(arr).map((i) => (
-        <p>{arr[i]}</p>
-      ))}
-    </>
-  );
-}
-
 export default function Home() {
-  const [checked, setChecked] = useState(false);
-
-  const handleChange = () => {
-    setChecked(!checked);
-  };
-
   const config = useControls(
     'Spring',
     {
@@ -36,12 +20,7 @@ export default function Home() {
 
   return (
     <PageLayout title="Decline Slovak" suffix="Slovak Quiz" center>
-      <Quiz
-        arrayOfPairs={[
-          ['hi', 'ahoj'],
-          ['hola', 'čau'],
-        ]}
-      />
+      <Quiz arrayOfPairs={res} />
     </PageLayout>
   );
 }

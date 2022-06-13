@@ -5,7 +5,7 @@ import {
   declensionArray,
   declensionName,
   gender,
-} from '../types';
+} from '../../types';
 
 export let declensionList: Array<declensionName> = [
   '1',

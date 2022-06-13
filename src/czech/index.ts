@@ -1,7 +1,7 @@
 import { pán, hrad, muž, soudce, stroj, předseda } from './masculine';
 import { město, vízum, moře, stavení, kuře } from './neuter';
 import { žena, růže, píseň, kost } from './feminine';
-import { prepositions } from '../prepositions';
+import { prepositions } from './prepositions';
 import { první, malý } from './adjectives';
 import { to, všechno } from './demonstratives';
 import { nounDeclension, declensionArray, gender } from '../types';

@@ -1,11 +1,6 @@
-import { prepositions } from '../prepositions';
-import {
-  allNouns,
-  basicAdjectives,
-  to,
-  všechno,
-} from '../declension-patterns-czech';
-import { cartesian } from '../utilities';
+import { prepositions } from './prepositions';
+import { allNouns, basicAdjectives, to, všechno } from '../index';
+import { cartesian } from '../../utilities';
 
 import {
   declensionList,
@@ -22,7 +17,7 @@ import {
   declensionName,
   preposition,
   gender,
-} from '../types';
+} from '../../types';
 
 let [první, malý] = basicAdjectives;
 

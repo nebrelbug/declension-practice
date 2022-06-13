@@ -22,8 +22,9 @@ export function Quiz({ arrayOfPairs }) {
     if (formValue === arrayOfPairs[arrIndex][1]) {
       setFormState('correct');
       setTimeout(() => {
-        setFormState('in-process');
         incrementArrIndex();
+        setFormValue('');
+        setFormState('in-process');
       }, 500);
     } else {
       setFormState('error');

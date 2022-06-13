@@ -1,6 +1,6 @@
 import { PageLayout } from '../components/layout';
 
-import { generateSimpleSentences } from '../src/sentence-generators';
+import { generateSimpleSentences } from '../src/czech/sentence-generators';
 
 let res = generateSimpleSentences();
 
