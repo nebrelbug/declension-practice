@@ -9,16 +9,6 @@ import { shuffle } from '../src/utilities';
 
 let res = generateSimpleSentences();
 
-function arrayLoop(arr) {
-  return (
-    <>
-      {Object.keys(arr).map((i) => (
-        <p>{arr[i]}</p>
-      ))}
-    </>
-  );
-}
-
 export default function Home() {
   // const config = useControls(
   //   'Settings',

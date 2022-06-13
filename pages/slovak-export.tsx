@@ -8,7 +8,7 @@ function arrayLoop(arr) {
   return (
     <>
       {Object.keys(arr).map((i) => (
-        <p>{arr[i]}</p>
+        <p>{arr[i][0] + ' - ' + arr[i][1]}</p>
       ))}
     </>
   );
