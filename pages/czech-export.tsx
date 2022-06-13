@@ -1,5 +1,4 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import { PageLayout } from '../components/layout';
 
 import { generateSimpleSentences } from '../src/sentence-generators';
 
@@ -17,24 +16,12 @@ function arrayLoop(arr) {
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Decline | Czech</title>
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          <Link href="/">Decline</Link>
-        </h1>
-
-        <p className={styles.description}>Practice Czech declension patterns</p>
-
-        <div className={styles.grid}>{arrayLoop(res)}</div>
-      </main>
-
-      {/* <footer className={styles.footer}>
-        Created with&nbsp;<b>next.new</b>&nbsp;by Ben Gubler
-      </footer> */}
-    </div>
+    <PageLayout
+      title="Export Czech Declensions"
+      suffix="Export Czech Declensions"
+      center={false}
+    >
+      {arrayLoop(res)}
+    </PageLayout>
   );
 }

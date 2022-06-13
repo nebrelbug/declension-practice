@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 let inputClass =
-  'mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:bg-white focus:ring-1';
+  'mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:bg-white focus:ring-1 w-96';
 
 let classStates = {
   error:
@@ -25,6 +25,7 @@ export function Input({ formState, errorMessage, onSubmit }) {
         className={`${inputClass} ${classStates[formState] || ''}`}
         value={name}
         onChange={(e) => setName(e.target.value)}
+        autoFocus
       />
       {formState === 'error' && (
         <p className="mt-2 text-sm text-red-600 text-center">{errorMessage}</p>

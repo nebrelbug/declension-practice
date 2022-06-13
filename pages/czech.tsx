@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { generateSimpleSentences } from '../src/sentence-generators';
 import { Leva, useControls, folder } from 'leva';
+import { PageLayout } from '../components/layout';
 import { Quiz } from '../components/quiz';
 
 let res = generateSimpleSentences();
@@ -53,33 +54,22 @@ export default function Home() {
   //   { collapsed: true }
   // );
 
-  return (
-    <div className="min-h-screen flex flex-col px-2">
-      <Head>
-        <title>Decline Czech</title>
-      </Head>
-
-      <h1 className="m-0 leading-normal text-3xl font-bold">
-        <Link href="/">
-          <a className="text-schnazzy-blue hover:underline">Decline</a>
-        </Link>
-        {' | Czech Quiz'}
-      </h1>
-
-      {/* <Leva
+  {
+    /* <Leva
         // collapsed
         hideCopyButton
         titleBar={{ title: 'Config', filter: false }}
-      ></Leva> */}
+      ></Leva> */
+  }
 
-      <main className="flex flex-col flex-1 items-center py-44 w-full">
-        <Quiz
-          arrayOfPairs={[
-            ['hi', 'ahoj'],
-            ['hola', 'čau'],
-          ]}
-        />
-      </main>
-    </div>
+  return (
+    <PageLayout title="Decline Czech" suffix="Czech Quiz" center>
+      <Quiz
+        arrayOfPairs={[
+          ['hi', 'ahoj'],
+          ['hola', 'čau'],
+        ]}
+      />
+    </PageLayout>
   );
 }

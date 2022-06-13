@@ -1,8 +1,7 @@
-import Head from 'next/head';
-import Link from 'next/link';
 import { useState } from 'react';
 import { generateSimpleSentences } from '../src/sentence-generators';
 import { useControls, Leva } from 'leva';
+import { PageLayout } from '../components/layout';
 
 let res = generateSimpleSentences();
 
@@ -35,26 +34,13 @@ export default function Home() {
   );
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Decline | Slovak</title>
-      </Head>
-
-      <Leva titleBar={false}></Leva>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          <Link href="/">Decline</Link> Slovak
-        </h1>
-
-        <p className={styles.description}>Practice Czech declension patterns</p>
-
-        <div className={styles.grid}>{arrayLoop(res)}</div>
-      </main>
-
-      {/* <footer className={styles.footer}>
-        Created with&nbsp;<b>next.new</b>&nbsp;by Ben Gubler
-      </footer> */}
-    </div>
+    <PageLayout title="Decline Slovak" suffix="Slovak Quiz" center>
+      <Quiz
+        arrayOfPairs={[
+          ['hi', 'ahoj'],
+          ['hola', 'čau'],
+        ]}
+      />
+    </PageLayout>
   );
 }

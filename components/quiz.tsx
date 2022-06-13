@@ -10,7 +10,7 @@ export function Quiz({ arrayOfPairs }) {
     <>
       <h3 className="text-3xl mb-20">The small man</h3>
 
-      <Input formState="d" errorMessage="Shoot" onSubmit={handleSubmit} />
+      <Input formState="error" errorMessage="Shoot" onSubmit={handleSubmit} />
     </>
   );
 }

@@ -20,7 +20,7 @@ export default function Home() {
       </Head>
 
       <main className="flex flex-col flex-1 justify-center items-center py-20">
-        <h1 className="m-0 leading-normal text-6xl text-center font-bold">
+        <h1 className="m-0 leading-tight text-6xl text-center font-bold pb-4">
           Welcome to <span className="text-schnazzy-blue">Decline</span>
         </h1>
 
