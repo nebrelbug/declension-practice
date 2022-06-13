@@ -1,99 +1,93 @@
 import { createNounDeclension } from '../utilities';
 
-export let město = createNounDeclension(
+export let mesto = createNounDeclension(
   'n',
   [
-    ['město', 'města', 'městu', 'město', 'město!', 'městě/u', 'městem'],
-    [
-      'města',
-      'měst',
-      'městům',
-      'města',
-      'města!',
-      'městech',
-      'městy', // 'městy/ama'
-    ],
+    ['mesto', 'mesta', 'mestu', 'mesto', false, 'meste', 'mestom'],
+    ['mestá', 'miest', 'mestám', 'mestá', false, 'mestách', 'mestami'],
   ],
   'city',
   'cities'
 );
 
-export let vízum = createNounDeclension(
+export let pole = createNounDeclension(
   'n',
   [
-    ['vízum', 'víza', 'vízu', 'vízum', 'vízum!', 'vízu', 'vízem'],
-    [
-      'víza',
-      'víz',
-      'vízům',
-      'víza',
-      'víza!',
-      'vízech',
-      'vízy', // 'vízy/ama'
-    ],
+    ['pole', 'poľa', 'poľu', 'pole', false, 'poli', 'poľom'],
+    ['polia', 'polí', 'poliam', 'polia', false, 'poliach', 'poľami'],
   ],
-  'visa',
-  'visas'
+  'field',
+  'fields'
 );
 
-export let moře = createNounDeclension(
+export let dievča = createNounDeclension(
   'n',
   [
-    ['moře', 'moře', 'moři', 'moře', 'moře!', 'moři', 'mořem'],
     [
-      'moře',
-      'moří',
-      'mořím',
-      'moře',
-      'moře!',
-      'mořích',
-      'moři', // 'moři/ema'
+      'dievča',
+      'dievčaťa',
+      'dievčaťu',
+      'dievča',
+      false,
+      'dievčati',
+      'dievčaťom',
+    ],
+    [
+      'dievčatá',
+      'dievčat',
+      'dievčatám',
+      'dievčatá',
+      false,
+      'dievčatách',
+      'dievčatami',
     ],
   ],
-  'sea',
-  'seas'
+  'girl',
+  'girls'
 );
 
-export let stavení = createNounDeclension(
+export let námestie = createNounDeclension(
   'n',
   [
     [
-      'stavení',
-      'stavení',
-      'stavení',
-      'stavení',
-      'stavení!',
-      'stavení',
-      'stavením',
+      'námestie',
+      'námestia',
+      'námestiu',
+      'námestie',
+      false,
+      'námestí',
+      'námestím',
     ],
     [
-      'stavení',
-      'stavení',
-      'stavením',
-      'stavení',
-      'stavení!',
-      'staveních',
-      'staveními', // 'staveními/íma'
+      'námestia',
+      'námestí',
+      'námestiam',
+      'námestia',
+      false,
+      'námestiach',
+      'námestiami',
     ],
   ],
-  'building',
-  'buildings'
+  'town square',
+  'town square'
 );
 
-export let kuře = createNounDeclension(
+export let jablko = createNounDeclension(
   'n',
   [
-    ['kuře', 'kuřete', 'kuřeti', 'kuře', 'kuře!', 'kuřeti', 'kuřetem'],
-    [
-      'kuřata',
-      'kuřat',
-      'kuřatům',
-      'kuřata',
-      'kuřata!',
-      'kuřatech',
-      'kuřaty', // 'kuřaty/ama'
-    ],
+    ['jablko', 'jablka', 'jablku', 'jablko', false, 'jablku', 'jablkom'],
+    ['jablká', 'jabĺk', 'jablkám', 'jablká', false, 'jablkách', 'jablkami'],
   ],
-  'chick',
-  'chicks'
+  'apple',
+  'apples'
+);
+
+export let múzeum = createNounDeclension(
+  'n',
+  [
+    ['múzeum', 'múzea', 'múzeu', 'múzeum', false, 'múzeu', 'múzeom'],
+    ['múzeá', 'múzeí', 'múzeám', 'múzeá', false, 'múzeách', 'múzeami'],
+  ],
+  'museum',
+  'museums'
 );

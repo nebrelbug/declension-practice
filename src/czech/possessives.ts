@@ -1,6 +1,6 @@
 import { createDeclension } from '../utilities';
 
-export let můjCZ = createDeclension(
+export let můj = createDeclension(
   [
     [
       ['můj', 'můj', 'moje', 'moje'],
@@ -24,7 +24,7 @@ export let můjCZ = createDeclension(
   'my'
 );
 
-export let nášCZ = createDeclension(
+export let náš = createDeclension(
   [
     [
       ['náš', 'náš', 'naše', 'naše'],
