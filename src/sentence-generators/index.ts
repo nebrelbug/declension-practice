@@ -109,7 +109,7 @@ export function generateSimpleSentences() {
       englishSentence += '!';
     }
 
-    return englishSentence + ' - ' + langSentence;
+    return [englishSentence, langSentence];
   });
 
   console.log(newRes);

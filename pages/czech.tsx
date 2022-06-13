@@ -64,12 +64,7 @@ export default function Home() {
 
   return (
     <PageLayout title="Decline Czech" suffix="Czech Quiz" center>
-      <Quiz
-        arrayOfPairs={[
-          ['hi', 'ahoj'],
-          ['hola', 'čau'],
-        ]}
-      />
+      <Quiz arrayOfPairs={res} />
     </PageLayout>
   );
 }
