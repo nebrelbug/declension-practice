@@ -1,4 +1,4 @@
-import { prepositions } from './prepositions';
+import { prepositions } from '../prepositions';
 import { allNouns, basicAdjectives, to, všechno } from '../index';
 import { cartesian } from '../../utilities';
 
