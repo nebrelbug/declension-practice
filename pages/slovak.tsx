@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { generateSimpleSentences } from '../src/sentence-generators';
 import { useControls, Leva } from 'leva';
 import { PageLayout } from '../components/layout';
+import { Quiz } from '../components/quiz';
 
 let res = generateSimpleSentences();
 
