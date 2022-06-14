@@ -14,7 +14,10 @@ function Card({ title, description, link }) {
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center px-2">
+    <div
+      className="min-h-screen flex flex-col justify-center items-center px-2"
+      id="root"
+    >
       <Head>
         <title>Decline</title>
       </Head>

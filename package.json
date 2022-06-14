@@ -12,7 +12,10 @@
     "next": "^12.1.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-responsive-modal": "^6.2.0",
+    "react-select": "^5.3.2",
     "tweakpane": "^3.0.8",
+    "use-persisted-state": "^0.3.3",
     "use-tweaks": "0.3.2-alpha.0"
   },
   "devDependencies": {

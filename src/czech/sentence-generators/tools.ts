@@ -12,7 +12,7 @@ export let declensionList: Array<declensionName> = [
   '2',
   '3',
   '4',
-  '4-m',
+  '4-M',
   '5',
   '6',
   '7',

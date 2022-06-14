@@ -17,7 +17,7 @@ export type declensionArray = [
 
 export type gender = 'ma' | 'mi' | 'n' | 'f';
 
-export type declensionName = '1' | '2' | '3' | '4' | '4-m' | '5' | '6' | '7';
+export type declensionName = '1' | '2' | '3' | '4' | '4-M' | '5' | '6' | '7';
 
 export type declension = {
   caseArray: declensionArray;

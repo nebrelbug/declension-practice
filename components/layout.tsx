@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export function PageLayout({ children, title, suffix, center }) {
   return (
-    <div className="min-h-screen flex flex-col px-2">
+    <div className="min-h-screen flex flex-col px-2" id="root">
       <Head>
         <title>{title}</title>
       </Head>
