@@ -1,26 +1,40 @@
-import { useState } from 'react';
-import { generateSimpleSentences } from '../src/slovak/sentence-generators';
-import { useControls, Leva } from 'leva';
+import useLocalStorageState from 'use-local-storage-state';
+
+import { generateSentences } from '../src/slovak/sentence-generators';
+import { shuffle } from '../src/utilities';
+import {
+  defaultDeclensionsSlovak,
+  defaultSettingsSlovak,
+} from '../src/default-config';
+
 import { PageLayout } from '../components/layout';
 import { Quiz } from '../components/quiz';
-
-let res = generateSimpleSentences();
+import { SettingsModal } from '../components/modal';
 
 export default function Home() {
-  const config = useControls(
-    'Spring',
+  const [declensions, setDeclensions] = useLocalStorageState(
+    'slovak-declensions',
     {
-      A: { value: 0, min: 0, max: 1 },
-      mass: { value: 1, min: 1, max: 10 },
-      tension: { value: 170, min: 1, max: 200 },
-      friction: { value: 26, min: 1, max: 30 },
-    },
-    { collapsed: true }
+      defaultValue: defaultDeclensionsSlovak,
+    }
   );
+
+  const [settings, setSettings] = useLocalStorageState('slovak-settings', {
+    defaultValue: defaultSettingsSlovak,
+  });
+
+  let res = generateSentences(declensions, settings);
 
   return (
     <PageLayout title="Decline Slovak" suffix="Slovak Quiz" center>
-      <Quiz arrayOfPairs={res} />
+      <SettingsModal
+        declensions={declensions}
+        settings={settings}
+        slovak={true}
+        updateDeclensions={setDeclensions}
+        updateSettings={setSettings}
+      />
+      <Quiz arrayOfPairs={shuffle(res)} />
     </PageLayout>
   );
 }

@@ -1,7 +1,7 @@
 import useLocalStorageState from 'use-local-storage-state';
 
 import { generateSentences } from '../src/czech/sentence-generators';
-import { shuffle, arrayLoop } from '../src/utilities';
+import { arrayLoop } from '../src/utilities';
 import {
   defaultDeclensionsCzech,
   defaultSettingsCzech,

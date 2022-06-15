@@ -32,7 +32,7 @@ type comboType = [
   number
 ];
 
-export function generateSimpleSentences() {
+export function generateSentences(options, settings) {
   let res: Array<comboType> = [];
 
   for (let dec of declensionList) {
