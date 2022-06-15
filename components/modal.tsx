@@ -17,10 +17,8 @@ export function SettingsModal({
   updateSettings,
   slovak,
 }) {
-  // TODO default false
   const [open, setOpen] = useState(false);
 
-  console.log(settings);
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
 

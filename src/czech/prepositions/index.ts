@@ -28,7 +28,7 @@ let prep4 = [
 let prep4m = [
   {
     preposition: 'za',
-    case: '4-m',
+    case: '4-M',
     english: '(motion) behind',
     default: true,
   },

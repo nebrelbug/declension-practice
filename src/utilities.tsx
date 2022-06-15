@@ -53,7 +53,7 @@ export function arrayLoop(arr) {
   return (
     <>
       {Object.keys(arr).map((i) => (
-        <p>{arr[i][0] + ' - ' + arr[i][1]}</p>
+        <p key={i}>{arr[i][0] + ' - ' + arr[i][1]}</p>
       ))}
     </>
   );

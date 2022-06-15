@@ -32,25 +32,25 @@ type comboType = [
   number
 ];
 
-export function generateSentences(options, settings) {
+export function generateSentences(declensions, settings) {
   let res: Array<comboType> = [];
 
   for (let dec of declensionList) {
-    let declensionNumber = declensionToNumber(dec);
+    if (declensions[dec]) {
+      let declensionNumber = declensionToNumber(dec);
 
-    let possiblePreps = getPrepositions(dec, onlyUseDefault);
-    let combos: comboType = cartesian([
-      possiblePreps,
-      [to],
-      basicAdjectives,
-      allNouns,
-      [true, false],
-      [declensionNumber],
-    ]);
+      let possiblePreps = getPrepositions(dec, onlyUseDefault);
+      let combos: comboType = cartesian([
+        possiblePreps,
+        [to],
+        basicAdjectives,
+        allNouns,
+        [true, false],
+        [declensionNumber],
+      ]);
 
-    console.log(combos);
-
-    res = res.concat(combos);
+      res = res.concat(combos);
+    }
   }
 
   let newRes = res.map(function (sent) {
@@ -107,7 +107,5 @@ export function generateSentences(options, settings) {
     return [englishSentence, langSentence];
   });
 
-  console.log(newRes);
-  console.log(newRes.length);
   return newRes;
 }
