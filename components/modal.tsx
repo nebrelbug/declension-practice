@@ -43,15 +43,17 @@ export function SettingsModal({
     );
   }
 
+  // plural, randomize, nounPatterns, gender, possessives, pronouns, includeTo, includeAdjectives, includePronouns
+
   return (
     <>
       <Button onClick={onOpenModal} />
       <Modal open={open} onClose={onCloseModal} closeIcon={closeIcon} center>
         <div>
           <h2 className="text-xl font-bold py-2">Declensions</h2>
-          <Checkbox value={true} name="Include Plural" />
+          <Checkbox value={settings.plural} name="Plural" />
 
-          <Checkbox value={true} name="Randomize Phrases" />
+          <Checkbox value={settings.randomize} name="Randomize Phrases" />
 
           <DToggle name="1" />
           <DToggle name="2" />
@@ -74,6 +76,7 @@ export function SettingsModal({
                 { value: 'less-common', label: 'Less Common' },
                 { value: 'irregular', label: 'Irregular' },
               ]}
+              value={settings.nounPatterns}
               isSearchable={false}
               className="my-1"
             />
@@ -105,15 +108,24 @@ export function SettingsModal({
               className="my-1"
             />
           </label>
+          <label className="block my-2">
+            <span>Prepositions</span>
+            <Select
+              options={[
+                { value: 'all', label: 'All' },
+                { value: 'key-prepositions', label: 'Key Prepositions' },
+              ]}
+              isSearchable={false}
+              className="my-1"
+            />
+          </label>
         </div>
         <hr />
         <div>
           <h2 className="text-xl font-bold py-2">Include</h2>
-          <Checkbox value={true} name='"To"' />
-          <Checkbox value={true} name="Adjectives" />
-          <Checkbox value={true} name="Pronouns" />
-          <br />
-          <br />
+          <Checkbox value={settings.includeTo} name='"To"' />
+          <Checkbox value={settings.includeAdjectives} name="Adjectives" />
+          <Checkbox value={settings.includePronouns} name="Pronouns" />
         </div>
       </Modal>
     </>

@@ -59,7 +59,7 @@ export function DeclensionToggle({ value, name, onToggle }) {
 export function Checkbox({ value, name, onToggle }) {
   return (
     <label className="flex items-center">
-      <input className="form-checkbox" type="checkbox" value={value} />
+      <input className="form-checkbox" type="checkbox" checked={value} />
       <span className="ml-2">{name}</span>
     </label>
   );

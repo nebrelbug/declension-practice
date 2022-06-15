@@ -23,13 +23,23 @@ export default function Home() {
     '7': true,
   });
 
-  const [settings, setSettings] = useSettings({});
+  const [settings, setSettings] = useSettings({
+    plural: true,
+    randomize: true,
+    nounPatterns: 'all',
+    gender: 'all',
+    possessives: 'all',
+    pronouns: 'all',
+    includeTo: true,
+    includeAdjectives: true,
+    includePronouns: true,
+  });
 
   return (
     <PageLayout title="Decline Czech" suffix="Czech Quiz" center>
       <SettingsModal
         declensions={declensions}
-        settings={{}}
+        settings={settings}
         slovak={false}
         updateDeclensions={setDeclensions}
         updateSettings={setSettings}
