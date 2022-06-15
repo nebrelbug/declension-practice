@@ -5,6 +5,8 @@ import type {
   nounDeclension,
 } from './types';
 
+import React from 'react';
+
 export function createDeclension(
   caseArray: declensionArray,
   definition: string,
@@ -45,4 +47,14 @@ export function shuffle(array) {
     [res[i], res[j]] = [res[j], res[i]];
   }
   return res;
+}
+
+export function arrayLoop(arr) {
+  return (
+    <>
+      {Object.keys(arr).map((i) => (
+        <p>{arr[i][0] + ' - ' + arr[i][1]}</p>
+      ))}
+    </>
+  );
 }

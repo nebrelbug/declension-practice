@@ -1,26 +1,42 @@
+import useLocalStorageState from 'use-local-storage-state';
+
+import { generateSentences } from '../src/czech/sentence-generators';
+import { shuffle, arrayLoop } from '../src/utilities';
+import {
+  defaultDeclensionsCzech,
+  defaultSettingsCzech,
+} from '../src/default-config';
+
 import { PageLayout } from '../components/layout';
-
-import { generateSimpleSentences } from '../src/czech/sentence-generators';
-
-let res = generateSimpleSentences();
-
-function arrayLoop(arr) {
-  return (
-    <>
-      {Object.keys(arr).map((i) => (
-        <p>{arr[i][0] + ' - ' + arr[i][1]}</p>
-      ))}
-    </>
-  );
-}
+import { SettingsModal } from '../components/modal';
 
 export default function Home() {
+  const [declensions, setDeclensions] = useLocalStorageState(
+    'czech-declensions',
+    {
+      defaultValue: defaultDeclensionsCzech,
+    }
+  );
+
+  const [settings, setSettings] = useLocalStorageState('czech-settings', {
+    defaultValue: defaultSettingsCzech,
+  });
+
+  let res = generateSentences(declensions, settings);
+
   return (
     <PageLayout
       title="Export Czech Declensions"
       suffix="Export Czech Declensions"
       center={false}
     >
+      <SettingsModal
+        declensions={declensions}
+        settings={settings}
+        slovak={false}
+        updateDeclensions={setDeclensions}
+        updateSettings={setSettings}
+      />
       {arrayLoop(res)}
     </PageLayout>
   );
