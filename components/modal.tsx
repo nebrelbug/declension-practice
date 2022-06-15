@@ -20,14 +20,25 @@ export function SettingsModal({
   // TODO default false
   const [open, setOpen] = useState(true);
 
+  console.log(settings);
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
 
   function toggleDec(dec) {
     updateDeclensions((oldDeclensions) => {
-      console.log('h');
-      console.log(dec, oldDeclensions);
       return { ...oldDeclensions, [dec]: !oldDeclensions[dec] };
+    });
+  }
+
+  function toggleCheckbox(key) {
+    updateSettings((oldSettings) => {
+      return { ...oldSettings, [key]: !oldSettings[key] };
+    });
+  }
+
+  function changeDropdown(key, newValue) {
+    updateSettings((oldSettings) => {
+      return { ...oldSettings, [key]: newValue };
     });
   }
 
@@ -43,7 +54,7 @@ export function SettingsModal({
     );
   }
 
-  // plural, randomize, nounPatterns, gender, possessives, pronouns, includeTo, includeAdjectives, includePronouns
+  // plural, randomize, nounPatterns, gender, possessives, prepositions, includeTo, includeAdjectives, includePronouns
 
   return (
     <>
@@ -51,9 +62,21 @@ export function SettingsModal({
       <Modal open={open} onClose={onCloseModal} closeIcon={closeIcon} center>
         <div>
           <h2 className="text-xl font-bold py-2">Declensions</h2>
-          <Checkbox value={settings.plural} name="Plural" />
+          <Checkbox
+            value={settings.plural}
+            name="Plural"
+            onToggle={() => {
+              toggleCheckbox('plural');
+            }}
+          />
 
-          <Checkbox value={settings.randomize} name="Randomize Phrases" />
+          <Checkbox
+            value={settings.randomize}
+            name="Randomize Phrases"
+            onToggle={() => {
+              toggleCheckbox('randomize');
+            }}
+          />
 
           <DToggle name="1" />
           <DToggle name="2" />
@@ -77,6 +100,9 @@ export function SettingsModal({
                 { value: 'irregular', label: 'Irregular' },
               ]}
               value={settings.nounPatterns}
+              onChange={(newValue) => {
+                changeDropdown('nounPatterns', newValue);
+              }}
               isSearchable={false}
               className="my-1"
             />
@@ -91,6 +117,10 @@ export function SettingsModal({
                 { value: 'neuter', label: 'Neuter' },
                 { value: 'feminine', label: 'Feminine' },
               ]}
+              value={settings.gender}
+              onChange={(newValue) => {
+                changeDropdown('gender', newValue);
+              }}
               isSearchable={false}
               className="my-1"
             />
@@ -104,6 +134,10 @@ export function SettingsModal({
                 { value: 'possessive-pronouns', label: 'Possessive Pronouns' },
                 { value: 'a', label: 'None' },
               ]}
+              value={settings.possessives}
+              onChange={(newValue) => {
+                changeDropdown('possessives', newValue);
+              }}
               isSearchable={false}
               className="my-1"
             />
@@ -115,6 +149,10 @@ export function SettingsModal({
                 { value: 'all', label: 'All' },
                 { value: 'key-prepositions', label: 'Key Prepositions' },
               ]}
+              value={settings.prepositions}
+              onChange={(newValue) => {
+                changeDropdown('prepositions', newValue);
+              }}
               isSearchable={false}
               className="my-1"
             />
@@ -123,9 +161,27 @@ export function SettingsModal({
         <hr />
         <div>
           <h2 className="text-xl font-bold py-2">Include</h2>
-          <Checkbox value={settings.includeTo} name='"To"' />
-          <Checkbox value={settings.includeAdjectives} name="Adjectives" />
-          <Checkbox value={settings.includePronouns} name="Pronouns" />
+          <Checkbox
+            value={settings.includeTo}
+            name='"To"'
+            onToggle={() => {
+              toggleCheckbox('includeTo');
+            }}
+          />
+          <Checkbox
+            value={settings.includeAdjectives}
+            name="Adjectives"
+            onToggle={() => {
+              toggleCheckbox('includeAdjectives');
+            }}
+          />
+          <Checkbox
+            value={settings.includePronouns}
+            name="Pronouns"
+            onToggle={() => {
+              toggleCheckbox('includePronouns');
+            }}
+          />
         </div>
       </Modal>
     </>
