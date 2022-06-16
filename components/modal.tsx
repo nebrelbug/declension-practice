@@ -10,6 +10,13 @@ import {
 import { Modal } from 'react-responsive-modal';
 import Select from 'react-select';
 
+import {
+  nounPatternOptions,
+  genderOptions,
+  possessivesOptions,
+  prepositionOptions,
+} from '../src/default-config';
+
 export function SettingsModal({
   declensions,
   settings,
@@ -17,7 +24,7 @@ export function SettingsModal({
   updateSettings,
   slovak,
 }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
@@ -91,12 +98,9 @@ export function SettingsModal({
           <label className="block my-2">
             <span>Noun Patterns</span>
             <Select
-              options={[
-                { value: 'all', label: 'All' },
-                { value: 'essential', label: 'Essential' },
-                { value: 'less-common', label: 'Less Common' },
-                { value: 'irregular', label: 'Irregular' },
-              ]}
+              options={nounPatternOptions}
+              isMulti
+              isClearable={false}
               value={settings.nounPatterns}
               onChange={(newValue) => {
                 changeDropdown('nounPatterns', newValue);
@@ -109,12 +113,9 @@ export function SettingsModal({
           <label className="block my-2">
             <span>Gender</span>
             <Select
-              options={[
-                { value: 'all', label: 'All' },
-                { value: 'masculine', label: 'Masculine' },
-                { value: 'neuter', label: 'Neuter' },
-                { value: 'feminine', label: 'Feminine' },
-              ]}
+              options={genderOptions}
+              isMulti
+              isClearable={false}
               value={settings.gender}
               onChange={(newValue) => {
                 changeDropdown('gender', newValue);
@@ -126,12 +127,9 @@ export function SettingsModal({
           <label className="block my-2">
             <span>Possessives</span>
             <Select
-              options={[
-                { value: 'all', label: 'All' },
-                { value: 'noun-possessives', label: 'Noun Possessives' },
-                { value: 'possessive-pronouns', label: 'Possessive Pronouns' },
-                { value: 'a', label: 'None' },
-              ]}
+              options={possessivesOptions}
+              isMulti
+              isClearable={false}
               value={settings.possessives}
               onChange={(newValue) => {
                 changeDropdown('possessives', newValue);
@@ -143,10 +141,8 @@ export function SettingsModal({
           <label className="block my-2">
             <span>Prepositions</span>
             <Select
-              options={[
-                { value: 'all', label: 'All' },
-                { value: 'key-prepositions', label: 'Key Prepositions' },
-              ]}
+              options={prepositionOptions}
+              isMulti
               value={settings.prepositions}
               onChange={(newValue) => {
                 changeDropdown('prepositions', newValue);
@@ -185,14 +181,3 @@ export function SettingsModal({
     </>
   );
 }
-
-/* 
-
-  //       "'To'": true,
-  //       Adjectives: true,
-  //       Pronouns: true,
-  //       'Possessive Pronouns': true,
-  //       'Noun Possessives': true,
-  //     }),
-  
-  */

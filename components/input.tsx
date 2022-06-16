@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 let inputClass =
-  'mt-1 block w-full rounded-md bg-gray-100 border-transparent w-96';
+  'mt-1 block w-full rounded-md bg-gray-100 border-transparent w-96 max-w-[90vw]';
 
 let classStates = {
   error:
