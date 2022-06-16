@@ -11,7 +11,14 @@ let classStates = {
   'in-progress': 'focus:bg-white focus:ring-1',
 };
 
-export function Input({ formState, errorMessage, onSubmit, value, setValue }) {
+export function Input({
+  formState,
+  errorMessage,
+  onSubmit,
+  value,
+  setValue,
+  disabled,
+}) {
   return (
     <form onSubmit={onSubmit}>
       <input
@@ -20,6 +27,7 @@ export function Input({ formState, errorMessage, onSubmit, value, setValue }) {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         autoFocus
+        disabled={disabled}
         readOnly={formState === 'correct'}
       />
       {formState === 'error' && (

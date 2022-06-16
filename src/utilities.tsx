@@ -15,12 +15,13 @@ export function createDeclension(
   return {
     caseArray: caseArray,
     definition: definition,
-    plural: plural || definition,
+    pluralDefinition: plural || definition,
   };
 }
 
 export function createNounDeclension(
   gender: gender,
+  type: 'essential' | 'advanced' | 'irregular',
   caseArray: declensionArray,
   definition: string,
   plural?: string,
@@ -30,6 +31,7 @@ export function createNounDeclension(
 
   return {
     gender: gender,
+    type: type,
     caseArray: caseArray,
     definition: definition,
     plural: newPlural,

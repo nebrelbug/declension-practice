@@ -64,120 +64,122 @@ export function SettingsModal({
   return (
     <>
       <Button onClick={onOpenModal} />
-      <Modal open={open} onClose={onCloseModal} closeIcon={closeIcon} center>
-        <div>
-          <h2 className="text-xl font-bold py-2">Declensions</h2>
-          <Checkbox
-            value={settings.plural}
-            name="Plural"
-            onToggle={() => {
-              toggleCheckbox('plural');
-            }}
-          />
+      {open && (
+        <Modal open={open} onClose={onCloseModal} closeIcon={closeIcon} center>
+          <div>
+            <h2 className="text-xl font-bold py-2">Declensions</h2>
+            <Checkbox
+              value={settings.plural}
+              name="Plural"
+              onToggle={() => {
+                toggleCheckbox('plural');
+              }}
+            />
 
-          <Checkbox
-            value={settings.randomize}
-            name="Randomize Phrases"
-            onToggle={() => {
-              toggleCheckbox('randomize');
-            }}
-          />
+            <Checkbox
+              value={settings.randomize}
+              name="Randomize Phrases"
+              onToggle={() => {
+                toggleCheckbox('randomize');
+              }}
+            />
 
-          <DToggle name="1" />
-          <DToggle name="2" />
-          <DToggle name="3" />
-          <DToggle name="4" />
-          <DToggle name="4-M" />
-          {!slovak && <DToggle name="5" />}
-          <DToggle name="6" />
-          <DToggle name="7" />
-        </div>
-        <hr />
-        <div>
-          <h2 className="text-xl font-bold py-2">Options</h2>
-          <label className="block my-2">
-            <span>Noun Patterns</span>
-            <Select
-              options={nounPatternOptions}
-              isMulti
-              isClearable={false}
-              value={settings.nounPatterns}
-              onChange={(newValue) => {
-                changeDropdown('nounPatterns', newValue);
-              }}
-              isSearchable={false}
-              className="my-1"
-            />
-          </label>
+            <DToggle name="1" />
+            <DToggle name="2" />
+            <DToggle name="3" />
+            <DToggle name="4" />
+            <DToggle name="4-M" />
+            {!slovak && <DToggle name="5" />}
+            <DToggle name="6" />
+            <DToggle name="7" />
+          </div>
+          <hr />
+          <div>
+            <h2 className="text-xl font-bold py-2">Options</h2>
+            <label className="block my-2">
+              <span>Noun Patterns</span>
+              <Select
+                options={nounPatternOptions}
+                isMulti
+                isClearable={false}
+                value={settings.nounPatterns}
+                onChange={(newValue) => {
+                  changeDropdown('nounPatterns', newValue);
+                }}
+                isSearchable={false}
+                className="my-1"
+              />
+            </label>
 
-          <label className="block my-2">
-            <span>Gender</span>
-            <Select
-              options={genderOptions}
-              isMulti
-              isClearable={false}
-              value={settings.gender}
-              onChange={(newValue) => {
-                changeDropdown('gender', newValue);
+            <label className="block my-2">
+              <span>Gender</span>
+              <Select
+                options={genderOptions}
+                isMulti
+                isClearable={false}
+                value={settings.gender}
+                onChange={(newValue) => {
+                  changeDropdown('gender', newValue);
+                }}
+                isSearchable={false}
+                className="my-1"
+              />
+            </label>
+            <label className="block my-2">
+              <span>Possessives</span>
+              <Select
+                options={possessivesOptions}
+                isMulti
+                isClearable={false}
+                value={settings.possessives}
+                onChange={(newValue) => {
+                  changeDropdown('possessives', newValue);
+                }}
+                isSearchable={false}
+                className="my-1"
+              />
+            </label>
+            <label className="block my-2">
+              <span>Prepositions</span>
+              <Select
+                options={prepositionOptions}
+                isMulti
+                value={settings.prepositions}
+                onChange={(newValue) => {
+                  changeDropdown('prepositions', newValue);
+                }}
+                isSearchable={false}
+                className="my-1"
+              />
+            </label>
+          </div>
+          <hr />
+          <div>
+            <h2 className="text-xl font-bold py-2">Include</h2>
+            <Checkbox
+              value={settings.includeTo}
+              name='"To"'
+              onToggle={() => {
+                toggleCheckbox('includeTo');
               }}
-              isSearchable={false}
-              className="my-1"
             />
-          </label>
-          <label className="block my-2">
-            <span>Possessives</span>
-            <Select
-              options={possessivesOptions}
-              isMulti
-              isClearable={false}
-              value={settings.possessives}
-              onChange={(newValue) => {
-                changeDropdown('possessives', newValue);
+            <Checkbox
+              value={settings.includeAdjectives}
+              name="Adjectives"
+              onToggle={() => {
+                toggleCheckbox('includeAdjectives');
               }}
-              isSearchable={false}
-              className="my-1"
             />
-          </label>
-          <label className="block my-2">
-            <span>Prepositions</span>
-            <Select
-              options={prepositionOptions}
-              isMulti
-              value={settings.prepositions}
-              onChange={(newValue) => {
-                changeDropdown('prepositions', newValue);
+            <Checkbox
+              value={settings.includePronouns}
+              name="Pronouns"
+              onToggle={() => {
+                toggleCheckbox('includePronouns');
               }}
-              isSearchable={false}
-              className="my-1"
             />
-          </label>
-        </div>
-        <hr />
-        <div>
-          <h2 className="text-xl font-bold py-2">Include</h2>
-          <Checkbox
-            value={settings.includeTo}
-            name='"To"'
-            onToggle={() => {
-              toggleCheckbox('includeTo');
-            }}
-          />
-          <Checkbox
-            value={settings.includeAdjectives}
-            name="Adjectives"
-            onToggle={() => {
-              toggleCheckbox('includeAdjectives');
-            }}
-          />
-          <Checkbox
-            value={settings.includePronouns}
-            name="Pronouns"
-            onToggle={() => {
-              toggleCheckbox('includePronouns');
-            }}
-          />
-        </div>
-      </Modal>
+          </div>
+        </Modal>
+      )}
     </>
   );
 }

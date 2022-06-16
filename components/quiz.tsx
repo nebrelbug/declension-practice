@@ -37,7 +37,11 @@ export function Quiz({ arrayOfPairs }) {
 
   return (
     <div className="flex flex-col flex-1 items-center w-full mt-16">
-      <h3 className="text-3xl mb-20">{arrayOfPairs[arrIndex][0]}</h3>
+      <h3 className="text-3xl mb-20">
+        {arrayOfPairs.length > 0
+          ? arrayOfPairs[arrIndex][0]
+          : 'No sentences available'}
+      </h3>
 
       <Input
         formState={formState}
@@ -45,6 +49,7 @@ export function Quiz({ arrayOfPairs }) {
         onSubmit={handleSubmit}
         value={formValue}
         setValue={setFormValue}
+        disabled={!!arrayOfPairs}
       />
     </div>
   );

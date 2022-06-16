@@ -2,6 +2,7 @@ import { createNounDeclension } from '../utilities';
 
 export var žena = createNounDeclension(
   'f',
+  'essential',
   [
     ['žena', 'ženy', 'ženě', 'ženu', 'ženo!', 'ženě', 'ženou'],
     [
@@ -20,6 +21,7 @@ export var žena = createNounDeclension(
 
 export var růže = createNounDeclension(
   'f',
+  'essential',
   [
     ['růže', 'růže', 'růži', 'růži', 'růže!', 'růži', 'růží'],
     [
@@ -40,6 +42,7 @@ export var růže = createNounDeclension(
 
 export var píseň = createNounDeclension(
   'f',
+  'essential',
   [
     ['píseň', 'písně', 'písni', 'píseň', 'písni!', 'písni', 'písní'],
     [
@@ -58,6 +61,7 @@ export var píseň = createNounDeclension(
 
 export var kost = createNounDeclension(
   'f',
+  'essential',
   [
     ['kost', 'kosti', 'kosti', 'kost', 'kosti!', 'kosti', 'kostí'],
     [

@@ -2,6 +2,7 @@ import { createNounDeclension } from '../utilities';
 
 export let pán = createNounDeclension(
   'ma',
+  'essential',
   [
     ['pán', 'pána', 'pánu/ovi', 'pána', 'páne!', 'pánu/ovi', 'pánem'],
     [
@@ -20,6 +21,7 @@ export let pán = createNounDeclension(
 
 export let hrad = createNounDeclension(
   'mi',
+  'essential',
   [
     ['hrad', 'hradu', 'hradu', 'hrad', 'hrade!', 'hradě/u', 'hradem'],
     [
@@ -38,6 +40,7 @@ export let hrad = createNounDeclension(
 
 export let muž = createNounDeclension(
   'ma',
+  'essential',
   [
     ['muž', 'muže', 'muži/ovi', 'muže', 'muži!', 'muži/ovi', 'mužem'],
     [
@@ -56,6 +59,7 @@ export let muž = createNounDeclension(
 
 export let soudce = createNounDeclension(
   'ma',
+  'advanced',
   [
     [
       'soudce',
@@ -82,6 +86,7 @@ export let soudce = createNounDeclension(
 
 export let stroj = createNounDeclension(
   'mi',
+  'essential',
   [
     ['stroj', 'stroje', 'stroji', 'stroj', 'stroji!', 'stroji', 'strojem'],
     [
@@ -100,6 +105,7 @@ export let stroj = createNounDeclension(
 
 export let předseda = createNounDeclension(
   'ma',
+  'advanced',
   [
     [
       'předseda',

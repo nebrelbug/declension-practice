@@ -23,15 +23,6 @@ let [první, malý] = basicAdjectives;
 
 let onlyUseDefault = false;
 
-type comboType = [
-  preposition | '',
-  declension,
-  declension,
-  nounDeclension,
-  boolean,
-  number
-];
-
 export function generateSentences(declensions, settings) {
   let res: Array<comboType> = [];
 
@@ -60,14 +51,6 @@ export function generateSentences(declensions, settings) {
     let caseNumber = sent[5];
     let gender = sent[3].gender;
     let plural = sent[4];
-
-    function english(dec: declension) {
-      if (plural) {
-        return dec.plural;
-      } else {
-        return dec.definition;
-      }
-    }
 
     if (sent[0] !== '') {
       englishSentence += sent[0].english + ' ';

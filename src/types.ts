@@ -16,19 +16,20 @@ export type declensionArray = [
 ];
 
 export type gender = 'ma' | 'mi' | 'n' | 'f';
+export type nounType = 'essential' | 'advanced' | 'irregular';
 
 export type declensionName = '1' | '2' | '3' | '4' | '4-M' | '5' | '6' | '7';
 
 export type declension = {
   caseArray: declensionArray;
   definition: string;
-  plural?: string;
+  type?: nounType;
+  pluralDefinition?: string;
+  objectiveCase?: string;
 };
 
 export interface nounDeclension extends declension {
   gender: gender;
-  plural?: string;
-  objectiveCase?: string;
 }
 
 export type preposition = {

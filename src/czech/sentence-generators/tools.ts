@@ -2,9 +2,11 @@ import { prepositions } from '../prepositions';
 
 import {
   nounDeclension,
+  declension,
   declensionArray,
   declensionName,
   gender,
+  preposition,
 } from '../../types';
 
 export let declensionList: Array<declensionName> = [
@@ -49,32 +51,66 @@ export function declensionToNumber(declensionName: declensionName): number {
   return declensionNumber;
 }
 
-type config = { caseNumber: number; gender: gender; plural: boolean };
+type config = { caseNumber: number; plural: boolean };
 
-export function getItem(noun: declensionArray, config: config): string {
-  // console.log('noun: ' + noun);
+export function getItem(
+  noun: declensionArray,
+  config: config,
+  gender: gender
+): string {
   let singleDec = config.plural ? noun[1] : noun[0];
 
-  // console.log('single: ' + singleDec);
   let dec = singleDec[config.caseNumber - 1];
-
-  // console.log('dec: ' + dec);
 
   if (typeof dec === 'string') {
     return dec;
   } else {
-    // console.log(dec);
-    return dec[genderList[config.gender]];
+    return dec[genderList[gender]];
   }
 }
 
+function english(dec: declension, plural: boolean, objective: boolean) {
+  if (plural) {
+    return dec.pluralDefinition;
+  } else {
+    return dec.definition;
+  }
+}
+
+type comboType = preposition | '' | declension | nounDeclension;
+
 export function transformArray(
   config: config,
-  inputArray: Array<declensionArray>
-): Array<string> {
-  let r = [];
+  inputArray: Array<comboType>
+): [string, string] {
+  let englishSentence = [];
+  let langSentence = [];
+
+  // ts-disable-line
+  let noun = inputArray.find(
+    (element) => element && (element as nounDeclension).gender
+  );
+
+  let gender = (noun as nounDeclension).gender;
+  let plural = config.plural;
+  let objectiveCase = config.caseNumber !== 1 && config.caseNumber !== 4;
+
   for (let i = 0; i < inputArray.length; i++) {
-    r[i] = getItem(inputArray[i], config);
+    let item = inputArray[i];
+
+    if (item) {
+      if ((item as preposition).preposition) {
+        englishSentence.push((item as preposition).english);
+        langSentence.push((item as preposition).preposition);
+      } else if ((item as declension).caseArray) {
+        englishSentence.push(
+          english(item as declension, plural, objectiveCase)
+        );
+        langSentence.push(
+          getItem((item as declension).caseArray, config, gender)
+        );
+      }
+    }
   }
-  return r;
+  return [englishSentence.join(' '), langSentence.join(' ')];
 }
