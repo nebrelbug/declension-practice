@@ -49,7 +49,7 @@ export function Quiz({ arrayOfPairs }) {
         onSubmit={handleSubmit}
         value={formValue}
         setValue={setFormValue}
-        disabled={!!arrayOfPairs}
+        disabled={arrayOfPairs.length === 0}
       />
     </div>
   );

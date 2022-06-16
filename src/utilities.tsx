@@ -34,7 +34,7 @@ export function createNounDeclension(
     type: type,
     caseArray: caseArray,
     definition: definition,
-    plural: newPlural,
+    pluralDefinition: newPlural,
     objectiveCase: objectiveCase || definition,
   };
 }

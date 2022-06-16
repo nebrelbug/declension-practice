@@ -77,7 +77,7 @@ function english(dec: declension, plural: boolean, objective: boolean) {
   }
 }
 
-type comboType = preposition | '' | declension | nounDeclension;
+export type comboType = preposition | '' | declension | nounDeclension;
 
 export function transformArray(
   config: config,
@@ -85,6 +85,7 @@ export function transformArray(
 ): [string, string] {
   let englishSentence = [];
   let langSentence = [];
+  console.log(inputArray);
 
   // ts-disable-line
   let noun = inputArray.find(
