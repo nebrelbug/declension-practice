@@ -1,5 +1,3 @@
-import { prepositions } from '../prepositions';
-
 import {
   nounDeclension,
   declension,
@@ -7,7 +5,7 @@ import {
   declensionName,
   gender,
   preposition,
-} from '../../types';
+} from './types';
 
 export let declensionList: Array<declensionName> = [
   '1',
@@ -19,24 +17,6 @@ export let declensionList: Array<declensionName> = [
   '6',
   '7',
 ];
-
-export function getPrepositions(
-  desiredCase: declensionName,
-  onlyDefault: boolean
-) {
-  if (desiredCase === '1' || desiredCase === '5') {
-    return [''];
-  }
-
-  return prepositions.filter(function (prep) {
-    if (
-      prep.case === desiredCase &&
-      (!onlyDefault || (onlyDefault && prep.default))
-    ) {
-      return true;
-    }
-  });
-}
 
 export let genderList = {
   ma: 0,
@@ -77,7 +57,7 @@ function english(dec: declension, plural: boolean, objective: boolean) {
   }
 }
 
-export type comboType = preposition | '' | declension | nounDeclension;
+export type comboType = preposition | declension | nounDeclension;
 
 export function transformArray(
   config: config,

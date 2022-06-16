@@ -10,6 +10,17 @@ export let genderOptions = [
   { value: 'feminine', label: 'feminine' },
 ];
 
+export let phraseOptions = [
+  { value: '"ten"', label: '"ten"' },
+  { value: 'adjectives', label: 'adjectives' },
+  { value: 'pronouns', label: 'pronouns' },
+];
+
+export let numberOptions = [
+  { value: 'singular', label: 'singular' },
+  { value: 'plural', label: 'plural' },
+];
+
 export let possessivesOptions = [
   { value: 'noun-possessives', label: 'noun possessives' },
   { value: 'possessive-pronouns', label: 'possessive pronouns' },
@@ -43,6 +54,15 @@ export let defaultSettingsCzech = {
     { value: 'neuter', label: 'neuter' },
     { value: 'feminine', label: 'feminine' },
   ],
+  phraseOptions: [
+    { value: '"ten"', label: '"ten"' },
+    { value: 'adjectives', label: 'adjectives' },
+    { value: 'pronouns', label: 'pronouns' },
+  ],
+  numberOptions: [
+    { value: 'singular', label: 'singular' },
+    { value: 'plural', label: 'plural' },
+  ],
   possessives: [
     { value: 'noun-possessives', label: 'noun possessives' },
     { value: 'possessive-pronouns', label: 'possessive pronouns' },
@@ -67,10 +87,29 @@ export let defaultDeclensionsSlovak = {
 export let defaultSettingsSlovak = {
   plural: true,
   randomize: true,
-  nounPatterns: { value: 'all', label: 'All' },
-  gender: { value: 'all', label: 'All' },
-  possessives: { value: 'all', label: 'All' },
-  prepositions: { value: 'all', label: 'All' },
+  nounPatterns: [
+    { value: 'essential', label: 'essential' },
+    { value: 'advanced', label: 'advanced' },
+  ],
+  gender: [
+    { value: 'masculine', label: 'masculine' },
+    { value: 'neuter', label: 'neuter' },
+    { value: 'feminine', label: 'feminine' },
+  ],
+  phraseOptions: [
+    { value: '"ten"', label: '"ten"' },
+    { value: 'adjectives', label: 'adjectives' },
+    { value: 'pronouns', label: 'pronouns' },
+  ],
+  numberOptions: [
+    { value: 'singular', label: 'singular' },
+    { value: 'plural', label: 'plural' },
+  ],
+  possessives: [
+    { value: 'noun-possessives', label: 'noun possessives' },
+    { value: 'possessive-pronouns', label: 'possessive pronouns' },
+  ],
+  prepositions: [{ value: 'key-prepositions', label: 'key prepositions' }],
   includeTo: true,
   includeAdjectives: true,
   includePronouns: true,

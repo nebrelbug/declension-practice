@@ -8,14 +8,17 @@ import {
   closeIcon,
 } from '../components/modal-button';
 import { Modal } from 'react-responsive-modal';
-import Select from 'react-select';
 
 import {
   nounPatternOptions,
   genderOptions,
+  phraseOptions,
+  numberOptions,
   possessivesOptions,
   prepositionOptions,
 } from '../src/default-config';
+
+import { SelectComponent } from './select';
 
 export function SettingsModal({
   declensions,
@@ -59,8 +62,6 @@ export function SettingsModal({
     );
   }
 
-  // plural, randomize, nounPatterns, gender, possessives, prepositions, includeTo, includeAdjectives, includePronouns
-
   return (
     <>
       <Button onClick={onOpenModal} />
@@ -68,21 +69,6 @@ export function SettingsModal({
         <Modal open={open} onClose={onCloseModal} closeIcon={closeIcon} center>
           <div>
             <h2 className="text-xl font-bold py-2">Declensions</h2>
-            <Checkbox
-              value={settings.plural}
-              name="Plural"
-              onToggle={() => {
-                toggleCheckbox('plural');
-              }}
-            />
-
-            <Checkbox
-              value={settings.randomize}
-              name="Randomize Phrases"
-              onToggle={() => {
-                toggleCheckbox('randomize');
-              }}
-            />
 
             <DToggle name="1" />
             <DToggle name="2" />
@@ -96,88 +82,73 @@ export function SettingsModal({
           <hr />
           <div>
             <h2 className="text-xl font-bold py-2">Options</h2>
-            <label className="block my-2">
-              <span>Noun Patterns</span>
-              <Select
-                options={nounPatternOptions}
-                isMulti
-                isClearable={false}
-                value={settings.nounPatterns}
-                onChange={(newValue) => {
-                  changeDropdown('nounPatterns', newValue);
-                }}
-                isSearchable={false}
-                className="my-1"
-              />
-            </label>
 
-            <label className="block my-2">
-              <span>Gender</span>
-              <Select
-                options={genderOptions}
-                isMulti
-                isClearable={false}
-                value={settings.gender}
-                onChange={(newValue) => {
-                  changeDropdown('gender', newValue);
-                }}
-                isSearchable={false}
-                className="my-1"
-              />
-            </label>
-            <label className="block my-2">
-              <span>Possessives</span>
-              <Select
-                options={possessivesOptions}
-                isMulti
-                isClearable={false}
-                value={settings.possessives}
-                onChange={(newValue) => {
-                  changeDropdown('possessives', newValue);
-                }}
-                isSearchable={false}
-                className="my-1"
-              />
-            </label>
-            <label className="block my-2">
-              <span>Prepositions</span>
-              <Select
-                options={prepositionOptions}
-                isMulti
-                value={settings.prepositions}
-                onChange={(newValue) => {
-                  changeDropdown('prepositions', newValue);
-                }}
-                isSearchable={false}
-                className="my-1"
-              />
-            </label>
+            <SelectComponent
+              options={nounPatternOptions}
+              name="Noun Patterns"
+              value={settings.nounPatterns}
+              onChange={(newValue) => {
+                changeDropdown('nounPatterns', newValue);
+              }}
+            />
+
+            <SelectComponent
+              options={genderOptions}
+              name="Gender"
+              value={settings.gender}
+              onChange={(newValue) => {
+                changeDropdown('gender', newValue);
+              }}
+            />
+
+            <SelectComponent
+              options={phraseOptions}
+              name="Phrase Options"
+              value={settings.phraseOptions}
+              onChange={(newValue) => {
+                changeDropdown('phraseOptions', newValue);
+              }}
+            />
+
+            <SelectComponent
+              options={numberOptions}
+              name="Number"
+              value={settings.numberOptions}
+              onChange={(newValue) => {
+                changeDropdown('numberOptions', newValue);
+              }}
+            />
+
+            <SelectComponent
+              options={possessivesOptions}
+              name="Possessives"
+              value={settings.possessives}
+              onChange={(newValue) => {
+                changeDropdown('possessives', newValue);
+              }}
+            />
+
+            <SelectComponent
+              options={prepositionOptions}
+              name="Prepositions"
+              value={settings.prepositions}
+              onChange={(newValue) => {
+                changeDropdown('prepositions', newValue);
+              }}
+            />
           </div>
           <hr />
           <div>
             <h2 className="text-xl font-bold py-2">Include</h2>
             <Checkbox
-              value={settings.includeTo}
-              name='"To"'
+              value={settings.randomize}
+              name="Randomize Phrases"
               onToggle={() => {
-                toggleCheckbox('includeTo');
-              }}
-            />
-            <Checkbox
-              value={settings.includeAdjectives}
-              name="Adjectives"
-              onToggle={() => {
-                toggleCheckbox('includeAdjectives');
-              }}
-            />
-            <Checkbox
-              value={settings.includePronouns}
-              name="Pronouns"
-              onToggle={() => {
-                toggleCheckbox('includePronouns');
+                toggleCheckbox('randomize');
               }}
             />
           </div>
+          <br />
         </Modal>
       )}
     </>
