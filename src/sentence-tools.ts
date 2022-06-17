@@ -41,15 +41,17 @@ export function filterNouns(
 ) {}
 
 export function usePlural(settings): [boolean, boolean] {
-  let singular = false; // default
-  let plural = false; // default
+  let singular = true; // default
+  let plural = true; // default
 
-  if (settings.numberOptions.filter((e) => e.value === 'singular').length > 0) {
-    singular = true;
+  if (
+    settings.numberOptions.filter((e) => e.value === 'singular').length === 0
+  ) {
+    singular = false;
   }
 
-  if (settings.numberOptions.filter((e) => e.value === 'plural').length > 0) {
-    plural = true;
+  if (settings.numberOptions.filter((e) => e.value === 'plural').length === 0) {
+    plural = false;
   }
 
   return [singular, plural];
