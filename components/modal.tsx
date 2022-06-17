@@ -85,7 +85,7 @@ export function SettingsModal({
 
             <SelectComponent
               options={nounPatternOptions}
-              name="Noun Patterns"
+              name="Nouns"
               value={settings.nounPatterns}
               onChange={(newValue) => {
                 changeDropdown('nounPatterns', newValue);
@@ -101,14 +101,14 @@ export function SettingsModal({
               }}
             />
 
-            <SelectComponent
+            {/* <SelectComponent
               options={phraseOptions}
               name="Phrase Options"
               value={settings.phraseOptions}
               onChange={(newValue) => {
                 changeDropdown('phraseOptions', newValue);
               }}
-            />
+            /> */}
 
             <SelectComponent
               options={numberOptions}
@@ -139,7 +139,7 @@ export function SettingsModal({
           </div>
           <hr />
           <div>
-            <h2 className="text-xl font-bold py-2">Include</h2>
+            <h2 className="text-xl font-bold py-2">Options</h2>
             <Checkbox
               value={settings.randomize}
               name="Randomize Phrases"

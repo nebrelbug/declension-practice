@@ -1,79 +1,81 @@
 import { createNounDeclension } from '../utilities';
 
-export var žena = createNounDeclension(
-  'f',
-  'essential',
-  [
-    ['žena', 'ženy', 'ženě', 'ženu', 'ženo!', 'ženě', 'ženou'],
+export let feminineNouns = [
+  createNounDeclension(
+    'f',
+    'essential',
     [
-      'ženy',
-      'žen',
-      'ženám',
-      'ženy',
-      'ženy!',
-      'ženách',
-      'ženami', // 'ženami/ama'
+      ['žena', 'ženy', 'ženě', 'ženu', 'ženo!', 'ženě', 'ženou'],
+      [
+        'ženy',
+        'žen',
+        'ženám',
+        'ženy',
+        'ženy!',
+        'ženách',
+        'ženami', // 'ženami/ama'
+      ],
     ],
-  ],
-  'woman',
-  'women'
-);
+    'woman',
+    'women'
+  ),
 
-export var růže = createNounDeclension(
-  'f',
-  'essential',
-  [
-    ['růže', 'růže', 'růži', 'růži', 'růže!', 'růži', 'růží'],
+  createNounDeclension(
+    'f',
+    'essential',
     [
-      'růže',
-      'růží',
-      'růžím',
-      'růže',
-      'růže!',
-      'růžích',
-      'řůžemi', // 'růžemi/ema'
+      ['růže', 'růže', 'růži', 'růži', 'růže!', 'růži', 'růží'],
+      [
+        'růže',
+        'růží',
+        'růžím',
+        'růže',
+        'růže!',
+        'růžích',
+        'řůžemi', // 'růžemi/ema'
+      ],
     ],
-  ],
-  'rose',
-  'roses'
-);
+    'rose',
+    'roses'
+  ),
 
-// add ulice
+  // add ulice
 
-export var píseň = createNounDeclension(
-  'f',
-  'essential',
-  [
-    ['píseň', 'písně', 'písni', 'píseň', 'písni!', 'písni', 'písní'],
+  createNounDeclension(
+    'f',
+    'essential',
     [
-      'písně',
-      'písní',
-      'písním',
-      'písně',
-      'písně!',
-      'písních',
-      'písněmi', // 'písněmi/ěma'
+      ['píseň', 'písně', 'písni', 'píseň', 'písni!', 'písni', 'písní'],
+      [
+        'písně',
+        'písní',
+        'písním',
+        'písně',
+        'písně!',
+        'písních',
+        'písněmi', // 'písněmi/ěma'
+      ],
     ],
-  ],
-  'song',
-  'songs'
-);
+    'song',
+    'songs'
+  ),
 
-export var kost = createNounDeclension(
-  'f',
-  'essential',
-  [
-    ['kost', 'kosti', 'kosti', 'kost', 'kosti!', 'kosti', 'kostí'],
+  createNounDeclension(
+    'f',
+    'essential',
     [
-      'kosti',
-      'kostí',
-      'kostem',
-      'kosti',
-      'kosti!',
-      'kostech',
-      'kostmi', // 'kostmi/ma'
+      ['kost', 'kosti', 'kosti', 'kost', 'kosti!', 'kosti', 'kostí'],
+      [
+        'kosti',
+        'kostí',
+        'kostem',
+        'kosti',
+        'kosti!',
+        'kostech',
+        'kostmi', // 'kostmi/ma'
+      ],
     ],
-  ],
-  'bone',
-  'bones'
-);
+    'bone',
+    'bones'
+  ),
+];

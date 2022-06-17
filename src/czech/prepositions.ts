@@ -1,3 +1,5 @@
+import type preposition from '../types';
+
 let prep2 = [
   {
     preposition: 'bez',
@@ -52,4 +54,10 @@ let prep7 = [
   },
 ];
 
-export let prepositions = prep2.concat(prep3, prep4, prep4m, prep6, prep7);
+export let prepositions = prep2.concat(
+  prep3,
+  prep4,
+  prep4m,
+  prep6,
+  prep7
+) as Array<preposition>;

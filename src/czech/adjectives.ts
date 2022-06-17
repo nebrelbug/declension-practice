@@ -74,11 +74,7 @@ function getAdjectiveDeclensions(adjectiveRoot: string, type: 'soft' | 'hard') {
   return newOuterArray as declensionArray;
 }
 
-export let první = createDeclension(
-  getAdjectiveDeclensions('prvn', 'soft'),
-  'first'
-);
-export let malý = createDeclension(
-  getAdjectiveDeclensions('mal', 'hard'),
-  'small'
-);
+export let basicAdjectives = [
+  createDeclension(getAdjectiveDeclensions('prvn', 'soft'), 'first'),
+  createDeclension(getAdjectiveDeclensions('mal', 'hard'), 'small'),
+];

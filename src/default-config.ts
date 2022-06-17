@@ -84,33 +84,4 @@ export let defaultDeclensionsSlovak = {
   '7': true,
 };
 
-export let defaultSettingsSlovak = {
-  plural: true,
-  randomize: true,
-  nounPatterns: [
-    { value: 'essential', label: 'essential' },
-    { value: 'advanced', label: 'advanced' },
-  ],
-  gender: [
-    { value: 'masculine', label: 'masculine' },
-    { value: 'neuter', label: 'neuter' },
-    { value: 'feminine', label: 'feminine' },
-  ],
-  phraseOptions: [
-    { value: '"ten"', label: '"ten"' },
-    { value: 'adjectives', label: 'adjectives' },
-    { value: 'pronouns', label: 'pronouns' },
-  ],
-  numberOptions: [
-    { value: 'singular', label: 'singular' },
-    { value: 'plural', label: 'plural' },
-  ],
-  possessives: [
-    { value: 'noun-possessives', label: 'noun possessives' },
-    { value: 'possessive-pronouns', label: 'possessive pronouns' },
-  ],
-  prepositions: [{ value: 'key-prepositions', label: 'key prepositions' }],
-  includeTo: true,
-  includeAdjectives: true,
-  includePronouns: true,
-};
+export let defaultSettingsSlovak = { ...defaultSettingsCzech };

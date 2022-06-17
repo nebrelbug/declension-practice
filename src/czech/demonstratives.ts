@@ -2,27 +2,6 @@ import { createDeclension } from '../utilities';
 
 import type { declensionArray } from '../types';
 
-var všechnoArray: declensionArray = [
-  [
-    ['všechen', 'všechen', 'všechno', 'všechna'],
-    ['všeho', 'všeho', 'všeho', 'vší'],
-    ['všemu', 'všemu', 'všemu', 'vší'],
-    ['všeho', 'všechen', 'všechno', 'všechnu'],
-    ['všechen', 'všechen', 'všechno', 'všechna'],
-    ['všem', 'všem', 'všem', 'vší'],
-    ['vším', 'vším', 'vším', 'vší'],
-  ],
-  [
-    ['všichni', 'všechny', 'všechna', 'všechny'],
-    'všech',
-    'všem',
-    ['všechny', 'všechny', 'všechna', 'všechny'],
-    ['všichni', 'všechny', 'všechna', 'všechny'],
-    'všech',
-    'všemi',
-  ],
-];
-
 var toArray: declensionArray = [
   [
     ['ten', 'ten', 'to', 'ta'],
@@ -44,5 +23,26 @@ var toArray: declensionArray = [
   ],
 ];
 
+// var všechnoArray: declensionArray = [
+//   [
+//     ['všechen', 'všechen', 'všechno', 'všechna'],
+//     ['všeho', 'všeho', 'všeho', 'vší'],
+//     ['všemu', 'všemu', 'všemu', 'vší'],
+//     ['všeho', 'všechen', 'všechno', 'všechnu'],
+//     ['všechen', 'všechen', 'všechno', 'všechna'],
+//     ['všem', 'všem', 'všem', 'vší'],
+//     ['vším', 'vším', 'vším', 'vší'],
+//   ],
+//   [
+//     ['všichni', 'všechny', 'všechna', 'všechny'],
+//     'všech',
+//     'všem',
+//     ['všechny', 'všechny', 'všechna', 'všechny'],
+//     ['všichni', 'všechny', 'všechna', 'všechny'],
+//     'všech',
+//     'všemi',
+//   ],
+// ];
+
 export let to = createDeclension(toArray, 'that', 'those');
-export let všechno = createDeclension(všechnoArray, 'all');
+// export let všechno = createDeclension(všechnoArray, 'all');

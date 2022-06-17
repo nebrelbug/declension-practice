@@ -1,131 +1,133 @@
 import { createNounDeclension } from '../utilities';
 
-export let pán = createNounDeclension(
-  'ma',
-  'essential',
-  [
-    ['pán', 'pána', 'pánu/ovi', 'pána', 'páne!', 'pánu/ovi', 'pánem'],
+export let masculineNouns = [
+  createNounDeclension(
+    'ma',
+    'essential',
     [
-      'páni/ové',
-      'pánů',
-      'pánům',
-      'pány',
-      'páni/ové!',
-      'pánech',
-      'pány', // 'pány/ama'
+      ['pán', 'pána', 'pánu/ovi', 'pána', 'páne!', 'pánu/ovi', 'pánem'],
+      [
+        'páni/ové',
+        'pánů',
+        'pánům',
+        'pány',
+        'páni/ové!',
+        'pánech',
+        'pány', // 'pány/ama'
+      ],
     ],
-  ],
-  'lord',
-  'lords'
-);
+    'lord',
+    'lords'
+  ),
 
-export let hrad = createNounDeclension(
-  'mi',
-  'essential',
-  [
-    ['hrad', 'hradu', 'hradu', 'hrad', 'hrade!', 'hradě/u', 'hradem'],
+  createNounDeclension(
+    'mi',
+    'essential',
     [
-      'hrady',
-      'hradů',
-      'hradům',
-      'hrady',
-      'hrady!',
-      'hradech',
-      'hrady', // 'hrady/ama'
+      ['hrad', 'hradu', 'hradu', 'hrad', 'hrade!', 'hradě/u', 'hradem'],
+      [
+        'hrady',
+        'hradů',
+        'hradům',
+        'hrady',
+        'hrady!',
+        'hradech',
+        'hrady', // 'hrady/ama'
+      ],
     ],
-  ],
-  'castle',
-  'castles'
-);
+    'castle',
+    'castles'
+  ),
 
-export let muž = createNounDeclension(
-  'ma',
-  'essential',
-  [
-    ['muž', 'muže', 'muži/ovi', 'muže', 'muži!', 'muži/ovi', 'mužem'],
+  createNounDeclension(
+    'ma',
+    'essential',
     [
-      'muži',
-      'mužů',
-      'mužům',
-      'muže',
-      'muži!',
-      'mužích',
-      'muži', // 'muži/ema'
+      ['muž', 'muže', 'muži/ovi', 'muže', 'muži!', 'muži/ovi', 'mužem'],
+      [
+        'muži',
+        'mužů',
+        'mužům',
+        'muže',
+        'muži!',
+        'mužích',
+        'muži', // 'muži/ema'
+      ],
     ],
-  ],
-  'man',
-  'men'
-);
+    'man',
+    'men'
+  ),
 
-export let soudce = createNounDeclension(
-  'ma',
-  'advanced',
-  [
+  createNounDeclension(
+    'ma',
+    'advanced',
     [
-      'soudce',
-      'soudce',
-      'soudci/ovi',
-      'soudce',
-      'soudce!',
-      'soudci/ovi',
-      'soudcem',
+      [
+        'soudce',
+        'soudce',
+        'soudci/ovi',
+        'soudce',
+        'soudce!',
+        'soudci/ovi',
+        'soudcem',
+      ],
+      [
+        'soudci/ové',
+        'soudců',
+        'soudcům',
+        'soudce',
+        'soudci/ovi!',
+        'soudcích',
+        'soudci', // 'soudci/ema'
+      ],
     ],
-    [
-      'soudci/ové',
-      'soudců',
-      'soudcům',
-      'soudce',
-      'soudci/ovi!',
-      'soudcích',
-      'soudci', // 'soudci/ema'
-    ],
-  ],
-  'judge',
-  'judges'
-);
+    'judge',
+    'judges'
+  ),
 
-export let stroj = createNounDeclension(
-  'mi',
-  'essential',
-  [
-    ['stroj', 'stroje', 'stroji', 'stroj', 'stroji!', 'stroji', 'strojem'],
+  createNounDeclension(
+    'mi',
+    'essential',
     [
-      'stroje',
-      'strojů',
-      'strojům',
-      'stroje',
-      'stroje!',
-      'strojích',
-      'stroji', // 'stroji/ema'
+      ['stroj', 'stroje', 'stroji', 'stroj', 'stroji!', 'stroji', 'strojem'],
+      [
+        'stroje',
+        'strojů',
+        'strojům',
+        'stroje',
+        'stroje!',
+        'strojích',
+        'stroji', // 'stroji/ema'
+      ],
     ],
-  ],
-  'machine',
-  'machines'
-);
+    'machine',
+    'machines'
+  ),
 
-export let předseda = createNounDeclension(
-  'ma',
-  'advanced',
-  [
+  createNounDeclension(
+    'ma',
+    'advanced',
     [
-      'předseda',
-      'předsedy',
-      'předsedovi',
-      'předsedu',
-      'předsedo!',
-      'předsedovi',
-      'předsedou',
+      [
+        'předseda',
+        'předsedy',
+        'předsedovi',
+        'předsedu',
+        'předsedo!',
+        'předsedovi',
+        'předsedou',
+      ],
+      [
+        'předsedové',
+        'předsedů',
+        'předsedům',
+        'předsedy',
+        'předsedové!',
+        'předsedech',
+        'predsedy', // 'předsedy/ama'
+      ],
     ],
-    [
-      'předsedové',
-      'předsedů',
-      'předsedům',
-      'předsedy',
-      'předsedové!',
-      'předsedech',
-      'predsedy', // 'předsedy/ama'
-    ],
-  ],
-  'chairman',
-  'chairmen'
-);
+    'chairman',
+    'chairmen'
+  ),
+];

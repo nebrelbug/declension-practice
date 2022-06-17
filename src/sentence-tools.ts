@@ -33,6 +33,47 @@ export function declensionToNumber(declensionName: declensionName): number {
 
 type config = { caseNumber: number; plural: boolean };
 
+export function filterNouns(
+  masculineNouns,
+  neuterNouns,
+  feminineNouns,
+  settings
+) {}
+
+export function usePlural(settings): [boolean, boolean] {
+  let singular = false; // default
+  let plural = false; // default
+
+  if (settings.numberOptions.filter((e) => e.value === 'singular').length > 0) {
+    singular = true;
+  }
+
+  if (settings.numberOptions.filter((e) => e.value === 'plural').length > 0) {
+    plural = true;
+  }
+
+  return [singular, plural];
+}
+
+export function getPrepositions(
+  prepositions: Array<preposition>,
+  desiredCase: declensionName,
+  onlyDefault: boolean
+) {
+  if (desiredCase === '1' || desiredCase === '5') {
+    return [''];
+  }
+
+  return prepositions.filter(function (prep) {
+    if (
+      prep.case === desiredCase &&
+      (!onlyDefault || (onlyDefault && prep.default))
+    ) {
+      return true;
+    }
+  });
+}
+
 export function getItem(
   noun: declensionArray,
   config: config,

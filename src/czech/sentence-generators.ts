@@ -1,39 +1,27 @@
 import { prepositions } from './prepositions';
-import { allNouns, basicAdjectives, to, všechno } from './index';
+import {
+  masculineNouns,
+  neuterNouns,
+  feminineNouns,
+  basicAdjectives,
+  to,
+} from './index';
 import { cartesian } from '../utilities';
 
 import {
   declensionList,
-  genderList,
-  getItem,
+  filterNouns,
+  usePlural,
+  getPrepositions,
   declensionToNumber,
   transformArray,
 } from '../sentence-tools';
 
 import type { comboType } from '../sentence-tools';
 
-import type { declensionName } from '../types';
-
-type arrayToParse = [boolean, number, ...comboType];
-
-let [první, malý] = basicAdjectives;
+type arrayToParse = [number, ...Array<comboType>];
 
 let onlyUseDefault = false;
-
-function getPrepositions(desiredCase: declensionName, onlyDefault: boolean) {
-  if (desiredCase === '1' || desiredCase === '5') {
-    return [''];
-  }
-
-  return prepositions.filter(function (prep) {
-    if (
-      prep.case === desiredCase &&
-      (!onlyDefault || (onlyDefault && prep.default))
-    ) {
-      return true;
-    }
-  });
-}
 
 export function generateSentences(declensions, settings) {
   let res: Array<arrayToParse> = [];
@@ -42,30 +30,43 @@ export function generateSentences(declensions, settings) {
     if (declensions[dec]) {
       let declensionNumber = declensionToNumber(dec);
 
-      let possiblePreps = getPrepositions(dec, onlyUseDefault);
+      let possiblePreps = getPrepositions(prepositions, dec, onlyUseDefault);
       let combos: arrayToParse = cartesian([
-        settings.plural ? [true, false] : [false],
         [declensionNumber],
         possiblePreps,
         [to],
         basicAdjectives,
-        allNouns,
+        [...masculineNouns, ...neuterNouns, ...feminineNouns],
+        // filterNouns(masculineNouns, neuterNouns, feminineNouns, settings),
       ]);
 
       res = res.concat(combos);
     }
   }
 
-  let newRes = res.map(function (sent) {
-    let [plural, caseNumber, ...array] = sent;
+  let singular = usePlural(settings)[0];
+  let plural = usePlural(settings)[1];
 
-    let [englishSentence, langSentence] = transformArray(
-      { plural: plural, caseNumber: caseNumber },
-      array
-    );
+  let newRes = res.reduce(function (result, sent) {
+    let [caseNumber, ...array] = sent;
 
-    return [englishSentence, langSentence];
-  });
+    if (singular) {
+      let [englishSingularSentence, langSingularSentence] = transformArray(
+        { plural: false, caseNumber: caseNumber },
+        array
+      );
+      result.push([englishSingularSentence, langSingularSentence]);
+    }
+    if (plural) {
+      let [englishSingularSentence, langSingularSentence] = transformArray(
+        { plural: true, caseNumber: caseNumber },
+        array
+      );
+      result.push([englishSingularSentence, langSingularSentence]);
+    }
+
+    return result;
+  }, []);
 
   return newRes;
 }
