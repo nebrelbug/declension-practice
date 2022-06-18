@@ -170,7 +170,7 @@ export function transformArray(
       } else if ((item as declension).caseArray) {
         let newEnglish = english(item as declension, plural, objectiveCase);
         if ((item as nounDeclension).gender) {
-          if (useIndefinite) {
+          if (useIndefinite && !plural) {
             newEnglish = a(newEnglish);
             console.log('yo');
           }

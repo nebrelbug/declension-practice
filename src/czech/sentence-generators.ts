@@ -36,7 +36,6 @@ export function generateSentences(declensions, settings) {
         possiblePreps,
         settings.includeTo ? [to] : ['a'],
         settings.includeAdjectives ? basicAdjectives : [false],
-        // [...masculineNouns, ...neuterNouns, ...feminineNouns],
         filterNouns(masculineNouns, neuterNouns, feminineNouns, settings),
       ]);
 
