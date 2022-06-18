@@ -11,7 +11,7 @@ let prep2 = [
 
 let prep3 = [
   {
-    preposition: 'díky',
+    preposition: 'vďaka',
     case: '3',
     english: 'thanks to',
     default: true,
@@ -20,7 +20,7 @@ let prep3 = [
 
 let prep4 = [
   {
-    preposition: 'skrze',
+    preposition: 'skrz',
     case: '4',
     english: 'through',
     default: true,
