@@ -7,6 +7,8 @@ import {
   preposition,
 } from './types';
 
+var a = require('indefinite');
+
 export let declensionList: Array<declensionName> = [
   '1',
   '2',
@@ -136,7 +138,7 @@ function english(dec: declension, plural: boolean, objective: boolean) {
   }
 }
 
-export type comboType = preposition | declension | nounDeclension;
+export type comboType = preposition | declension | nounDeclension | 'a' | false;
 
 export function transformArray(
   config: config,
@@ -153,18 +155,31 @@ export function transformArray(
   let gender = (noun as nounDeclension).gender;
   let plural = config.plural;
   let objectiveCase = config.caseNumber !== 1 && config.caseNumber !== 4;
+  let useIndefinite = false;
 
   for (let i = 0; i < inputArray.length; i++) {
     let item = inputArray[i];
 
     if (item) {
-      if ((item as preposition).preposition) {
+      if (item === 'a') {
+        useIndefinite = true;
+        console.log('hi');
+      } else if ((item as preposition).preposition) {
         englishSentence.push((item as preposition).english);
         langSentence.push((item as preposition).preposition);
       } else if ((item as declension).caseArray) {
-        englishSentence.push(
-          english(item as declension, plural, objectiveCase)
-        );
+        let newEnglish = english(item as declension, plural, objectiveCase);
+        if ((item as nounDeclension).gender) {
+          if (useIndefinite) {
+            newEnglish = a(newEnglish);
+            console.log('yo');
+          }
+          if (config.caseNumber === 5) {
+            newEnglish += '!';
+          }
+        }
+
+        englishSentence.push(newEnglish);
         langSentence.push(
           getItem((item as declension).caseArray, config, gender)
         );

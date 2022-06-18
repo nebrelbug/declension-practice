@@ -34,8 +34,8 @@ export function generateSentences(declensions, settings) {
       let combos: arrayToParse = cartesian([
         [declensionNumber],
         possiblePreps,
-        settings.includeTo ? [to] : [],
-        basicAdjectives,
+        settings.includeTo ? [to] : ['a'],
+        settings.includeAdjectives ? basicAdjectives : [false],
         // [...masculineNouns, ...neuterNouns, ...feminineNouns],
         filterNouns(masculineNouns, neuterNouns, feminineNouns, settings),
       ]);
