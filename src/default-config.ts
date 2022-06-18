@@ -48,11 +48,6 @@ export let defaultSettingsCzech = {
     { value: 'neuter', label: 'neuter' },
     { value: 'feminine', label: 'feminine' },
   ],
-  phraseOptions: [
-    { value: '"ten"', label: '"ten"' },
-    { value: 'adjectives', label: 'adjectives' },
-    { value: 'pronouns', label: 'pronouns' },
-  ],
   numberOptions: [
     { value: 'singular', label: 'singular' },
     { value: 'plural', label: 'plural' },
@@ -67,14 +62,8 @@ export let defaultSettingsCzech = {
 };
 
 export let defaultDeclensionsSlovak = {
-  '1': true,
-  '2': true,
-  '3': true,
-  '4': true,
-  '4-M': true,
+  ...defaultSettingsCzech,
   '5': false,
-  '6': true,
-  '7': true,
 };
 
 export let defaultSettingsSlovak = { ...defaultSettingsCzech };

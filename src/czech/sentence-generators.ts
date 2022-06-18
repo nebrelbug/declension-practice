@@ -21,16 +21,16 @@ import type { comboType } from '../sentence-tools';
 
 type arrayToParse = [number, ...Array<comboType>];
 
-let onlyUseDefault = false;
-
 export function generateSentences(declensions, settings) {
   let res: Array<arrayToParse> = [];
+  
+  let adjectives = []
 
   for (let dec of declensionList) {
     if (declensions[dec]) {
       let declensionNumber = declensionToNumber(dec);
 
-      let possiblePreps = getPrepositions(prepositions, dec, onlyUseDefault);
+      let possiblePreps = getPrepositions(prepositions, dec, settings);
       let combos: arrayToParse = cartesian([
         [declensionNumber],
         possiblePreps,

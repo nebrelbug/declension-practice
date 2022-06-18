@@ -35,7 +35,7 @@ export function declensionToNumber(declensionName: declensionName): number {
 
 type config = { caseNumber: number; plural: boolean };
 
-function settingIsOn(settings, field, value) {
+export function settingIsOn(settings, field, value) {
   if (settings[field].some((e) => e.value === value)) {
     return true;
   }
@@ -95,21 +95,69 @@ export function usePlural(settings): [boolean, boolean] {
   return [singular, plural];
 }
 
+export function usePrepositions(settings): [boolean, boolean] {
+  let keyPrepositions = true; // default
+  let otherPrepositions = true; // default
+
+  if (
+    settings.prepositions.filter((e) => e.value === 'key-prepositions')
+      .length === 0
+  ) {
+    keyPrepositions = false;
+  }
+
+  if (
+    settings.prepositions.filter((e) => e.value === 'other-prepositions')
+      .length === 0
+  ) {
+    otherPrepositions = false;
+  }
+
+  return [keyPrepositions, otherPrepositions];
+}
+
+export function usePossessives(settings): [boolean, boolean] {
+  let nounPossessives = false; // default
+  let possessivePronouns = false; // default
+
+  if (
+    settings.possessives.filter((e) => e.value === 'noun-possessives').length >
+    0
+  ) {
+    nounPossessives = true;
+  }
+
+  if (
+    settings.prepositions.filter((e) => e.value === 'possessive-pronouns')
+      .length > 0
+  ) {
+    possessivePronouns = true;
+  }
+
+  return [nounPossessives, possessivePronouns];
+}
+
 export function getPrepositions(
   prepositions: Array<preposition>,
   desiredCase: declensionName,
-  onlyDefault: boolean
+  settings
 ) {
   if (desiredCase === '1' || desiredCase === '5') {
     return [''];
   }
 
+  let [keyPrepositions, otherPrepositions] = usePrepositions(settings);
+
   return prepositions.filter(function (prep) {
-    if (
-      prep.case === desiredCase &&
-      (!onlyDefault || (onlyDefault && prep.default))
-    ) {
-      return true;
+    if (prep.case === desiredCase) {
+      if (prep.default && keyPrepositions) {
+        return true;
+      }
+
+      if (!prep.default && otherPrepositions) {
+        return true;
+      }
+      return false;
     }
   });
 }
