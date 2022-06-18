@@ -12,7 +12,6 @@ import { Modal } from 'react-responsive-modal';
 import {
   nounPatternOptions,
   genderOptions,
-  phraseOptions,
   numberOptions,
   possessivesOptions,
   prepositionOptions,
@@ -101,30 +100,12 @@ export function SettingsModal({
               }}
             />
 
-            {/* <SelectComponent
-              options={phraseOptions}
-              name="Phrase Options"
-              value={settings.phraseOptions}
-              onChange={(newValue) => {
-                changeDropdown('phraseOptions', newValue);
-              }}
-            /> */}
-
             <SelectComponent
               options={numberOptions}
               name="Number"
               value={settings.numberOptions}
               onChange={(newValue) => {
                 changeDropdown('numberOptions', newValue);
-              }}
-            />
-
-            <SelectComponent
-              options={possessivesOptions}
-              name="Possessives"
-              value={settings.possessives}
-              onChange={(newValue) => {
-                changeDropdown('possessives', newValue);
               }}
             />
 
@@ -136,6 +117,15 @@ export function SettingsModal({
                 changeDropdown('prepositions', newValue);
               }}
             />
+
+            <SelectComponent
+              options={possessivesOptions}
+              name="Possessives"
+              value={settings.possessives}
+              onChange={(newValue) => {
+                changeDropdown('possessives', newValue);
+              }}
+            />
           </div>
           <hr />
           <div>
@@ -145,6 +135,20 @@ export function SettingsModal({
               name="Randomize Phrases"
               onToggle={() => {
                 toggleCheckbox('randomize');
+              }}
+            />
+            <Checkbox
+              value={settings.includeTo}
+              name="Include 'To'"
+              onToggle={() => {
+                toggleCheckbox('includeTo');
+              }}
+            />
+            <Checkbox
+              value={settings.includeAdjectives}
+              name="Include Adjectives"
+              onToggle={() => {
+                toggleCheckbox('includeAdjectives');
               }}
             />
           </div>

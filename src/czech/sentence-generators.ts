@@ -6,7 +6,7 @@ import {
   basicAdjectives,
   to,
 } from './index';
-import { cartesian } from '../utilities';
+import { cartesian, shuffleArray } from '../utilities';
 
 import {
   declensionList,
@@ -36,8 +36,8 @@ export function generateSentences(declensions, settings) {
         possiblePreps,
         [to],
         basicAdjectives,
-        [...masculineNouns, ...neuterNouns, ...feminineNouns],
-        // filterNouns(masculineNouns, neuterNouns, feminineNouns, settings),
+        // [...masculineNouns, ...neuterNouns, ...feminineNouns],
+        filterNouns(masculineNouns, neuterNouns, feminineNouns, settings),
       ]);
 
       res = res.concat(combos);
@@ -67,6 +67,10 @@ export function generateSentences(declensions, settings) {
 
     return result;
   }, []);
+
+  if (settings.randomize) {
+    newRes = shuffleArray(newRes);
+  }
 
   return newRes;
 }

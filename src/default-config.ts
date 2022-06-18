@@ -10,12 +10,6 @@ export let genderOptions = [
   { value: 'feminine', label: 'feminine' },
 ];
 
-export let phraseOptions = [
-  { value: '"ten"', label: '"ten"' },
-  { value: 'adjectives', label: 'adjectives' },
-  { value: 'pronouns', label: 'pronouns' },
-];
-
 export let numberOptions = [
   { value: 'singular', label: 'singular' },
   { value: 'plural', label: 'plural' },
@@ -70,7 +64,6 @@ export let defaultSettingsCzech = {
   prepositions: [{ value: 'key-prepositions', label: 'key prepositions' }],
   includeTo: true,
   includeAdjectives: true,
-  includePronouns: true,
 };
 
 export let defaultDeclensionsSlovak = {

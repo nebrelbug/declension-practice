@@ -33,12 +33,49 @@ export function declensionToNumber(declensionName: declensionName): number {
 
 type config = { caseNumber: number; plural: boolean };
 
+function settingIsOn(settings, field, value) {
+  console.log(settings, field, value);
+  if (settings[field].some((e) => e.value === value)) {
+    return true;
+  }
+
+  return false;
+}
+
 export function filterNouns(
   masculineNouns,
   neuterNouns,
   feminineNouns,
   settings
-) {}
+) {
+  let essential = settingIsOn(settings, 'nounPatterns', 'essential');
+  let advanced = settingIsOn(settings, 'nounPatterns', 'advanced');
+  let uncommon = settingIsOn(settings, 'nounPatterns', 'uncommon');
+
+  let masculine = settingIsOn(settings, 'gender', 'masculine');
+  let neuter = settingIsOn(settings, 'gender', 'neuter');
+  let feminine = settingIsOn(settings, 'gender', 'feminine');
+
+  let res = [];
+  if (masculine) {
+    res = res.concat(masculineNouns);
+  }
+  if (neuter) {
+    res = res.concat(neuterNouns);
+  }
+  if (feminine) {
+    res = res.concat(feminineNouns);
+  }
+
+  res = res.filter((e) => {
+    if (!essential && e.type === 'essential') return false;
+    if (!advanced && e.type === 'advanced') return false;
+    if (!uncommon && e.type === 'uncommon') return false;
+    return true;
+  });
+
+  return res;
+}
 
 export function usePlural(settings): [boolean, boolean] {
   let singular = true; // default
