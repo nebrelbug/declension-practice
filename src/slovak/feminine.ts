@@ -1,75 +1,86 @@
 import { createNounDeclension } from '../utilities';
 
-export var žena = createNounDeclension(
-  'f',
-  [
-    ['žena', 'ženy', 'ženě', 'ženu', 'ženo!', 'ženě', 'ženou'],
+export let feminineNouns = [
+  createNounDeclension(
+    'f',
+    'essential',
     [
-      'ženy',
-      'žen',
-      'ženám',
-      'ženy',
-      'ženy!',
-      'ženách',
-      'ženami', // 'ženami/ama'
+      ['žena', 'ženy', 'žene', 'ženu', false, 'žene', 'ženou'],
+      ['ženy', 'žien', 'ženám', 'ženy', false, 'ženách', 'ženami'],
     ],
-  ],
-  'woman',
-  'women'
-);
-
-export var růže = createNounDeclension(
-  'f',
-  [
-    ['růže', 'růže', 'růži', 'růži', 'růže!', 'růži', 'růží'],
+    'woman',
+    'women'
+  ),
+  createNounDeclension(
+    'f',
+    'essential',
     [
-      'růže',
-      'růží',
-      'růžím',
-      'růže',
-      'růže!',
-      'růžích',
-      'řůžemi', // 'růžemi/ema'
+      ['ulica', 'ulice', 'ulici', 'ulicu', false, 'ulici', 'ulicou'],
+      ['ulice', 'ulíc', 'uliciam', 'ulice', false, 'uliciach', 'ulicami'],
     ],
-  ],
-  'rose',
-  'roses'
-);
-
-// add ulice
-
-export var píseň = createNounDeclension(
-  'f',
-  [
-    ['píseň', 'písně', 'písni', 'píseň', 'písni!', 'písni', 'písní'],
+    'street',
+    'streets'
+  ),
+  createNounDeclension(
+    'f',
+    'essential',
     [
-      'písně',
-      'písní',
-      'písním',
-      'písně',
-      'písně!',
-      'písních',
-      'písněmi', // 'písněmi/ěma'
+      ['posteľ', 'postele', 'posteli', 'posteľ', false, 'posteli', 'postelou'],
+      [
+        'postele',
+        'postelí',
+        'posteliam',
+        'postele',
+        false,
+        'posteliach',
+        'postelami',
+      ],
     ],
-  ],
-  'song',
-  'songs'
-);
-
-export var kost = createNounDeclension(
-  'f',
-  [
-    ['kost', 'kosti', 'kosti', 'kost', 'kosti!', 'kosti', 'kostí'],
+    'bed',
+    'beds'
+  ),
+  createNounDeclension(
+    'f',
+    'advanced',
     [
-      'kosti',
-      'kostí',
-      'kostem',
-      'kosti',
-      'kosti!',
-      'kostech',
-      'kostmi', // 'kostmi/ma'
+      [
+        'reštaurácia',
+        'reštaurácie',
+        'reštaurácii',
+        'reštauráciu',
+        false,
+        'reštaurácii',
+        'reštauráciou',
+      ],
+      [
+        'reštaurácie',
+        'reštaurácií',
+        'reštauráciám',
+        'reštaurácie',
+        false,
+        'reštauráciách',
+        'reštauráciami',
+      ],
     ],
-  ],
-  'bone',
-  'bones'
-);
+    'restaurant',
+    'restaurants'
+  ),
+  createNounDeclension(
+    'f',
+    'essential',
+    [
+      ['radosť', 'radosti', 'radosti', 'radosť', false, 'radosti', 'radosťou'],
+      [
+        'radosti',
+        'radostí',
+        'radostiam',
+        'radosti',
+        false,
+        'radostiach',
+        'radosťami',
+      ],
+    ],
+    'joy',
+    'joys'
+  ),
+];
