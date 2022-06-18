@@ -1,125 +1,52 @@
 import { createNounDeclension } from '../utilities';
 
-export let pán = createNounDeclension(
-  'ma',
-  [
-    ['pán', 'pána', 'pánu/ovi', 'pána', 'páne!', 'pánu/ovi', 'pánem'],
+export let masculineNouns = [
+  createNounDeclension(
+    'ma',
+    'essential',
     [
-      'páni/ové',
-      'pánů',
-      'pánům',
-      'pány',
-      'páni/ové!',
-      'pánech',
-      'pány', // 'pány/ama'
+      ['chlap', 'chlapa', 'chlapovi', 'chlapa', false, 'chlapovi', 'chlapom'],
+      ['chlapi', 'chlapov', 'chlapom', 'chlapov', false, 'chlapoch', 'chlapmi'],
     ],
-  ],
-  'lord',
-  'lords'
-);
-
-export let hrad = createNounDeclension(
-  'mi',
-  [
-    ['hrad', 'hradu', 'hradu', 'hrad', 'hrade!', 'hradě/u', 'hradem'],
+    'boy',
+    'boys'
+  ),
+  createNounDeclension(
+    'ma',
+    'advanced',
     [
-      'hrady',
-      'hradů',
-      'hradům',
-      'hrady',
-      'hrady!',
-      'hradech',
-      'hrady', // 'hrady/ama'
+      ['dedo', 'deda', 'dedovi', 'deda', false, 'dedovi', 'dedom'],
+      ['dedovia', 'dedov', 'dedom', 'dedov', false, 'dedoch', 'dedami'],
     ],
-  ],
-  'castle',
-  'castles'
-);
-
-export let muž = createNounDeclension(
-  'ma',
-  [
-    ['muž', 'muže', 'muži/ovi', 'muže', 'muži!', 'muži/ovi', 'mužem'],
+    'grandfather',
+    'grandfathers'
+  ),
+  createNounDeclension(
+    'ma',
+    'essential',
     [
-      'muži',
-      'mužů',
-      'mužům',
-      'muže',
-      'muži!',
-      'mužích',
-      'muži', // 'muži/ema'
+      ['kolega', 'kolegu', 'kolegovi', 'kolegu', false, 'kolegovi', 'kolegom'],
+      [
+        'kolegovia',
+        'kolegov',
+        'kolegom',
+        'kolegov',
+        false,
+        'kolegoch',
+        'kolegami',
+      ],
     ],
-  ],
-  'man',
-  'men'
-);
-
-export let soudce = createNounDeclension(
-  'ma',
-  [
+    'colleague',
+    'colleagues'
+  ),
+  createNounDeclension(
+    'mi',
+    'essential',
     [
-      'soudce',
-      'soudce',
-      'soudci/ovi',
-      'soudce',
-      'soudce!',
-      'soudci/ovi',
-      'soudcem',
+      ['stôl', 'stola', 'stolu', 'stôl', false, 'stole', 'stolom'],
+      ['stoly', 'stolov', 'stolom', 'stoly', false, 'stoloch', 'stolmi'],
     ],
-    [
-      'soudci/ové',
-      'soudců',
-      'soudcům',
-      'soudce',
-      'soudci/ovi!',
-      'soudcích',
-      'soudci', // 'soudci/ema'
-    ],
-  ],
-  'judge',
-  'judges'
-);
-
-export let stroj = createNounDeclension(
-  'mi',
-  [
-    ['stroj', 'stroje', 'stroji', 'stroj', 'stroji!', 'stroji', 'strojem'],
-    [
-      'stroje',
-      'strojů',
-      'strojům',
-      'stroje',
-      'stroje!',
-      'strojích',
-      'stroji', // 'stroji/ema'
-    ],
-  ],
-  'machine',
-  'machines'
-);
-
-export let předseda = createNounDeclension(
-  'ma',
-  [
-    [
-      'předseda',
-      'předsedy',
-      'předsedovi',
-      'předsedu',
-      'předsedo!',
-      'předsedovi',
-      'předsedou',
-    ],
-    [
-      'předsedové',
-      'předsedů',
-      'předsedům',
-      'předsedy',
-      'předsedové!',
-      'předsedech',
-      'predsedy', // 'předsedy/ama'
-    ],
-  ],
-  'chairman',
-  'chairmen'
-);
+    'table',
+    'tables'
+  ),
+];
