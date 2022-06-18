@@ -34,7 +34,6 @@ export function declensionToNumber(declensionName: declensionName): number {
 type config = { caseNumber: number; plural: boolean };
 
 function settingIsOn(settings, field, value) {
-  console.log(settings, field, value);
   if (settings[field].some((e) => e.value === value)) {
     return true;
   }
@@ -145,7 +144,6 @@ export function transformArray(
 ): [string, string] {
   let englishSentence = [];
   let langSentence = [];
-  console.log(inputArray);
 
   // ts-disable-line
   let noun = inputArray.find(
