@@ -11,11 +11,8 @@ const BrowserComponent = dynamic(() => import('./browser-component'), {
 export function PageLayout({ children, title, suffix, center }) {
   return (
     <div className="min-h-screen flex flex-col px-2" id="root">
-      <Head>
-        <title>{title}</title>
-      </Head>
       <Script
-        strategy="afterInteractive"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: `
     ;(function () {
@@ -26,6 +23,10 @@ export function PageLayout({ children, title, suffix, center }) {
   })();`,
         }}
       />
+
+      <Head>
+        <title>{title}</title>
+      </Head>
 
       <h1 className="m-0 leading-normal text-3xl font-bold">
         <Link href="/">
