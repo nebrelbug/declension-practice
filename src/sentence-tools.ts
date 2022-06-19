@@ -217,7 +217,6 @@ export function transformArray(
     if (item) {
       if (item === 'a') {
         useIndefinite = true;
-        console.log('hi');
       } else if ((item as preposition).preposition) {
         englishSentence.push((item as preposition).english);
         langSentence.push((item as preposition).preposition);
@@ -268,16 +267,16 @@ export function sentenceGenerator(
   let plural = usePlural(settings)[1];
 
   let newRes = res.reduce(function (result, sent) {
-    let [caseNumber, ...array] = sent;
+    let [caseNumber, ...arr] = sent;
 
     if (singular) {
       result.push(
-        transformArray({ plural: false, caseNumber: caseNumber }, array)
+        transformArray({ plural: false, caseNumber: caseNumber }, arr)
       );
     }
     if (plural) {
       result.push(
-        transformArray({ plural: true, caseNumber: caseNumber }, array)
+        transformArray({ plural: true, caseNumber: caseNumber }, arr)
       );
     }
 
