@@ -89,22 +89,17 @@ export function usePlural(settings): [boolean, boolean] {
 }
 
 export function usePrepositions(settings): [boolean, boolean] {
-  let keyPrepositions = true; // default
-  let otherPrepositions = true; // default
+  let keyPrepositions = settingIsOn(
+    settings,
+    'prepositions',
+    'key-prepositions'
+  );
 
-  // if (
-  //   settings.prepositions.filter((e) => e.value === 'key-prepositions')
-  //     .length === 0
-  // ) {
-  //   keyPrepositions = false;
-  // }
-
-  // if (
-  //   settings.prepositions.filter((e) => e.value === 'other-prepositions')
-  //     .length === 0
-  // ) {
-  //   otherPrepositions = false;
-  // }
+  let otherPrepositions = settingIsOn(
+    settings,
+    'prepositions',
+    'other-prepositions'
+  );
 
   return [keyPrepositions, otherPrepositions];
 }

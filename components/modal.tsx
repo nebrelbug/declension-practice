@@ -14,7 +14,7 @@ import {
   genderOptions,
   numberOptions,
   possessivesOptions,
-  // prepositionOptions,
+  prepositionOptions,
 } from '../src/default-config';
 
 import { SelectComponent } from './select';
@@ -109,14 +109,14 @@ export function SettingsModal({
               }}
             />
 
-            {/* <SelectComponent
+            <SelectComponent
               options={prepositionOptions}
               name="Prepositions"
               value={settings.prepositions}
               onChange={(newValue) => {
                 changeDropdown('prepositions', newValue);
               }}
-            /> */}
+            />
 
             <SelectComponent
               options={possessivesOptions}

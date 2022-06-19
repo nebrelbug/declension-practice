@@ -26,10 +26,10 @@ export let possessivesOptions = [
   { value: 'possessive-pronouns', label: 'possessive pronouns' },
 ];
 
-// export let prepositionOptions = [
-//   { value: 'key-prepositions', label: 'key prepositions' },
-//   { value: 'other-prepositions', label: 'other prepositions' },
-// ];
+export let prepositionOptions = [
+  { value: 'key-prepositions', label: 'key prepositions' },
+  { value: 'other-prepositions', label: 'other prepositions' },
+];
 
 export let defaultDeclensionsCzech = {
   '1': true,
@@ -62,7 +62,7 @@ export let defaultSettingsCzech = {
     { value: 'noun-possessives', label: 'noun possessives' },
     { value: 'possessive-pronouns', label: 'possessive pronouns' },
   ],
-  // prepositions: [{ value: 'key-prepositions', label: 'key prepositions' }],
+  prepositions: [{ value: 'key-prepositions', label: 'key prepositions' }],
   includeTo: true,
   includeAdjectives: true,
 };
