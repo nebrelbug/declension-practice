@@ -1,6 +1,6 @@
-import type preposition from '../types';
+import type { preposition } from '../types';
 
-let prep2 = [
+let prep2: preposition[] = [
   {
     preposition: 'bez',
     case: '2',
@@ -9,7 +9,7 @@ let prep2 = [
   },
 ];
 
-let prep3 = [
+let prep3: preposition[] = [
   {
     preposition: 'vďaka',
     case: '3',
@@ -18,7 +18,7 @@ let prep3 = [
   },
 ];
 
-let prep4 = [
+let prep4: preposition[] = [
   {
     preposition: 'skrz',
     case: '4',
@@ -27,7 +27,7 @@ let prep4 = [
   },
 ];
 
-let prep4m = [
+let prep4m: preposition[] = [
   {
     preposition: 'za',
     case: '4-M',
@@ -36,7 +36,7 @@ let prep4m = [
   },
 ];
 
-let prep6 = [
+let prep6: preposition[] = [
   {
     preposition: 'o',
     case: '6',
@@ -45,7 +45,7 @@ let prep6 = [
   },
 ];
 
-let prep7 = [
+let prep7: preposition[] = [
   {
     preposition: 's',
     case: '7',
