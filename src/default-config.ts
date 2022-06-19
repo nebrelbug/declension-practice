@@ -1,6 +1,6 @@
 import * as czechDeclensions from './czech';
 
-export let version = '1-2'; // update the version every time there's a breaking change to the structure of localStorage
+export let version = '1-3'; // update the version every time there's a breaking change to the structure of localStorage
 
 // TODO: change so that the options are just the different nouns. Use different markers for essential, advanced, etc.
 // TODO: do the same thing for prepositions, adjectives, and possessives
