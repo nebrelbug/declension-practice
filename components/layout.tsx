@@ -12,6 +12,8 @@ export function PageLayout({ children, title, suffix, center }) {
     <div className="min-h-screen flex flex-col px-2" id="root">
       <Head>
         <title>{title}</title>
+        <script src="node_modules/eruda/eruda.js"></script>
+        <script>eruda.init();</script>
       </Head>
 
       <h1 className="m-0 leading-normal text-3xl font-bold">
