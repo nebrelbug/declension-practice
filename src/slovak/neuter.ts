@@ -71,7 +71,7 @@ export let neuterNouns = [
       ],
     ],
     'town square',
-    'town square'
+    'town squares'
   ),
   createNounDeclension(
     'n',
