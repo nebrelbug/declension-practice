@@ -252,8 +252,6 @@ export function sentenceGenerator(
 ) {
   let res: Array<arrayToParse> = [];
 
-  let adjectives = [];
-
   for (let dec of declensionList) {
     if (declensions[dec]) {
       let declensionNumber = declensionToNumber(dec);
