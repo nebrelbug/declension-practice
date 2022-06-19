@@ -7,4 +7,4 @@ export {
   possessivePronouns,
   nounPossessives,
 } from './adjectives';
-export { to } from './demonstratives';
+export { to, jenž } from './demonstratives';
