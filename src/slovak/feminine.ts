@@ -25,7 +25,7 @@ export let feminineNouns = [
     'f',
     'essential',
     [
-      ['posteľ', 'postele', 'posteli', 'posteľ', false, 'posteli', 'postelou'],
+      ['posteľ', 'postele', 'posteli', 'posteľ', false, 'posteli', 'posteľou'],
       [
         'postele',
         'postelí',
