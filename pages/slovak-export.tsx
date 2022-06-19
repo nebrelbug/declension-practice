@@ -19,9 +19,12 @@ export default function Home() {
     }
   );
 
-  const [settings, setSettings] = useLocalStorageState('slovak-settings', {
-    defaultValue: defaultSettingsSlovak,
-  });
+  const [settings, setSettings] = useLocalStorageState(
+    'slovak-settings' + version,
+    {
+      defaultValue: defaultSettingsSlovak,
+    }
+  );
 
   let res = generateSentences(declensions, settings);
 

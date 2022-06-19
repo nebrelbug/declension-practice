@@ -20,9 +20,12 @@ export default function Home() {
     }
   );
 
-  const [settings, setSettings] = useLocalStorageState('czech-settings', {
-    defaultValue: defaultSettingsCzech,
-  });
+  const [settings, setSettings] = useLocalStorageState(
+    'czech-settings' + version,
+    {
+      defaultValue: defaultSettingsCzech,
+    }
+  );
 
   let res = generateSentences(declensions, settings);
 
