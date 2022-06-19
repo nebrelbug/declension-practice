@@ -190,7 +190,6 @@ export function transformArray(
         if ((item as nounDeclension).gender) {
           if (useIndefinite && !plural) {
             newEnglish = a(newEnglish);
-            console.log('yo');
           }
           if (config.caseNumber === 5) {
             newEnglish += '!';
