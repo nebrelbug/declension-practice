@@ -3,7 +3,7 @@ import useLocalStorageState from 'use-local-storage-state';
 import { generateSentences } from '../src/slovak/sentence-generators';
 import { shuffle } from '../src/utilities';
 import {
-  versio
+  version,
   defaultDeclensionsSlovak,
   defaultSettingsSlovak,
 } from '../src/default-config';

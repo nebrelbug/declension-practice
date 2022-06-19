@@ -77,7 +77,7 @@ function getAdjectiveDeclensions(adjectiveRoot: string, type: 'soft' | 'hard') {
 }
 
 export let basicAdjectives = [
-  createDeclension(getAdjectiveDeclensions('cudz', 'soft'), 'first'),
+  createDeclension(getAdjectiveDeclensions('cudz', 'soft'), 'foreign'),
   createDeclension(getAdjectiveDeclensions('mal', 'hard'), 'small'),
 ];
 
