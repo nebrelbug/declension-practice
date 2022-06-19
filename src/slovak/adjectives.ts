@@ -135,47 +135,47 @@ export let nounPossessives = [
   createDeclension(
     [
       [
-        ['Petrov', 'Petrov', 'Petrovo', 'Petrova'],
-        ['Petrova', 'Petrova', 'Petrova', 'Petrovy'],
-        ['Petrovu', 'Petrovu', 'Petrovu', 'Petrově'],
-        ['Petrova', 'Petrův', 'Petrovo', 'Petrovu'],
+        ['otcov', 'otcov', 'otcovo', 'otcova'],
+        ['otcovho', 'otcovho', 'otcovho', 'otcovej'],
+        ['otcovmu', 'otcovmu', 'otcovmu', 'otcovej'],
+        ['otcovho', 'otcov', 'otcovo', 'otcovu'],
         false,
-        'Petrově',
-        ['Petrovým', 'Petrovým', 'Petrovým', 'Petrovou'],
+        ['otcovom', 'otcovom', 'otcovom', 'otcovej'],
+        ['otcovým', 'otcovým', 'otcovým', 'otcovou'],
       ],
       [
-        ['Petrovi', 'Petrovy', 'Petrova', 'Petrovy'],
-        'Petrových',
-        'Petrovým',
-        ['Petrovy', 'Petrovy', 'Petrova', 'Petrovy'],
+        ['otcovi', 'otcove', 'otcove', 'otcove'],
+        'otcových',
+        'otcovým',
+        ['otcových', 'otcove', 'otcove', 'otcove'],
         false,
-        'Petrových',
-        'Petrovými',
+        'otcových',
+        'otcovými',
       ],
     ],
-    "Petr's"
+    "father's"
   ),
   createDeclension(
     [
       [
-        ['Evin', 'Evin', 'Evino', 'Evina'],
-        ['Evina', 'Evina', 'Evina', 'Eviny'],
-        ['Evinu', 'Evinu', 'Evinu', 'Evině'],
-        ['Evina', 'Evin', 'Evino', 'Evinu'],
+        ['matkin', 'matkin', 'matkino', 'matkina'],
+        ['matkinho', 'matkinho', 'matkinho', 'matkinej'],
+        ['matkinmu', 'matkinmu', 'matkinmu', 'matkinej'],
+        ['matkinho', 'matkin', 'matkino', 'matkinu'],
         false,
-        'Evině',
-        ['Eviným', 'Eviným', 'Eviným', 'Evinou'],
+        ['matkinom', 'matkinom', 'matkinom', 'matkinej'],
+        ['matkiným', 'matkiným', 'matkiným', 'matkinou'],
       ],
       [
-        ['Evini', 'Eviny', 'Evina', 'Eviny'],
-        'Eviných',
-        'Eviným',
-        ['Eviny', 'Eviny', 'Evina', 'Eviny'],
+        ['matkini', 'matkine', 'matkine', 'matkine'],
+        'matkiných',
+        'matkiným',
+        ['matkiných', 'matkine', 'matkine', 'matkine'],
         false,
-        'Eviných',
-        'Evinými',
+        'matkiných',
+        'matkinými',
       ],
     ],
-    "Eva's"
+    "mother's"
   ),
 ];
