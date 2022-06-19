@@ -188,6 +188,10 @@ function english(dec: declension, plural: boolean, objective: boolean) {
 
 export type comboType = preposition | declension | nounDeclension | 'a' | false;
 
+export type arrayToParse = [number, ...Array<comboType>];
+
+export type generatedSentences = Array<[string, string]>;
+
 export function transformArray(
   config: config,
   inputArray: Array<comboType>

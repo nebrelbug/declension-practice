@@ -17,14 +17,23 @@ import {
   transformArray,
 } from '../sentence-tools';
 
-import type { comboType } from '../sentence-tools';
+import type { arrayToParse, generatedSentences } from '../sentence-tools';
 
-type arrayToParse = [number, ...Array<comboType>];
+export function generateSentences(declensions, settings): generatedSentences {
+  let res = [];
+  res = res.concat(generateBasicSentences(declensions, settings));
 
-export function generateSentences(declensions, settings) {
+  if (settings.randomize) {
+    res = shuffleArray(res);
+  }
+
+  return res;
+}
+
+export function generateBasicSentences(declensions, settings) {
   let res: Array<arrayToParse> = [];
-  
-  let adjectives = []
+
+  let adjectives = [];
 
   for (let dec of declensionList) {
     if (declensions[dec]) {
@@ -66,10 +75,6 @@ export function generateSentences(declensions, settings) {
 
     return result;
   }, []);
-
-  if (settings.randomize) {
-    newRes = shuffleArray(newRes);
-  }
 
   return newRes;
 }
