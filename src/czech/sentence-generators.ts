@@ -17,7 +17,13 @@ import {
   transformArray,
 } from '../sentence-tools';
 
-import type { arrayToParse, generatedSentences } from '../sentence-tools';
+import type {
+  comboType,
+  arrayToParse,
+  generatedSentences,
+} from '../sentence-tools';
+
+import type { declensionName } from '../types';
 
 export function generateSentences(declensions, settings): generatedSentences {
   let res = [];
@@ -31,6 +37,31 @@ export function generateSentences(declensions, settings): generatedSentences {
 }
 
 export function generateBasicSentences(declensions, settings) {
+  let res = sentenceGenerator(
+    declensions,
+    settings,
+    function (dec: declensionName) {
+      let possiblePreps = getPrepositions(prepositions, dec, settings);
+
+      return [
+        possiblePreps as Array<preposition>,
+        settings.includeTo ? [to] : ['a'],
+        settings.includeAdjectives ? basicAdjectives : [false],
+        filterNouns(masculineNouns, neuterNouns, feminineNouns, settings),
+      ] as Array<comboType>;
+    }
+  );
+
+  return res;
+}
+
+type fnReturn = (dec: declensionName) => Array<comboType>;
+
+export function sentenceGenerator(
+  declensions,
+  settings,
+  makeComboArray: fnReturn
+) {
   let res: Array<arrayToParse> = [];
 
   let adjectives = [];
@@ -39,14 +70,9 @@ export function generateBasicSentences(declensions, settings) {
     if (declensions[dec]) {
       let declensionNumber = declensionToNumber(dec);
 
-      let possiblePreps = getPrepositions(prepositions, dec, settings);
-      let combos: arrayToParse = cartesian([
-        [declensionNumber],
-        possiblePreps,
-        settings.includeTo ? [to] : ['a'],
-        settings.includeAdjectives ? basicAdjectives : [false],
-        filterNouns(masculineNouns, neuterNouns, feminineNouns, settings),
-      ]);
+      let comboArray = makeComboArray(dec as declensionName);
+
+      let combos: arrayToParse = cartesian([[declensionNumber], ...comboArray]);
 
       res = res.concat(combos);
     }
@@ -59,18 +85,14 @@ export function generateBasicSentences(declensions, settings) {
     let [caseNumber, ...array] = sent;
 
     if (singular) {
-      let [englishSingularSentence, langSingularSentence] = transformArray(
-        { plural: false, caseNumber: caseNumber },
-        array
+      result.push(
+        transformArray({ plural: false, caseNumber: caseNumber }, array)
       );
-      result.push([englishSingularSentence, langSingularSentence]);
     }
     if (plural) {
-      let [englishSingularSentence, langSingularSentence] = transformArray(
-        { plural: true, caseNumber: caseNumber },
-        array
+      result.push(
+        transformArray({ plural: true, caseNumber: caseNumber }, array)
       );
-      result.push([englishSingularSentence, langSingularSentence]);
     }
 
     return result;
