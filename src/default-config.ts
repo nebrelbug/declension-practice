@@ -68,8 +68,14 @@ export let defaultSettingsCzech = {
 };
 
 export let defaultDeclensionsSlovak = {
-  ...defaultSettingsCzech,
+  '1': true,
+  '2': true,
+  '3': true,
+  '4': true,
+  '4-M': true,
   '5': false,
+  '6': true,
+  '7': true,
 };
 
 export let defaultSettingsSlovak = { ...defaultSettingsCzech };
