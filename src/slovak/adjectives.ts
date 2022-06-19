@@ -80,3 +80,102 @@ export let basicAdjectives = [
   createDeclension(getAdjectiveDeclensions('cudz', 'soft'), 'first'),
   createDeclension(getAdjectiveDeclensions('mal', 'hard'), 'small'),
 ];
+
+export let possessivePronouns = [
+  createDeclension(
+    [
+      [
+        ['môj', 'môj', 'moje', 'moja'],
+        ['môjho', 'môjho', 'môjho', 'mojej'],
+        ['môjmu', 'môjmu', 'môjmu', 'mojej'],
+        ['môjho', 'môj', 'moje', 'moju'],
+        false,
+        ['mojom', 'mojom', 'mojom', 'mojej'],
+        ['mojím', 'mojím', 'mojím', 'mojou'],
+      ],
+      [
+        ['moji', 'moje', 'moje', 'moje'],
+        'mojich',
+        'mojim',
+        ['mojich', 'moje', 'moje', 'moje'],
+        false,
+        'mojich',
+        'mojimi',
+      ],
+    ],
+    'my'
+  ),
+  createDeclension(
+    [
+      // náš follows môj, just with an "á" where môj has an "ô"
+      [
+        ['náš', 'náš', 'naše', 'naša'],
+        ['nášho', 'nášho', 'nášho', 'našej'],
+        ['nášmu', 'nášmu', 'nášmu', 'našej'],
+        ['nášho', 'náš', 'naše', 'našu'],
+        false,
+        ['našom', 'našom', 'našom', 'našej'],
+        ['naším', 'naším', 'naším', 'našou'],
+      ],
+      [
+        ['naši', 'naše', 'naše', 'naše'],
+        'našich',
+        'našim',
+        ['našich', 'naše', 'naše', 'naše'],
+        false,
+        'našich',
+        'našimi',
+      ],
+    ],
+    'our'
+  ),
+];
+
+export let nounPossessives = [
+  createDeclension(
+    [
+      [
+        ['Petrov', 'Petrov', 'Petrovo', 'Petrova'],
+        ['Petrova', 'Petrova', 'Petrova', 'Petrovy'],
+        ['Petrovu', 'Petrovu', 'Petrovu', 'Petrově'],
+        ['Petrova', 'Petrův', 'Petrovo', 'Petrovu'],
+        false,
+        'Petrově',
+        ['Petrovým', 'Petrovým', 'Petrovým', 'Petrovou'],
+      ],
+      [
+        ['Petrovi', 'Petrovy', 'Petrova', 'Petrovy'],
+        'Petrových',
+        'Petrovým',
+        ['Petrovy', 'Petrovy', 'Petrova', 'Petrovy'],
+        false,
+        'Petrových',
+        'Petrovými',
+      ],
+    ],
+    "Petr's"
+  ),
+  createDeclension(
+    [
+      [
+        ['Evin', 'Evin', 'Evino', 'Evina'],
+        ['Evina', 'Evina', 'Evina', 'Eviny'],
+        ['Evinu', 'Evinu', 'Evinu', 'Evině'],
+        ['Evina', 'Evin', 'Evino', 'Evinu'],
+        false,
+        'Evině',
+        ['Eviným', 'Eviným', 'Eviným', 'Evinou'],
+      ],
+      [
+        ['Evini', 'Eviny', 'Evina', 'Eviny'],
+        'Eviných',
+        'Eviným',
+        ['Eviny', 'Eviny', 'Evina', 'Eviny'],
+        false,
+        'Eviných',
+        'Evinými',
+      ],
+    ],
+    "Eva's"
+  ),
+];

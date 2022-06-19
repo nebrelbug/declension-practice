@@ -1,3 +1,7 @@
+import * as czechDeclensions from './czech';
+
+// TODO: change so that the options are just the different nouns. Use different markers for essential, advanced, etc.
+// TODO: do the same thing for prepositions, adjectives, and possessives
 export let nounPatternOptions = [
   { value: 'essential', label: 'essential' },
   { value: 'advanced', label: 'advanced' },

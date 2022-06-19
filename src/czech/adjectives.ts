@@ -150,7 +150,7 @@ export let nounPossessives = [
         'Petrovými',
       ],
     ],
-    "Peter's"
+    "Petr's"
   ),
   createDeclension(
     [
