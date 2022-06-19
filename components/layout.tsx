@@ -2,7 +2,6 @@ import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Script from 'next/script';
 
 const BrowserComponent = dynamic(() => import('./browser-component'), {
   ssr: false,
@@ -11,13 +10,6 @@ const BrowserComponent = dynamic(() => import('./browser-component'), {
 export function PageLayout({ children, title, suffix, center }) {
   return (
     <div className="min-h-screen flex flex-col px-2" id="root">
-      <Script src="//cdn.jsdelivr.net/npm/eruda" />
-      <Script
-        dangerouslySetInnerHTML={{
-          __html: `eruda.init();`,
-        }}
-      />
-
       <Head>
         <title>{title}</title>
       </Head>
