@@ -101,19 +101,19 @@ export function usePrepositions(settings): [boolean, boolean] {
   let keyPrepositions = true; // default
   let otherPrepositions = true; // default
 
-  if (
-    settings.prepositions.filter((e) => e.value === 'key-prepositions')
-      .length === 0
-  ) {
-    keyPrepositions = false;
-  }
+  // if (
+  //   settings.prepositions.filter((e) => e.value === 'key-prepositions')
+  //     .length === 0
+  // ) {
+  //   keyPrepositions = false;
+  // }
 
-  if (
-    settings.prepositions.filter((e) => e.value === 'other-prepositions')
-      .length === 0
-  ) {
-    otherPrepositions = false;
-  }
+  // if (
+  //   settings.prepositions.filter((e) => e.value === 'other-prepositions')
+  //     .length === 0
+  // ) {
+  //   otherPrepositions = false;
+  // }
 
   return [keyPrepositions, otherPrepositions];
 }
@@ -130,7 +130,7 @@ export function usePossessives(settings): [boolean, boolean] {
   }
 
   if (
-    settings.prepositions.filter((e) => e.value === 'possessive-pronouns')
+    settings.possessives.filter((e) => e.value === 'possessive-pronouns')
       .length > 0
   ) {
     possessivePronouns = true;

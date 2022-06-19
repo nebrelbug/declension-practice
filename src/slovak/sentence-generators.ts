@@ -1,4 +1,9 @@
+import type { comboType, generatedSentences } from '../sentence-tools';
+
+import type { declensionName } from '../types';
+
 import { prepositions } from './prepositions';
+
 import {
   masculineNouns,
   neuterNouns,
@@ -6,6 +11,7 @@ import {
   basicAdjectives,
   to,
 } from './index';
+
 import { shuffleArray } from '../utilities';
 
 import {
@@ -13,15 +19,6 @@ import {
   getPrepositions,
   sentenceGenerator,
 } from '../sentence-tools';
-
-import type {
-  comboType,
-  arrayToParse,
-  generatedSentences,
-  fnReturn,
-} from '../sentence-tools';
-
-import type { declensionName } from '../types';
 
 export function generateSentences(declensions, settings): generatedSentences {
   let res = [];
