@@ -11,9 +11,8 @@ const BrowserComponent = dynamic(() => import('./browser-component'), {
 export function PageLayout({ children, title, suffix, center }) {
   return (
     <div className="min-h-screen flex flex-col px-2" id="root">
-      <Script strategy="beforeInteractive" src="//cdn.jsdelivr.net/npm/eruda" />
+      <Script src="//cdn.jsdelivr.net/npm/eruda" />
       <Script
-        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: `eruda.init();`,
         }}
