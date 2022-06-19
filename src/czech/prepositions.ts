@@ -95,7 +95,7 @@ let prep2: preposition[] = [
     english: 'next to',
   },
   {
-    preposition: 'z(e)',
+    preposition: 'z',
     case: '2',
     english: 'from/out of',
   },
@@ -119,7 +119,7 @@ let prep3: preposition[] = [
     english: 'against',
   },
   {
-    preposition: 'k(e)',
+    preposition: 'k',
     case: '3',
     english: 'to/towards',
   },
@@ -246,7 +246,7 @@ let prep6: preposition[] = [
     english: 'at/during',
   },
   {
-    preposition: 'v(e)',
+    preposition: 'v',
     case: '6',
     english: 'in',
   },
