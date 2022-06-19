@@ -81,18 +81,9 @@ export function filterNouns(
 }
 
 export function usePlural(settings): [boolean, boolean] {
-  let singular = true; // default
-  let plural = true; // default
+  let singular = settingIsOn(settings, 'numberOptions', 'singular');
 
-  if (
-    settings.numberOptions.filter((e) => e.value === 'singular').length === 0
-  ) {
-    singular = false;
-  }
-
-  if (settings.numberOptions.filter((e) => e.value === 'plural').length === 0) {
-    plural = false;
-  }
+  let plural = settingIsOn(settings, 'numberOptions', 'plural');
 
   return [singular, plural];
 }
@@ -116,27 +107,6 @@ export function usePrepositions(settings): [boolean, boolean] {
   // }
 
   return [keyPrepositions, otherPrepositions];
-}
-
-export function usePossessives(settings): [boolean, boolean] {
-  let nounPossessives = false; // default
-  let possessivePronouns = false; // default
-
-  if (
-    settings.possessives.filter((e) => e.value === 'noun-possessives').length >
-    0
-  ) {
-    nounPossessives = true;
-  }
-
-  if (
-    settings.possessives.filter((e) => e.value === 'possessive-pronouns')
-      .length > 0
-  ) {
-    possessivePronouns = true;
-  }
-
-  return [nounPossessives, possessivePronouns];
 }
 
 export function getPrepositions(
