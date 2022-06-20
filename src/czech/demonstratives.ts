@@ -24,28 +24,3 @@ export let to = createDeclension(
   'that',
   'those'
 );
-
-export let jenž = createDeclension(
-  [
-    [
-      ['jenž', 'jenž', 'jež', 'jež'],
-      ['jehož', 'jehož', 'jehož', 'jíž'],
-      ['jemuž', 'jemuž', 'jemuž', 'jíž'],
-      ['jehož', 'jejž', 'jež', 'již'],
-      ['jenž', 'jenž', 'jež', 'jež'],
-      ['němž', 'němž', 'němž', 'níž'],
-      ['jímž', 'jímž', 'jímž', 'jíž'],
-    ],
-    [
-      ['již', 'jež', 'jež', 'jež'],
-      'jichž',
-      'jimž',
-      'jež',
-      ['již', 'jež', 'jež', 'jež'],
-      'nichž',
-      'jimiž', // *dual 'jimaž'
-    ],
-  ],
-  'that',
-  'those'
-);

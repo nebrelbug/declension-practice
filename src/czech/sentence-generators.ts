@@ -11,6 +11,7 @@ import {
   basicAdjectives,
   possessivePronouns,
   nounPossessives,
+  jenž,
   to,
 } from './index';
 
@@ -36,6 +37,10 @@ export function generateSentences(declensions, settings): generatedSentences {
 
   if (settingIsOn(settings, 'phraseOptions', 'noun-possessives')) {
     res = res.concat(generateNounPossessiveSentences(declensions, settings));
+  }
+
+  if (settingIsOn(settings, 'phraseOptions', 'jenž')) {
+    res = res.concat(generateJenžSentences(declensions, settings));
   }
 
   if (settings.randomize) {
@@ -82,6 +87,23 @@ export function generateNounPossessiveSentences(declensions, settings) {
       possiblePreps,
       nounPossessives,
       filterNouns(masculineNouns, neuterNouns, feminineNouns, settings),
+    ] as Array<Array<comboType>>;
+  });
+
+  return res;
+}
+
+export function generateJenžSentences(declensions, settings) {
+  let res = sentenceGenerator(declensions, settings, (dec: declensionName) => {
+    let possiblePreps = getPrepositions(prepositions, dec, settings);
+
+    if (dec === '5') return [[]];
+
+    return [
+      filterNouns(masculineNouns, neuterNouns, feminineNouns, settings),
+      [','],
+      possiblePreps,
+      [jenž],
     ] as Array<Array<comboType>>;
   });
 

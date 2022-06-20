@@ -6,5 +6,6 @@ export {
   basicAdjectives,
   possessivePronouns,
   nounPossessives,
+  jenž, // different from Slovak
 } from './adjectives';
-export { to, jenž } from './demonstratives';
+export { to } from './demonstratives';

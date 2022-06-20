@@ -176,3 +176,27 @@ export let nounPossessives = [
     "Eva's"
   ),
 ];
+
+export let jenž = createDeclension(
+  [
+    [
+      ['jenž', 'jenž', 'jež', 'jež'],
+      ['něhož', 'něhož', 'něhož', 'níž'],
+      ['němuž', 'němuž', 'němuž', 'níž'],
+      ['něhož', 'nějž', 'něž', 'niž'],
+      ['jenž', 'jenž', 'jež', 'jež'],
+      ['němž', 'němž', 'němž', 'níž'],
+      ['nímž', 'nímž', 'nímž', 'níž'],
+    ],
+    [
+      ['již', 'jež', 'jež', 'jež'],
+      'nichž',
+      'nimž',
+      'něž',
+      ['již', 'jež', 'jež', 'jež'],
+      'nichž',
+      'nimiž', // *dual nimaž
+    ],
+  ],
+  'which'
+);

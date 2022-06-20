@@ -153,7 +153,13 @@ function english(dec: declension, plural: boolean, objective: boolean) {
   }
 }
 
-export type comboType = preposition | declension | nounDeclension | 'a' | false;
+export type comboType =
+  | preposition
+  | declension
+  | nounDeclension
+  | 'a'
+  | ','
+  | false;
 
 export type arrayToParse = [number, ...Array<comboType>];
 
@@ -182,6 +188,11 @@ export function transformArray(
     if (item) {
       if (item === 'a') {
         useIndefinite = true;
+      } else if (item === ',') {
+        englishSentence[englishSentence.length - 1] =
+          englishSentence[englishSentence.length - 1] + ',';
+        langSentence[langSentence.length - 1] =
+          langSentence[langSentence.length - 1] + ',';
       } else if ((item as preposition).preposition) {
         englishSentence.push((item as preposition).english);
         langSentence.push((item as preposition).preposition);
