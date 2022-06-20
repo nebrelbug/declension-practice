@@ -32,14 +32,23 @@ export let feminineNouns = [
         'růže',
         'růže!',
         'růžích',
-        'řůžemi', // 'růžemi/ema'
+        'růžemi', // 'růžemi/ema'
       ],
     ],
     'rose',
     'roses'
   ),
 
-  // add ulice
+  createNounDeclension(
+    'f',
+    'advanced',
+    [
+      ['ulice', 'ulice', 'ulici', 'ulici', 'ulice!', 'ulici', 'ulicí'],
+      ['ulice', 'ulic', 'ulicím', 'ulice', 'ulice!', 'ulicích', 'ulicemi'],
+    ],
+    'street',
+    'streets'
+  ),
 
   createNounDeclension(
     'f',

@@ -143,7 +143,7 @@ export let masculineNouns = [
   ),
 
   createNounDeclension(
-    'ma',
+    'mi',
     'advanced',
     [
       ['cyklus', 'cyklu', 'cyklu', 'cyklus', 'cykle!', 'cyklu', 'cyklem'],
