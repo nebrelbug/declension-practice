@@ -152,4 +152,15 @@ export let feminineNouns = [
     'eye',
     'eyes'
   ),
+
+  createNounDeclension(
+    'f',
+    'irregular',
+    [
+      ['idea', 'idey', 'ideji', 'ideu', 'ideo!', 'ideji', 'ideou'],
+      ['idey', 'idejí', 'ideám', 'idey', 'idey!', 'ideách', 'ideami'],
+    ],
+    'idea',
+    'ideas'
+  ),
 ];
