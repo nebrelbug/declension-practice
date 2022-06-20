@@ -49,6 +49,12 @@ export function generateBasicSentences(declensions, settings) {
   let res = sentenceGenerator(declensions, settings, (dec: declensionName) => {
     let possiblePreps = getPrepositions(prepositions, dec, settings);
 
+    if (dec === '5')
+      return [
+        [false],
+        filterNouns(masculineNouns, neuterNouns, feminineNouns, settings),
+      ] as Array<Array<comboType>>;
+
     return [
       possiblePreps,
       settings.includeTo ? [to] : ['a'],
@@ -64,6 +70,8 @@ export function generatePossessivePronounSentences(declensions, settings) {
   let res = sentenceGenerator(declensions, settings, (dec: declensionName) => {
     let possiblePreps = getPrepositions(prepositions, dec, settings);
 
+    if (dec === '5') return [[]];
+
     return [
       possiblePreps,
       possessivePronouns,
@@ -77,6 +85,8 @@ export function generatePossessivePronounSentences(declensions, settings) {
 export function generateNounPossessiveSentences(declensions, settings) {
   let res = sentenceGenerator(declensions, settings, (dec: declensionName) => {
     let possiblePreps = getPrepositions(prepositions, dec, settings);
+
+    if (dec === '5') return [[]];
 
     return [
       possiblePreps,

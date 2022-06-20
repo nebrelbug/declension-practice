@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Input } from './input';
+import { SkipButton } from './modal-button';
 
 export function Quiz({ arrayOfPairs }) {
   const [formValue, setFormValue] = useState('');
@@ -38,6 +39,15 @@ export function Quiz({ arrayOfPairs }) {
     }
   };
 
+  const skipToNext = () => {
+    setFormState('skipped');
+    setTimeout(() => {
+      incrementArrIndex();
+      setFormValue('');
+      setFormState('in-process');
+    }, 250);
+  };
+
   return (
     <div className="flex flex-col flex-1 items-center w-full mt-16">
       <h3 className="text-3xl mb-20">
@@ -54,6 +64,9 @@ export function Quiz({ arrayOfPairs }) {
         setValue={setFormValue}
         disabled={arrayOfPairs.length === 0}
       />
+
+      <br />
+      <SkipButton onClick={skipToNext} />
     </div>
   );
 }

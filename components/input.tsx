@@ -6,6 +6,8 @@ let inputClass =
 let classStates = {
   error:
     'bg-red-50 border border-red-500 focus:ring-red-500 focus:border-red-500',
+  skipped:
+    'bg-orange-50 border border-orange-500 focus:ring-orange-500 focus:border-orange-500',
   correct:
     'bg-green-50 border border-green-500 focus:ring-green-500 focus:border-green-500',
   'in-progress': 'focus:bg-white focus:ring-1',

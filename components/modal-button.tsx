@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export function Button({ onClick }) {
   return (
@@ -23,6 +23,30 @@ export function Button({ onClick }) {
   );
 }
 
+export function SkipButton({ onClick }) {
+  return (
+    <button
+      type="button"
+      className="text-gray font-medium inline-flex items-center rounded hover:bg-gray-100"
+      onClick={onClick}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-11 w-11"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    </button>
+  );
+}
 export let closeIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
