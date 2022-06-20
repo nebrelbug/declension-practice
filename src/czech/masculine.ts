@@ -144,6 +144,28 @@ export let masculineNouns = [
 
   createNounDeclension(
     'ma',
+    'advanced',
+    [
+      ['cyklus', 'cyklu', 'cyklu', 'cyklus', 'cykle!', 'cyklu', 'cyklem'],
+      ['cykly', 'cyklů', 'cyklům', 'cykly', 'cykly!', 'cyklech', 'cykly'],
+    ],
+    'cycle',
+    'cycles'
+  ),
+
+  createNounDeclension(
+    'ma',
+    'advanced',
+    [
+      ['génius', 'génia', 'géniu', 'génia', 'génie!', 'géniu', 'géniem'],
+      ['géniové', 'géniů', 'géniům', 'génie', 'géniové!', 'géniích', 'génii'],
+    ],
+    'genius',
+    'geniuses'
+  ),
+
+  createNounDeclension(
+    'ma',
     'irregular',
     [
       ['bůh', 'boha', 'bohu', 'boha', 'bože!', 'bohu', 'bohem'],
