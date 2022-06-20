@@ -102,6 +102,17 @@ export let neuterNouns = [
 
   createNounDeclension(
     'n',
+    'advanced',
+    [
+      ['téma', 'tématu', 'tématu', 'téma', 'téma!', 'tématu', 'tématem'],
+      ['témata', 'témat', 'tématům', 'témata', 'témata!', 'tématech', 'tématy'],
+    ],
+    'theme',
+    'themes'
+  ),
+
+  createNounDeclension(
+    'n',
     'irregular',
     [['dítě', 'dítěte', 'dítěti', 'dítě', 'dítě!', 'dítěti', 'dítětem'], []],
     'child'
