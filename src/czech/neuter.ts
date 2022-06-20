@@ -128,4 +128,23 @@ export let neuterNouns = [
     'museum',
     'museums'
   ),
+
+  createNounDeclension(
+    'n',
+    'advanced',
+    [
+      ['drama', 'dramatu', 'dramatu', 'drama', 'drama!', 'dramatu', 'dramatem'],
+      [
+        'dramata',
+        'dramat',
+        'muzeím',
+        'dramata',
+        'dramata!',
+        'muzeích',
+        'muzei',
+      ],
+    ],
+    'museum',
+    'museums'
+  ),
 ];
