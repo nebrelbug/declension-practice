@@ -1,6 +1,6 @@
 import * as czechDeclensions from './czech';
 
-export let version = '1-3'; // update the version every time there's a breaking change to the structure of localStorage
+export let version = '1-5'; // update the version every time there's a breaking change to the structure of localStorage
 
 // TODO: change so that the options are just the different nouns. Use different markers for essential, advanced, etc.
 // TODO: do the same thing for prepositions, adjectives, and possessives
@@ -21,7 +21,15 @@ export let numberOptions = [
   { value: 'plural', label: 'plural' },
 ];
 
-export let possessivesOptions = [
+export let phraseOptionsCzech = [
+  { value: 'basic', label: 'basic phrases' },
+  { value: 'noun-possessives', label: 'noun possessives' },
+  { value: 'possessive-pronouns', label: 'possessive pronouns' },
+  { value: 'jenž', label: 'jenž' },
+];
+
+export let phraseOptionsSlovak = [
+  { value: 'basic', label: 'basic phrases' },
   { value: 'noun-possessives', label: 'noun possessives' },
   { value: 'possessive-pronouns', label: 'possessive pronouns' },
 ];
@@ -58,8 +66,8 @@ export let defaultSettingsCzech = {
     { value: 'singular', label: 'singular' },
     { value: 'plural', label: 'plural' },
   ],
-  possessives: [
-    { value: 'noun-possessives', label: 'noun possessives' },
+  phraseOptions: [
+    { value: 'basic', label: 'basic phrases' },
     { value: 'possessive-pronouns', label: 'possessive pronouns' },
   ],
   prepositions: [{ value: 'key-prepositions', label: 'key prepositions' }],
