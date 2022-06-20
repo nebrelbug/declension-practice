@@ -83,4 +83,14 @@ export let feminineNouns = [
     'joy',
     'joys'
   ),
+  createNounDeclension(
+    'f',
+    'irregular',
+    [
+      ['idea', 'idey', 'idei', 'ideu', false, 'idei', 'ideou'],
+      ['idey', 'ideí', 'ideám', 'idey', false, 'ideách', 'ideami'],
+    ],
+    'idea',
+    'ideas'
+  ),
 ];
