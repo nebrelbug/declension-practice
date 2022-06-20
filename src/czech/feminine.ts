@@ -101,6 +101,28 @@ export let feminineNouns = [
   createNounDeclension(
     'f',
     'irregular',
+    [
+      ['ruka', 'ruky', 'ruce', 'ruku', 'ruko!', 'ruce', 'rukou'],
+      ['ruce', 'rukou', 'rukám', 'ruce', 'ruce!', 'rukou', 'rukama'],
+    ],
+    'hand',
+    'hands'
+  ),
+
+  createNounDeclension(
+    'f',
+    'irregular',
+    [
+      ['noha', 'nohy', 'noze', 'nohu', 'noho!', 'noze', 'nohou'],
+      ['nohy', 'nohou', 'nohám', 'nohy', 'nohy!', 'nohou', 'nohama'],
+    ],
+    'leg',
+    'legs'
+  ),
+
+  createNounDeclension(
+    'f',
+    'irregular',
     [[], ['děti', 'dětí', 'dětem', 'děti', 'děti!', 'dětech', 'dětmi']],
     'child',
     'children'
