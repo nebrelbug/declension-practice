@@ -78,4 +78,12 @@ export let feminineNouns = [
     'bone',
     'bones'
   ),
+
+  createNounDeclension(
+    'f',
+    'irregular',
+    [[], ['děti', 'dětí', 'dětem', 'děti', 'děti!', 'dětech', 'dětmi']],
+    'child',
+    'children'
+  ),
 ];

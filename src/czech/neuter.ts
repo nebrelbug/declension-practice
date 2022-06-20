@@ -99,4 +99,11 @@ export let neuterNouns = [
     'chick',
     'chicks'
   ),
+
+  createNounDeclension(
+    'n',
+    'irregular',
+    [['dítě', 'dítěte', 'dítěti', 'dítě', 'dítě!', 'dítěti', 'dítětem'], []],
+    'child'
+  ),
 ];

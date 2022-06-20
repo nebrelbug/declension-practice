@@ -136,12 +136,14 @@ export function getItem(
 ): string {
   let singleDec = config.plural ? noun[1] : noun[0];
 
-  let dec = singleDec[config.caseNumber - 1];
+  if (singleDec.length > 0) {
+    let dec = singleDec[config.caseNumber - 1];
 
-  if (typeof dec === 'string') {
-    return dec;
-  } else {
-    return dec[genderList[gender]];
+    if (typeof dec === 'string') {
+      return dec;
+    } else {
+      return dec[genderList[gender]];
+    }
   }
 }
 
@@ -168,53 +170,61 @@ export type generatedSentences = Array<[string, string]>;
 export function transformArray(
   config: config,
   inputArray: Array<comboType>
-): [string, string] {
+): [string, string] | false {
   let englishSentence = [];
   let langSentence = [];
 
   // ts-disable-line
   let noun = inputArray.find(
     (element) => element && (element as nounDeclension).gender
-  );
+  ) as nounDeclension;
 
-  let gender = (noun as nounDeclension).gender;
-  let plural = config.plural;
-  let objectiveCase = config.caseNumber !== 1 && config.caseNumber !== 4;
-  let useIndefinite = false;
+  if (
+    !(noun.gender && config.plural && noun.caseArray[1].length === 0) &&
+    !(noun.gender && !config.plural && noun.caseArray[0].length === 0)
+  ) {
+    let gender = (noun as nounDeclension).gender;
+    let plural = config.plural;
+    let objectiveCase = config.caseNumber !== 1 && config.caseNumber !== 4;
+    let useIndefinite = false;
 
-  for (let i = 0; i < inputArray.length; i++) {
-    let item = inputArray[i];
+    for (let i = 0; i < inputArray.length; i++) {
+      let item = inputArray[i];
 
-    if (item) {
-      if (item === 'a') {
-        useIndefinite = true;
-      } else if (item === ',') {
-        englishSentence[englishSentence.length - 1] =
-          englishSentence[englishSentence.length - 1] + ',';
-        langSentence[langSentence.length - 1] =
-          langSentence[langSentence.length - 1] + ',';
-      } else if ((item as preposition).preposition) {
-        englishSentence.push((item as preposition).english);
-        langSentence.push((item as preposition).preposition);
-      } else if ((item as declension).caseArray) {
-        let newEnglish = english(item as declension, plural, objectiveCase);
-        if ((item as nounDeclension).gender) {
-          if (useIndefinite && !plural) {
-            newEnglish = a(newEnglish);
+      if (item) {
+        if (item === 'a') {
+          useIndefinite = true;
+        } else if (item === ',') {
+          englishSentence[englishSentence.length - 1] =
+            englishSentence[englishSentence.length - 1] + ',';
+          langSentence[langSentence.length - 1] =
+            langSentence[langSentence.length - 1] + ',';
+        } else if ((item as preposition).preposition) {
+          englishSentence.push((item as preposition).english);
+          langSentence.push((item as preposition).preposition);
+        } else if ((item as declension).caseArray) {
+          let newEnglish = english(item as declension, plural, objectiveCase);
+          if ((item as nounDeclension).gender) {
+            if (useIndefinite && !plural) {
+              newEnglish = a(newEnglish);
+            }
+            if (config.caseNumber === 5) {
+              newEnglish += '!';
+            }
           }
-          if (config.caseNumber === 5) {
-            newEnglish += '!';
-          }
+
+          englishSentence.push(newEnglish);
+          langSentence.push(
+            getItem((item as declension).caseArray, config, gender)
+          );
         }
-
-        englishSentence.push(newEnglish);
-        langSentence.push(
-          getItem((item as declension).caseArray, config, gender)
-        );
       }
     }
   }
-  return [englishSentence.join(' '), langSentence.join(' ')];
+  if (englishSentence.length && langSentence.length) {
+    return [englishSentence.join(' '), langSentence.join(' ')];
+  }
+  return false;
 }
 
 export type fnReturn = (dec: declensionName) => Array<Array<comboType>>;
@@ -245,14 +255,22 @@ export function sentenceGenerator(
     let [caseNumber, ...arr] = sent;
 
     if (singular) {
-      result.push(
-        transformArray({ plural: false, caseNumber: caseNumber }, arr)
+      let singRes = transformArray(
+        { plural: false, caseNumber: caseNumber },
+        arr
       );
+      if (singRes) {
+        result.push(singRes);
+      }
     }
     if (plural) {
-      result.push(
-        transformArray({ plural: true, caseNumber: caseNumber }, arr)
+      let pluralRes = transformArray(
+        { plural: true, caseNumber: caseNumber },
+        arr
       );
+      if (pluralRes) {
+        result.push(pluralRes);
+      }
     }
 
     return result;

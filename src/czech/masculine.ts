@@ -130,4 +130,26 @@ export let masculineNouns = [
     'chairman',
     'chairmen'
   ),
+
+  createNounDeclension(
+    'ma',
+    'advanced',
+    [
+      ['kluk', 'kluka', 'kluku', 'kluka', 'kluku!', 'kluku', 'klukem'],
+      ['kluci', 'kluků', 'klukům', 'kluky', 'kluci!', 'klucích', 'kluky'],
+    ],
+    'boy',
+    'boys'
+  ),
+
+  createNounDeclension(
+    'ma',
+    'irregular',
+    [
+      ['bůh', 'boha', 'bohu', 'boha', 'bože!', 'bohu', 'bohem'],
+      ['bohové', 'bohů', 'bohům', 'bohy', 'bohové!', 'bozích', 'bohy'],
+    ],
+    'God',
+    'gods'
+  ),
 ];
