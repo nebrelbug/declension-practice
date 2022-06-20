@@ -79,4 +79,32 @@ export let masculineNouns = [
     'couch',
     'couches'
   ),
+  createNounDeclension(
+    'ma',
+    'irregular',
+    [
+      ['boh', 'boha', 'bohu', 'boha', 'bože!', 'bohu', 'bohom'],
+      ['bohovia', 'bohov', 'bohom', 'bohov', false, 'bohoch', 'bohmi'],
+    ],
+    'god',
+    'gods'
+  ),
+  createNounDeclension(
+    'ma',
+    'irregular',
+    [
+      [
+        'človek',
+        'človeka',
+        'človeku',
+        'človeka',
+        'človeče!',
+        'človeku',
+        'človekom',
+      ],
+      ['ľudia', 'ľudí', 'ľuďom', 'ľudí', false, 'ľuďoch', 'ľuďmi'],
+    ],
+    'person',
+    'people'
+  ),
 ];

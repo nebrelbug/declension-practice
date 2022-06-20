@@ -86,4 +86,23 @@ export let feminineNouns = [
     'child',
     'children'
   ),
+
+  createNounDeclension(
+    'f',
+    'irregular',
+    [
+      ['dcera', 'dcery', 'dceři', 'dceru', 'dcero!', 'dceři', 'dcerou'],
+      [
+        'dcery',
+        'dcer',
+        'dcerám',
+        'dcery',
+        'dcery!',
+        'dcerách',
+        'dcerami', // 'ženami/ama'
+      ],
+    ],
+    'daughter',
+    'daughters'
+  ),
 ];

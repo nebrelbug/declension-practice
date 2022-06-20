@@ -117,4 +117,15 @@ export let neuterNouns = [
     [['dítě', 'dítěte', 'dítěti', 'dítě', 'dítě!', 'dítěti', 'dítětem'], []],
     'child'
   ),
+
+  createNounDeclension(
+    'n',
+    'advanced',
+    [
+      ['muzeum', 'muzea', 'muzeu', 'muzeum', 'muzeum!', 'muzeu', 'muzeem'],
+      ['muzea', 'muzeí', 'muzeím', 'muzea', 'muzea!', 'muzeích', 'muzei'],
+    ],
+    'museum',
+    'museums'
+  ),
 ];

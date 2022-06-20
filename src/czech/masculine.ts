@@ -149,7 +149,7 @@ export let masculineNouns = [
       ['bůh', 'boha', 'bohu', 'boha', 'bože!', 'bohu', 'bohem'],
       ['bohové', 'bohů', 'bohům', 'bohy', 'bohové!', 'bozích', 'bohy'],
     ],
-    'God',
+    'god',
     'gods'
   ),
 ];
