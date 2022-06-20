@@ -40,6 +40,17 @@ export let masculineNouns = [
   ),
 
   createNounDeclension(
+    'mi',
+    'advanced',
+    [
+      ['svět', 'světa', 'světu', 'svět', 'světe!', 'světě', 'světem'],
+      ['světy', 'světů', 'světům', 'světy', 'světy!', 'světech', 'světy'],
+    ],
+    'world',
+    'worlds'
+  ),
+
+  createNounDeclension(
     'ma',
     'essential',
     [
