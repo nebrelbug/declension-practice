@@ -152,4 +152,22 @@ export let masculineNouns = [
     'god',
     'gods'
   ),
+  createNounDeclension(
+    'ma',
+    'irregular',
+    [
+      [
+        'člověk',
+        'člověka',
+        'člověku',
+        'člověka',
+        'člověče!',
+        'člověku',
+        'člověkem',
+      ],
+      ['lidé/i', 'lidí', 'lidem', 'lidi', 'lidé/i', 'lidech', 'lidmi'],
+    ],
+    'person',
+    'people'
+  ),
 ];
