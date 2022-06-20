@@ -82,14 +82,6 @@ export let feminineNouns = [
   createNounDeclension(
     'f',
     'irregular',
-    [[], ['děti', 'dětí', 'dětem', 'děti', 'děti!', 'dětech', 'dětmi']],
-    'child',
-    'children'
-  ),
-
-  createNounDeclension(
-    'f',
-    'irregular',
     [
       ['dcera', 'dcery', 'dceři', 'dceru', 'dcero!', 'dceři', 'dcerou'],
       [
@@ -104,5 +96,29 @@ export let feminineNouns = [
     ],
     'daughter',
     'daughters'
+  ),
+
+  createNounDeclension(
+    'f',
+    'irregular',
+    [[], ['děti', 'dětí', 'dětem', 'děti', 'děti!', 'dětech', 'dětmi']],
+    'child',
+    'children'
+  ),
+
+  createNounDeclension(
+    'f',
+    'irregular',
+    [[], ['uši', 'uší', 'uším', 'uši', 'uši!', 'uších', 'ušima']],
+    'ear',
+    'ears'
+  ),
+
+  createNounDeclension(
+    'f',
+    'irregular',
+    [[], ['oči', 'očí', 'očím', 'oči', 'oči!', 'očích', 'očima']],
+    'eye',
+    'eyes'
   ),
 ];

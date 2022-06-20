@@ -115,7 +115,8 @@ export let neuterNouns = [
     'n',
     'irregular',
     [['dítě', 'dítěte', 'dítěti', 'dítě', 'dítě!', 'dítěti', 'dítětem'], []],
-    'child'
+    'child',
+    'children'
   ),
 
   createNounDeclension(
@@ -137,14 +138,30 @@ export let neuterNouns = [
       [
         'dramata',
         'dramat',
-        'muzeím',
+        'dramatům',
         'dramata',
         'dramata!',
-        'muzeích',
-        'muzei',
+        'dramatech',
+        'dramaty',
       ],
     ],
-    'museum',
-    'museums'
+    'drama',
+    'dramas'
+  ),
+
+  createNounDeclension(
+    'n',
+    'irregular',
+    [['ucho', 'ucha', 'uchu', 'ucho', 'ucho!', 'uchu', 'uchem'], []],
+    'ear',
+    'ears'
+  ),
+
+  createNounDeclension(
+    'n',
+    'irregular',
+    [['oko', 'oka', 'oku', 'oko', 'oko!', 'oku', 'okem'], []],
+    'eye',
+    'eyes'
   ),
 ];
