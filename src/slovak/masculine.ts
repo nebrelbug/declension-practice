@@ -8,8 +8,8 @@ export let masculineNouns = [
       ['chlap', 'chlapa', 'chlapovi', 'chlapa', false, 'chlapovi', 'chlapom'],
       ['chlapi', 'chlapov', 'chlapom', 'chlapov', false, 'chlapoch', 'chlapmi'],
     ],
-    'boy',
-    'boys'
+    'guy',
+    'guys'
   ),
   createNounDeclension(
     'ma',

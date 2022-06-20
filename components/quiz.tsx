@@ -20,7 +20,10 @@ export function Quiz({ arrayOfPairs }) {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     if (
-      formValue.trim().toLocaleLowerCase() ===
+      formValue
+        .trim()
+        .replace(/\s\s+/g, ' ') // fix double spaces
+        .toLocaleLowerCase() ===
       arrayOfPairs[arrIndex][1].trim().toLocaleLowerCase()
     ) {
       setFormState('correct');

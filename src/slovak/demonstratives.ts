@@ -13,7 +13,7 @@ var toArray: declensionArray = [
     ['tým', 'tým', 'tým', 'tou'],
   ],
   [
-    ['ti', 'tie', 'tie', 'tie'],
+    ['tí', 'tie', 'tie', 'tie'],
     'tých',
     'tým',
     ['tých', 'tie', 'tie', 'tie'],

@@ -13,14 +13,14 @@ import { SettingsModal } from '../components/modal';
 
 export default function Home() {
   const [declensions, setDeclensions] = useLocalStorageState(
-    'czech-declensions' + version,
+    'czech-export-declensions' + version,
     {
       defaultValue: defaultDeclensionsCzech,
     }
   );
 
   const [settings, setSettings] = useLocalStorageState(
-    'czech-settings' + version,
+    'czech-export-settings' + version,
     {
       defaultValue: defaultSettingsCzech,
     }
