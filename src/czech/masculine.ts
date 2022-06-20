@@ -135,7 +135,7 @@ export let masculineNouns = [
         'předsedy',
         'předsedové!',
         'předsedech',
-        'predsedy', // 'předsedy/ama'
+        'předsedy', // 'předsedy/ama'
       ],
     ],
     'chairman',
@@ -202,5 +202,16 @@ export let masculineNouns = [
     ],
     'person',
     'people'
+  ),
+
+  createNounDeclension(
+    'ma',
+    'irregular',
+    [
+      ['kůň', 'koně', 'koni', 'kůň', 'koni!', 'koni', 'koněm'],
+      ['koně', 'koní', 'koním', 'koně', 'koně!', 'koních', 'koni'],
+    ],
+    'horse',
+    'horses'
   ),
 ];
