@@ -28,9 +28,9 @@ export function Input({
         className={`${inputClass} ${classStates[formState] || ''}`}
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        autoFocus
+        ref={(input) => input && input.focus()} // auto focus
         disabled={disabled}
-        readOnly={formState === 'correct'}
+        readOnly={formState === 'correct' || formState === 'skipped'}
       />
       {formState === 'error' && (
         <p className="mt-2 text-sm text-red-600 text-center">{errorMessage}</p>

@@ -7,6 +7,7 @@ export function Quiz({ arrayOfPairs }) {
   const [arrIndex, setArrIndex] = useState(0);
   const [formState, setFormState] = useState('in-process');
   const [errorMsg, setErrorMsg] = useState('');
+  const [score, setScore] = useState({ correct: 0, error: 0, skipped: 0 });
 
   let incrementArrIndex = () => {
     setArrIndex((i) => {
@@ -31,10 +32,16 @@ export function Quiz({ arrayOfPairs }) {
       setTimeout(() => {
         incrementArrIndex();
         setFormValue('');
+        setScore((score) => {
+          return { ...score, correct: score.correct + 1 };
+        });
         setFormState('in-process');
       }, 500);
     } else {
       setFormState('error');
+      setScore((score) => {
+        return { ...score, error: score.error + 1 };
+      });
       setErrorMsg(arrayOfPairs[arrIndex][1]);
     }
   };
@@ -44,13 +51,16 @@ export function Quiz({ arrayOfPairs }) {
     setTimeout(() => {
       incrementArrIndex();
       setFormValue('');
+      setScore((score) => {
+        return { ...score, skipped: score.skipped + 1 };
+      });
       setFormState('in-process');
     }, 250);
   };
 
   return (
     <div className="flex flex-col flex-1 items-center w-full mt-16">
-      <h3 className="text-3xl mb-20">
+      <h3 className="text-3xl mb-20 text-center">
         {arrayOfPairs.length > 0
           ? arrayOfPairs[arrIndex][0]
           : 'No sentences available'}
@@ -66,7 +76,16 @@ export function Quiz({ arrayOfPairs }) {
       />
 
       <br />
+      <br />
+
       <SkipButton onClick={skipToNext} />
+      <br />
+      <br />
+
+      <p className="mt-2 text-lg text-center">
+        Correct: {score.correct}, Incorrect: {score.error}, Skipped:{' '}
+        {score.skipped}
+      </p>
     </div>
   );
 }
