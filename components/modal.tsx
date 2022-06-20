@@ -18,7 +18,7 @@ import {
   prepositionOptions,
 } from '../src/default-config';
 
-import { settingIsOn } from '../src/sentence-tools.ts';
+import { settingIsOn } from '../src/sentence-tools';
 
 import { SelectComponent } from './select';
 
