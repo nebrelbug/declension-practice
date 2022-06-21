@@ -11,8 +11,13 @@ export function Quiz({ arrayOfPairs }) {
 
   const inputReference = useRef(null);
 
-  useEffect(() => {
+  const focusInput = () => {
     inputReference.current.focus();
+    inputReference.current.setSelectionRange(0, 0);
+  };
+
+  useEffect(() => {
+    focusInput();
   }, []);
 
   let incrementArrIndex = () => {
@@ -42,7 +47,7 @@ export function Quiz({ arrayOfPairs }) {
           return { ...score, correct: score.correct + 1 };
         });
         setFormState('in-process');
-        inputReference.current.focus();
+        focusInput();
       }, 500);
     } else {
       setFormState('error');
@@ -62,7 +67,7 @@ export function Quiz({ arrayOfPairs }) {
         return { ...score, skipped: score.skipped + 1 };
       });
       setFormState('in-process');
-      inputReference.current.focus();
+      focusInput();
     }, 250);
   };
 
