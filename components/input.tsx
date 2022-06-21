@@ -38,7 +38,7 @@ export function Input({
         autoCorrect="off"
         autoCapitalize="off"
         spellCheck="false"
-        // autoFocus
+        autoFocus
         onChange={(e) => setValue(e.target.value)}
         ref={inputRef} // auto focus
         disabled={disabled}
