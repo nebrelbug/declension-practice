@@ -22,11 +22,21 @@ export function Input({
   disabled,
 }) {
   return (
-    <form onSubmit={onSubmit}>
+    <form
+      onSubmit={onSubmit}
+      autoComplete="off"
+      autoCorrect="off"
+      autoCapitalize="off"
+      spellCheck="false"
+    >
       <input
         type="text"
         className={`${inputClass} ${classStates[formState] || ''}`}
         value={value}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck="false"
         onChange={(e) => setValue(e.target.value)}
         ref={(input) => input && input.focus()} // auto focus
         disabled={disabled}
