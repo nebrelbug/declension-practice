@@ -6,25 +6,25 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-const useClick = (callback) => {
-  const ref = useRef(null);
+// const useClick = (callback) => {
+//   const ref = useRef(null);
 
-  useEffect(() => {
-    const handleClick = (event) => {
-      if (ref.current && !ref.current.contains(event.target)) {
-        callback();
-      }
-    };
+//   useEffect(() => {
+//     const handleClick = (event) => {
+//       if (ref.current && !ref.current.contains(event.target)) {
+//         callback();
+//       }
+//     };
 
-    ref.addEventListener('click', handleClick, true);
+//     ref.addEventListener('click', handleClick, true);
 
-    return () => {
-      ref.removeEventListener('click', handleClick, true);
-    };
-  }, [ref]);
+//     return () => {
+//       ref.removeEventListener('click', handleClick, true);
+//     };
+//   }, [ref]);
 
-  return ref;
-};
+//   return ref;
+// };
 
 export function Quiz({ arrayOfPairs }) {
   const [formValue, setFormValue] = useState('');
