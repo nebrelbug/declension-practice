@@ -59,14 +59,14 @@ export function Quiz({ arrayOfPairs }) {
   };
 
   return (
-    <div className="flex flex-col flex-1 items-center w-full mt-16">
+    <div className="flex flex-col flex-1 items-center w-full mt-4 md:mt-16">
       <h3 className="text-3xl text-center max-w-[90vw] absolute">
         {arrayOfPairs.length > 0
           ? arrayOfPairs[arrIndex][0]
           : 'No sentences available'}
       </h3>
 
-      <div className="mt-40">
+      <div className="mt-28 md:mt-40">
         <Input
           formState={formState}
           errorMessage={errorMsg}
@@ -77,14 +77,9 @@ export function Quiz({ arrayOfPairs }) {
         />
       </div>
 
-      <br />
-      <br />
-
       <SkipButton onClick={skipToNext} />
-      <br />
-      <br />
 
-      <p className="mt-2 text-lg text-center">
+      <p className="mt-2 md:mt-10 text-lg text-center">
         Correct: {score.correct}, Incorrect: {score.error}, Skipped:{' '}
         {score.skipped}
       </p>

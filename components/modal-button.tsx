@@ -27,7 +27,7 @@ export function SkipButton({ onClick }) {
   return (
     <button
       type="button"
-      className="text-gray font-medium inline-flex items-center rounded hover:bg-gray-100"
+      className="text-gray font-medium inline-flex items-center rounded hover:bg-gray-100 mt-4 md:mt-10"
       onClick={onClick}
     >
       <svg
