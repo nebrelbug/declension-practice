@@ -24,7 +24,7 @@ export function PageLayout({ children, title, suffix, center }) {
       <main
         className={`flex flex-col flex-1 ${
           center ? 'items-center' : ''
-        } py-20 w-full`}
+        } w-full`}
       >
         <BrowserComponent>{children}</BrowserComponent>
       </main>

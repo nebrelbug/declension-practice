@@ -41,6 +41,9 @@ export default function Home() {
         updateDeclensions={setDeclensions}
         updateSettings={setSettings}
       />
+      <h2 className="text-lg font-bold mt-4 mb-4">
+        {res.length} phrases generated
+      </h2>
       {arrayLoop(res)}
     </PageLayout>
   );
