@@ -2,6 +2,10 @@ import { useState, useRef, useEffect } from 'react';
 import { Input } from './input';
 import { SkipButton } from './modal-button';
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 export function Quiz({ arrayOfPairs }) {
   const [formValue, setFormValue] = useState('');
   const [arrIndex, setArrIndex] = useState(0);
@@ -58,18 +62,18 @@ export function Quiz({ arrayOfPairs }) {
     }
   };
 
-  const skipToNext = () => {
+  async function skipToNext() {
     setFormState('skipped');
-    setTimeout(() => {
-      incrementArrIndex();
-      setFormValue('');
-      setScore((score) => {
-        return { ...score, skipped: score.skipped + 1 };
-      });
-      setFormState('in-process');
-      focusInput();
-    }, 250);
-  };
+    await sleep(250);
+
+    incrementArrIndex();
+    setFormValue('');
+    setScore((score) => {
+      return { ...score, skipped: score.skipped + 1 };
+    });
+    setFormState('in-process');
+    focusInput();
+  }
 
   return (
     <div className="flex flex-col flex-1 items-center w-full mt-16">
