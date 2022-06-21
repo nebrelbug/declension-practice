@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Input } from './input';
 import { SkipButton } from './modal-button';
 
@@ -8,6 +8,12 @@ export function Quiz({ arrayOfPairs }) {
   const [formState, setFormState] = useState('in-process');
   const [errorMsg, setErrorMsg] = useState('');
   const [score, setScore] = useState({ correct: 0, error: 0, skipped: 0 });
+
+  const inputReference = useRef(null);
+
+  useEffect(() => {
+    inputReference.current.focus();
+  }, []);
 
   let incrementArrIndex = () => {
     setArrIndex((i) => {
@@ -36,6 +42,7 @@ export function Quiz({ arrayOfPairs }) {
           return { ...score, correct: score.correct + 1 };
         });
         setFormState('in-process');
+        inputReference.current.focus();
       }, 500);
     } else {
       setFormState('error');
@@ -55,6 +62,7 @@ export function Quiz({ arrayOfPairs }) {
         return { ...score, skipped: score.skipped + 1 };
       });
       setFormState('in-process');
+      inputReference.current.focus();
     }, 250);
   };
 
@@ -74,6 +82,7 @@ export function Quiz({ arrayOfPairs }) {
           value={formValue}
           setValue={setFormValue}
           disabled={arrayOfPairs.length === 0}
+          inputRef={inputReference}
         />
       </div>
 

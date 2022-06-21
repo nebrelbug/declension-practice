@@ -20,6 +20,7 @@ export function Input({
   value,
   setValue,
   disabled,
+  inputRef,
 }) {
   return (
     <form
@@ -37,9 +38,9 @@ export function Input({
         autoCorrect="off"
         autoCapitalize="off"
         spellCheck="false"
-        autoFocus
+        // autoFocus
         onChange={(e) => setValue(e.target.value)}
-        ref={(input) => input && input.focus()} // auto focus
+        ref={inputRef} // auto focus
         disabled={disabled}
         readOnly={formState === 'correct' || formState === 'skipped'}
       />
