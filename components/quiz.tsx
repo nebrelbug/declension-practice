@@ -62,9 +62,9 @@ export function Quiz({ arrayOfPairs }) {
     }
   };
 
-  async function skipToNext() {
+  function skipToNext() {
     setFormState('skipped');
-    await sleep(250);
+    // sleep(250);
 
     incrementArrIndex();
     setFormValue('');
