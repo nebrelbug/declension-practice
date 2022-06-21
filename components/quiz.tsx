@@ -80,7 +80,7 @@ export function Quiz({ arrayOfPairs }) {
       setFormState('in-process');
 
       focusInput();
-      inputReference.dispatchEvent(new Event('click'));
+      // inputReference.dispatchEvent(new Event('click'));
     } else {
       setFormState('error');
       setScore((score) => {
@@ -103,7 +103,7 @@ export function Quiz({ arrayOfPairs }) {
     setFormState('in-process');
 
     focusInput();
-    inputReference.dispatchEvent(new Event('click'));
+    // inputReference.dispatchEvent(new Event('click'));
   }
 
   return (
