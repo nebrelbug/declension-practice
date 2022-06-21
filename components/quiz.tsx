@@ -34,7 +34,7 @@ export function Quiz({ arrayOfPairs }) {
     });
   };
 
-  const handleSubmit = (evt) => {
+  async function handleSubmit(evt) {
     evt.preventDefault();
     if (
       formValue
@@ -44,15 +44,17 @@ export function Quiz({ arrayOfPairs }) {
       arrayOfPairs[arrIndex][1].trim().toLocaleLowerCase()
     ) {
       setFormState('correct');
-      setTimeout(() => {
-        incrementArrIndex();
-        setFormValue('');
-        setScore((score) => {
-          return { ...score, correct: score.correct + 1 };
-        });
-        setFormState('in-process');
-        focusInput();
-      }, 500);
+      setScore((score) => {
+        return { ...score, correct: score.correct + 1 };
+      });
+
+      await sleep(250);
+
+      incrementArrIndex();
+      setFormValue('');
+      setFormState('in-process');
+
+      focusInput();
     } else {
       setFormState('error');
       setScore((score) => {
@@ -60,18 +62,20 @@ export function Quiz({ arrayOfPairs }) {
       });
       setErrorMsg(arrayOfPairs[arrIndex][1]);
     }
-  };
+  }
 
-  function skipToNext() {
+  async function skipToNext() {
     setFormState('skipped');
-    // sleep(250);
-
-    incrementArrIndex();
-    setFormValue('');
     setScore((score) => {
       return { ...score, skipped: score.skipped + 1 };
     });
+
+    await sleep(250);
+
+    incrementArrIndex();
+    setFormValue('');
     setFormState('in-process');
+
     focusInput();
   }
 
