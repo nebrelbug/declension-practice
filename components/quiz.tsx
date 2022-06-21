@@ -59,7 +59,7 @@ export function Quiz({ arrayOfPairs }) {
   };
 
   return (
-    <div className="flex flex-col flex-1 items-center w-full -mt-[12vh] md:mt-16">
+    <div className="flex flex-col flex-1 items-center w-full -mt-12 md:mt-16">
       <h3 className="text-3xl text-center max-w-[90vw] absolute">
         {arrayOfPairs.length > 0
           ? arrayOfPairs[arrIndex][0]
