@@ -53,7 +53,7 @@ export function filterNouns(
 ) {
   let essential = settingIsOn(settings, 'nounPatterns', 'essential');
   let advanced = settingIsOn(settings, 'nounPatterns', 'advanced');
-  let uncommon = settingIsOn(settings, 'nounPatterns', 'uncommon');
+  let irregular = settingIsOn(settings, 'nounPatterns', 'irregular');
 
   let masculine = settingIsOn(settings, 'gender', 'masculine');
   let neuter = settingIsOn(settings, 'gender', 'neuter');
@@ -73,7 +73,7 @@ export function filterNouns(
   res = res.filter((e) => {
     if (!essential && e.type === 'essential') return false;
     if (!advanced && e.type === 'advanced') return false;
-    if (!uncommon && e.type === 'uncommon') return false;
+    if (!irregular && e.type === 'irregular') return false;
     return true;
   });
 
