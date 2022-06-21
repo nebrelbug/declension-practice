@@ -204,10 +204,13 @@ export function transformArray(
           langSentence.push((item as preposition).preposition);
         } else if ((item as declension).caseArray) {
           let newEnglish = english(item as declension, plural, objectiveCase);
+
+          if (useIndefinite && !plural) {
+            newEnglish = a(newEnglish);
+            useIndefinite = false;
+          }
+
           if ((item as nounDeclension).gender) {
-            if (useIndefinite && !plural) {
-              newEnglish = a(newEnglish);
-            }
             if (config.caseNumber === 5) {
               newEnglish += '!';
             }
