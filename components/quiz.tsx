@@ -33,10 +33,12 @@ export function Quiz({ arrayOfPairs }) {
   const [errorMsg, setErrorMsg] = useState('');
   const [score, setScore] = useState({ correct: 0, error: 0, skipped: 0 });
 
-  const inputReference = useClick((e) => {
+  const inputReference = useRef(null);
+
+  /* useClick((e) => {
     inputReference.current.focus();
     inputReference.current.setSelectionRange(0, 0);
-  });
+  }); */
 
   const focusInput = () => {
     inputReference.current.focus();
