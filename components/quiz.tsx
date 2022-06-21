@@ -6,6 +6,26 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+const useClick = (callback) => {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const handleClick = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        callback();
+      }
+    };
+
+    ref.addEventListener('click', handleClick, true);
+
+    return () => {
+      ref.removeEventListener('click', handleClick, true);
+    };
+  }, [ref]);
+
+  return ref;
+};
+
 export function Quiz({ arrayOfPairs }) {
   const [formValue, setFormValue] = useState('');
   const [arrIndex, setArrIndex] = useState(0);
@@ -13,7 +33,10 @@ export function Quiz({ arrayOfPairs }) {
   const [errorMsg, setErrorMsg] = useState('');
   const [score, setScore] = useState({ correct: 0, error: 0, skipped: 0 });
 
-  const inputReference = useRef(null);
+  const inputReference = useClick((e) => {
+    inputReference.current.focus();
+    inputReference.current.setSelectionRange(0, 0);
+  });
 
   const focusInput = () => {
     inputReference.current.focus();
