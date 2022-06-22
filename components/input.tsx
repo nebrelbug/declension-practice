@@ -42,7 +42,7 @@ export function Input({
         onChange={(e) => setValue(e.target.value)}
         ref={inputRef} // auto focus
         disabled={disabled}
-        readOnly={formState === 'correct' || formState === 'skipped'}
+        // readOnly={formState === 'correct' || formState === 'skipped'}
       />
       {formState === 'error' && (
         <p className="mt-2 text-sm text-red-600 text-center">{errorMessage}</p>
