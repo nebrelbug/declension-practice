@@ -42,7 +42,7 @@ export function Quiz({ arrayOfPairs }) {
 
   const focusInput = () => {
     inputReference.current.focus();
-    inputReference.current.setSelectionRange(0, 0);
+    // inputReference.current.setSelectionRange(0, 0);
   };
 
   useEffect(() => {
