@@ -9,7 +9,7 @@ import type {
 export var softEndings: declensionArray = [
   [
     ['í', 'í', 'ie', 'ia'],
-    ['ieho', 'ieho', 'ieho', 'ia'],
+    ['ieho', 'ieho', 'ieho', 'ej'],
     ['iemu', 'iemu', 'iemu', 'ej'],
     ['ieho', 'í', 'ie', 'iu'],
     false,
