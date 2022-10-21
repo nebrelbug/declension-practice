@@ -27,6 +27,7 @@ export let genderList = {
   mi: 1,
   n: 2,
   f: 3,
+  fa: 3,
 };
 
 export function declensionToNumber(declensionName: declensionName): number {
@@ -142,6 +143,9 @@ export function getItem(
     if (typeof dec === 'string') {
       return dec;
     } else {
+      if (config.caseNumber - 1 === 4 && gender === 'fa') {
+        return dec[genderList[0]]; // animate form for Russian
+      }
       return dec[genderList[gender]];
     }
   }

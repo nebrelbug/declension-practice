@@ -15,7 +15,7 @@ export type declensionArray = [
   singleDeclensionArray | []
 ];
 
-export type gender = 'ma' | 'mi' | 'n' | 'f';
+export type gender = 'ma' | 'mi' | 'n' | 'f' | 'fa';
 export type nounType = 'essential' | 'advanced' | 'irregular';
 
 export type declensionName = '1' | '2' | '3' | '4' | '4-M' | '5' | '6' | '7';

@@ -85,3 +85,7 @@ export let defaultDeclensionsSlovak = {
 };
 
 export let defaultSettingsSlovak = { ...defaultSettingsCzech };
+
+export let defaultSettingsRussian = { ...defaultSettingsSlovak };
+export let defaultDeclensionsRussian = { ...defaultDeclensionsSlovak };
+export let phraseOptionsRussian = { ...phraseOptionsSlovak };
