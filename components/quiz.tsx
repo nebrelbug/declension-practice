@@ -64,6 +64,7 @@ export function Quiz({ arrayOfPairs }) {
     if (
       formValue
         .trim()
+        .replace(/\u0301/g, '') // remove Russian stress marks
         .replace(/\s\s+/g, ' ') // fix double spaces
         .toLocaleLowerCase() ===
       arrayOfPairs[arrIndex][1].trim().toLocaleLowerCase()
