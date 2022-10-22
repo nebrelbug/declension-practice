@@ -21,7 +21,7 @@ export function createDeclension(
 
 export function createNounDeclension(
   gender: gender,
-  type: 'essential' | 'advanced' | 'irregular',
+  type: 'essential' | 'advanced' | 'irregular' | 'type-1' | 'type-2' | 'type-3',
   caseArray: declensionArray,
   definition: string,
   plural?: string,

@@ -2,216 +2,201 @@ import { createNounDeclension } from '../utilities';
 
 export let masculineNouns = [
   createNounDeclension(
+    // Animate masculine nouns ending in a consonant
+
     'ma',
-    'essential',
+    'type-1',
     [
-      ['pán', 'pána', 'pánu/ovi', 'pána', 'páne!', 'pánu/ovi', 'pánem'],
       [
-        'páni/ové',
-        'pánů',
-        'pánům',
-        'pány',
-        'páni/ové!',
-        'pánech',
-        'pány', // 'pány/ama'
+        'студент',
+        'студента',
+        'студенту',
+        'студента',
+        false,
+        'студенте',
+        'студентом',
+      ],
+      [
+        'студенты',
+        'студентов',
+        'студентам',
+        'студентов',
+        false,
+        'студентах',
+        'студентами',
       ],
     ],
-    'lord',
-    'lords'
+    'student',
+    'students'
   ),
 
   createNounDeclension(
+    // Inanimate masculine nouns ending in a consonant
+
     'mi',
-    'essential',
+    'type-1',
     [
-      ['hrad', 'hradu', 'hradu', 'hrad', 'hrade!', 'hradě/u', 'hradem'],
+      ['диплом', 'диплома', 'диплому', 'диплом', false, 'дипломе', 'дипломом'],
       [
-        'hrady',
-        'hradů',
-        'hradům',
-        'hrady',
-        'hrady!',
-        'hradech',
-        'hrady', // 'hrady/ama'
+        'дипломы',
+        'дипломов',
+        'дипломам',
+        'дипломы',
+        false,
+        'дипломах',
+        'дипломами',
       ],
     ],
-    'castle',
-    'castles'
+    'diploma',
+    'diplomas'
   ),
 
   createNounDeclension(
+    // Animate masculine nouns ending in -ь
+
+    'ma',
+    'type-1',
+    [
+      ['житель', 'жителя', 'жителю', 'жителя', false, 'жителе', 'жителем'],
+      ['жители', 'жителей', 'жителям', 'жителей', false, 'жителях', 'жителями'],
+    ],
+    'citizen',
+    'citizens'
+  ),
+
+  createNounDeclension(
+    // Inanimate masculine nouns ending in -ь
+
     'mi',
-    'advanced',
+    'type-1',
     [
-      ['svět', 'světa', 'světu', 'svět', 'světe!', 'světě', 'světem'],
-      ['světy', 'světů', 'světům', 'světy', 'světy!', 'světech', 'světy'],
+      ['рубль', 'рубль', 'рублю', 'рубль', false, 'рубле', 'рублём'],
+      ['рубли', 'рублей', 'рублям', 'рубли', false, 'рублях', 'рублями'],
     ],
-    'world',
-    'worlds'
+    'ruble',
+    'rubles'
   ),
 
   createNounDeclension(
+    // Animate masculine noun ending in -й
+
     'ma',
-    'essential',
+    'type-1',
     [
-      ['muž', 'muže', 'muži/ovi', 'muže', 'muži!', 'muži/ovi', 'mužem'],
-      [
-        'muži',
-        'mužů',
-        'mužům',
-        'muže',
-        'muži!',
-        'mužích',
-        'muži', // 'muži/ema'
-      ],
+      ['герой', 'героя', 'герою', 'героя', false, 'герое', 'героем'],
+      ['герои', 'героев', 'героям', 'героев', false, 'героях', 'героями'],
     ],
-    'man',
-    'men'
+    'hero',
+    'heroes'
   ),
 
   createNounDeclension(
-    'ma',
-    'advanced',
-    [
-      [
-        'soudce',
-        'soudce',
-        'soudci/ovi',
-        'soudce',
-        'soudce!',
-        'soudci/ovi',
-        'soudcem',
-      ],
-      [
-        'soudci/ové',
-        'soudců',
-        'soudcům',
-        'soudce',
-        'soudci/ovi!',
-        'soudcích',
-        'soudci', // 'soudci/ema'
-      ],
-    ],
-    'judge',
-    'judges'
-  ),
+    // Inanimate masculine noun ending in -й
 
-  createNounDeclension(
     'mi',
-    'essential',
+    'type-1',
     [
-      ['stroj', 'stroje', 'stroji', 'stroj', 'stroji!', 'stroji', 'strojem'],
-      [
-        'stroje',
-        'strojů',
-        'strojům',
-        'stroje',
-        'stroje!',
-        'strojích',
-        'stroji', // 'stroji/ema'
-      ],
+      ['музей', 'музея', 'музею', 'музей', false, 'музее', 'музеем'],
+      ['музеи', 'музеев', 'музеям', 'музеи', false, 'музеях', 'музеями'],
     ],
-    'machine',
-    'machines'
+    'museum',
+    'museums'
   ),
 
   createNounDeclension(
+    // Animate masculine noun ending in -ий
+
     'ma',
-    'advanced',
+    'type-1',
     [
       [
-        'předseda',
-        'předsedy',
-        'předsedovi',
-        'předsedu',
-        'předsedo!',
-        'předsedovi',
-        'předsedou',
+        'Василий',
+        'Василия',
+        'Василию',
+        'Василия',
+        false,
+        'Василии',
+        'Василием',
       ],
       [
-        'předsedové',
-        'předsedů',
-        'předsedům',
-        'předsedy',
-        'předsedové!',
-        'předsedech',
-        'předsedy', // 'předsedy/ama'
+        'Василии',
+        'Василиев',
+        'Василиям',
+        'Василиев',
+        false,
+        'Василиях',
+        'Василиями',
       ],
     ],
-    'chairman',
-    'chairmen'
+    'Vasily',
+    'Vasilys'
   ),
 
   createNounDeclension(
-    'ma',
-    'advanced',
-    [
-      ['kluk', 'kluka', 'kluku', 'kluka', 'kluku!', 'kluku', 'klukem'],
-      ['kluci', 'kluků', 'klukům', 'kluky', 'kluci!', 'klucích', 'kluky'],
-    ],
-    'boy',
-    'boys'
-  ),
+    // Inanimate masculine noun ending in -ий
 
-  createNounDeclension(
     'mi',
-    'advanced',
-    [
-      ['cyklus', 'cyklu', 'cyklu', 'cyklus', 'cykle!', 'cyklu', 'cyklem'],
-      ['cykly', 'cyklů', 'cyklům', 'cykly', 'cykly!', 'cyklech', 'cykly'],
-    ],
-    'cycle',
-    'cycles'
-  ),
-
-  createNounDeclension(
-    'ma',
-    'advanced',
-    [
-      ['génius', 'génia', 'géniu', 'génia', 'génie!', 'géniu', 'géniem'],
-      ['géniové', 'géniů', 'géniům', 'génie', 'géniové!', 'géniích', 'génii'],
-    ],
-    'genius',
-    'geniuses'
-  ),
-
-  createNounDeclension(
-    'ma',
-    'irregular',
-    [
-      ['bůh', 'boha', 'bohu', 'boha', 'bože!', 'bohu', 'bohem'],
-      ['bohové', 'bohů', 'bohům', 'bohy', 'bohové!', 'bozích', 'bohy'],
-    ],
-    'god',
-    'gods'
-  ),
-  createNounDeclension(
-    'ma',
-    'irregular',
+    'type-1',
     [
       [
-        'člověk',
-        'člověka',
-        'člověku',
-        'člověka',
-        'člověče!',
-        'člověku',
-        'člověkem',
+        'сценарий',
+        'сценария',
+        'сценарию',
+        'сценарий',
+        false,
+        'сценарии',
+        'сценарием',
       ],
-      ['lidé/i', 'lidí', 'lidem', 'lidi', 'lidé/i', 'lidech', 'lidmi'],
+      [
+        'сценарии',
+        'сценариев',
+        'сценариям',
+        'сценарии',
+        false,
+        'сценариях',
+        'сценариями',
+      ],
     ],
-    'person',
-    'people'
+    'script',
+    'scripts'
   ),
 
   createNounDeclension(
+    // Masculine nouns ending in -а
+
     'ma',
-    'irregular',
+    'type-2',
     [
-      ['kůň', 'koně', 'koni', 'kůň', 'koni!', 'koni', 'koněm'],
-      ['koně', 'koní', 'koním', 'koně', 'koně!', 'koních', 'koni'],
+      ['папа', 'папы', 'папе', 'папу', false, 'папе', 'папой'],
+      ['папы', 'пап', 'папам', 'пап', false, 'папах', 'папами'],
     ],
-    'horse',
-    'horses'
+    'papa',
+    'papas'
+  ),
+
+  createNounDeclension(
+    // Мasculine nouns ending in -я
+
+    'ma',
+    'type-2',
+    [
+      ['дядя', 'дяди', 'дяде', 'дядю', false, 'дяде', 'дядей'],
+      ['папи', 'дядь', 'дядям', 'дядь', false, 'дядях', 'дядями'],
+    ],
+    'uncle',
+    'uncles'
+  ),
+
+  createNounDeclension(
+    // Masculine noun путь
+
+    'mi',
+    'type-3',
+    [
+      ['путь', 'пути', 'пути', 'путь', false, 'пути', 'путём'],
+      ['пути', 'путей', 'путям', 'пути', false, 'путях', 'путями'],
+    ],
+    'path',
+    'paths'
   ),
 ];

@@ -2,166 +2,67 @@ import { createNounDeclension } from '../utilities';
 
 export let neuterNouns = [
   createNounDeclension(
+    // Neuter nouns ending in -o
+
     'n',
-    'essential',
+    'type-1',
     [
-      ['město', 'města', 'městu', 'město', 'město!', 'městě/u', 'městem'],
-      [
-        'města',
-        'měst',
-        'městům',
-        'města',
-        'města!',
-        'městech',
-        'městy', // 'městy/ama'
-      ],
+      ['окно', 'окна', 'окну', 'окно', false, 'окне', 'окном'],
+      ['окна', 'окон', 'окнам', 'окна', false, 'окнах', 'окнами'],
     ],
-    'city',
-    'cities'
+    'window',
+    'windows'
   ),
+
   createNounDeclension(
+    // Neuter nouns ending in -е
+
     'n',
-    'advanced',
+    'type-1',
     [
-      ['vízum', 'víza', 'vízu', 'vízum', 'vízum!', 'vízu', 'vízem'],
-      [
-        'víza',
-        'víz',
-        'vízům',
-        'víza',
-        'víza!',
-        'vízech',
-        'vízy', // 'vízy/ama'
-      ],
-    ],
-    'visa',
-    'visas'
-  ),
-  createNounDeclension(
-    'n',
-    'essential',
-    [
-      ['moře', 'moře', 'moři', 'moře', 'moře!', 'moři', 'mořem'],
-      [
-        'moře',
-        'moří',
-        'mořím',
-        'moře',
-        'moře!',
-        'mořích',
-        'moři', // 'moři/ema'
-      ],
+      ['море', 'моря', 'морю', 'море', false, 'море', 'морем'],
+      ['моря', 'морей', 'морям', 'моря', false, 'морях', 'морями'],
     ],
     'sea',
     'seas'
   ),
+
   createNounDeclension(
+    // Neuter nouns ending in -ё
+
     'n',
-    'essential',
+    'type-1',
     [
-      [
-        'stavení',
-        'stavení',
-        'stavení',
-        'stavení',
-        'stavení!',
-        'stavení',
-        'stavením',
-      ],
-      [
-        'stavení',
-        'stavení',
-        'stavením',
-        'stavení',
-        'stavení!',
-        'staveních',
-        'staveními', // 'staveními/íma'
-      ],
+      ['копьё', 'копья', 'копью', 'копьё', false, 'копье', 'копьём'],
+      ['копья', 'копий', 'копьям', 'копья', false, 'копьями', 'копьях'],
+    ],
+    'spear',
+    'spears'
+  ),
+
+  createNounDeclension(
+    // Neuter nouns ending in -ие
+
+    'n',
+    'type-1',
+    [
+      ['здание', 'здания', 'зданию', 'здание', false, 'здании', 'зданием'],
+      ['здания', 'зданий', 'зданиям', 'здания', false, 'зданиях', 'зданиями'],
     ],
     'building',
     'buildings'
   ),
+
   createNounDeclension(
+    // Neuter nouns ending in -мя
+
     'n',
-    'advanced',
+    'type-3',
     [
-      ['kuře', 'kuřete', 'kuřeti', 'kuře', 'kuře!', 'kuřeti', 'kuřetem'],
-      [
-        'kuřata',
-        'kuřat',
-        'kuřatům',
-        'kuřata',
-        'kuřata!',
-        'kuřatech',
-        'kuřaty', // 'kuřaty/ama'
-      ],
+      ['имя', 'имени', 'имени', 'имя', false, 'имени', 'именем'],
+      ['имена', 'имён', 'именам', 'имена', false, 'именах', 'именами'],
     ],
-    'chick',
-    'chicks'
-  ),
-
-  createNounDeclension(
-    'n',
-    'advanced',
-    [
-      ['téma', 'tématu', 'tématu', 'téma', 'téma!', 'tématu', 'tématem'],
-      ['témata', 'témat', 'tématům', 'témata', 'témata!', 'tématech', 'tématy'],
-    ],
-    'theme',
-    'themes'
-  ),
-
-  createNounDeclension(
-    'n',
-    'irregular',
-    [['dítě', 'dítěte', 'dítěti', 'dítě', 'dítě!', 'dítěti', 'dítětem'], []],
-    'child',
-    'children'
-  ),
-
-  createNounDeclension(
-    'n',
-    'advanced',
-    [
-      ['muzeum', 'muzea', 'muzeu', 'muzeum', 'muzeum!', 'muzeu', 'muzeem'],
-      ['muzea', 'muzeí', 'muzeím', 'muzea', 'muzea!', 'muzeích', 'muzei'],
-    ],
-    'museum',
-    'museums'
-  ),
-
-  createNounDeclension(
-    'n',
-    'advanced',
-    [
-      ['drama', 'dramatu', 'dramatu', 'drama', 'drama!', 'dramatu', 'dramatem'],
-      [
-        'dramata',
-        'dramat',
-        'dramatům',
-        'dramata',
-        'dramata!',
-        'dramatech',
-        'dramaty',
-      ],
-    ],
-    'drama',
-    'dramas'
-  ),
-
-  createNounDeclension(
-    'n',
-    'irregular',
-    [['ucho', 'ucha', 'uchu', 'ucho', 'ucho!', 'uchu', 'uchem'], []],
-    'ear',
-    'ears'
-  ),
-
-  createNounDeclension(
-    'n',
-    'irregular',
-    [['oko', 'oka', 'oku', 'oko', 'oko!', 'oku', 'okem'], []],
-    'eye',
-    'eyes'
+    'name',
+    'names'
   ),
 ];

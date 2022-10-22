@@ -34,7 +34,7 @@ export default function Home() {
       <SettingsModal
         declensions={declensions}
         settings={settings}
-        slovak={false}
+        lang="russian"
         updateDeclensions={setDeclensions}
         updateSettings={setSettings}
       />

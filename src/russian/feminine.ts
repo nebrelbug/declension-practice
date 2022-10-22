@@ -7,7 +7,7 @@ export let feminineNouns = [
     // Animate feminine nouns ending in -a
 
     'fa',
-    'essential',
+    'type-2',
     [
       ['мамa', 'мамы', 'маме', 'маму', false, 'маме', 'мамой'],
       ['мамы', 'мам', 'мамам', 'мам', false, 'мамах', 'мамами'],
@@ -20,7 +20,7 @@ export let feminineNouns = [
     // Inanimate feminine nouns ending in -а
 
     'f',
-    'essential',
+    'type-2',
     [
       ['лампa', 'лампы', 'лампе', 'лампу', false, 'лампе', 'лампой'],
       ['лампы', 'ламп', 'лампам', 'лампы', false, 'лампах', 'лампами'],
@@ -33,7 +33,7 @@ export let feminineNouns = [
     // Animate feminine nouns ending in -я
 
     'fa',
-    'essential',
+    'type-2',
     [
       [
         'героиня',
@@ -62,7 +62,7 @@ export let feminineNouns = [
     // Inanimate feminine noun ending in -я
 
     'f',
-    'essential',
+    'type-2',
     [
       ['пилюля', 'пилюли', 'пилюле', 'пилюлю', false, 'пилюле', 'пилюлей'],
       ['пилюли', 'пилюль', 'пилюлям', 'пилюли', false, 'пилюлях', 'пилюлями'],
@@ -75,7 +75,7 @@ export let feminineNouns = [
     // Animate feminine nouns ending in -ия
 
     'fa',
-    'essential',
+    'type-2',
     [
       ['Мария', 'Марии', 'Марии', 'Марию', false, 'Марии', 'Марией'],
       ['Марии', 'Марий', 'Мариям', 'Марий', false, 'Мариях', 'Мариями'],
@@ -88,7 +88,7 @@ export let feminineNouns = [
     // Inanimate feminine nouns ending in -ия
 
     'f',
-    'essential',
+    'type-2',
     [
       [
         'станция',
@@ -117,7 +117,7 @@ export let feminineNouns = [
     // Feminine nouns ending in -ь
 
     'f',
-    'essential',
+    'type-3',
     [
       [
         'площадь',
@@ -146,7 +146,7 @@ export let feminineNouns = [
     // Feminine nouns ending in -ь
 
     'f',
-    'essential',
+    'type-3',
     [
       ['ночь', 'ночи', 'ночи', 'ночь', false, 'ночи', 'ночью'],
       ['ночи', 'ночей', 'ночам', 'ночи', false, 'ночах', 'ночами'],
@@ -159,7 +159,7 @@ export let feminineNouns = [
     // Feminine noun мать
 
     'fa',
-    'essential',
+    'type-3',
     [
       ['мать', 'матери', 'матери', 'мать', false, 'матери', 'матерью'],
       ['матери', 'матерей', 'матерям', 'матерей', false, 'матерях', 'матерями'],
@@ -172,7 +172,7 @@ export let feminineNouns = [
     // Feminine noun дочь
 
     'fa',
-    'essential',
+    'type-3',
     [
       ['дочь', 'дочери', 'дочери', 'дочь', false, 'дочери', 'дочерью'],
       ['дочери', 'дочерей', 'дочерям', 'дочерей', false, 'дочерях', 'дочерями'],

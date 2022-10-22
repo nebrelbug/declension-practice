@@ -52,7 +52,7 @@ export default function Home() {
             description="Export Slovak declensions to a list"
             link="slovak-export"
           />
-          {/* <Card
+          <Card
             title="Russian"
             description="Practice Russian declensions in quiz form"
             link="/russian"
@@ -61,7 +61,7 @@ export default function Home() {
             title="Russian - Export"
             description="Export Russian declensions to a list"
             link="/russian-export"
-          /> */}
+          />
         </div>
       </main>
 

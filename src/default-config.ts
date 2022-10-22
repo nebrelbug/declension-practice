@@ -8,6 +8,12 @@ export let nounPatternOptions = [
   { value: 'irregular', label: 'irregular' },
 ];
 
+export let nounPatternOptionsRussian = [
+  { value: 'type-1', label: 'I declension' },
+  { value: 'type-2', label: 'II declension' },
+  { value: 'type-3', label: 'III declension' },
+];
+
 export let genderOptions = [
   { value: 'masculine', label: 'masculine' },
   { value: 'neuter', label: 'neuter' },
@@ -27,6 +33,12 @@ export let phraseOptionsCzech = [
 ];
 
 export let phraseOptionsSlovak = [
+  { value: 'basic', label: 'basic phrases' },
+  { value: 'noun-possessives', label: 'noun possessives' },
+  { value: 'possessive-pronouns', label: 'possessive pronouns' },
+];
+
+export let phraseOptionsRussian = [
   { value: 'basic', label: 'basic phrases' },
   { value: 'noun-possessives', label: 'noun possessives' },
   { value: 'possessive-pronouns', label: 'possessive pronouns' },
@@ -86,6 +98,11 @@ export let defaultDeclensionsSlovak = {
 
 export let defaultSettingsSlovak = { ...defaultSettingsCzech };
 
-export let defaultSettingsRussian = { ...defaultSettingsSlovak };
+export let defaultSettingsRussian = {
+  ...defaultSettingsSlovak,
+  nounPatterns: [
+    { value: 'type-1', label: 'I declension' },
+    { value: 'type-2', label: 'II declension' },
+  ],
+};
 export let defaultDeclensionsRussian = { ...defaultDeclensionsSlovak };
-export let phraseOptionsRussian = { ...phraseOptionsSlovak };

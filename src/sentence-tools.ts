@@ -56,6 +56,10 @@ export function filterNouns(
   let advanced = settingIsOn(settings, 'nounPatterns', 'advanced');
   let irregular = settingIsOn(settings, 'nounPatterns', 'irregular');
 
+  let type1 = settingIsOn(settings, 'nounPatterns', 'type-1');
+  let type2 = settingIsOn(settings, 'nounPatterns', 'type-2');
+  let type3 = settingIsOn(settings, 'nounPatterns', 'type-3');
+
   let masculine = settingIsOn(settings, 'gender', 'masculine');
   let neuter = settingIsOn(settings, 'gender', 'neuter');
   let feminine = settingIsOn(settings, 'gender', 'feminine');
@@ -75,6 +79,9 @@ export function filterNouns(
     if (!essential && e.type === 'essential') return false;
     if (!advanced && e.type === 'advanced') return false;
     if (!irregular && e.type === 'irregular') return false;
+    if (!type1 && e.type === 'type-1') return false;
+    if (!type2 && e.type === 'type-2') return false;
+    if (!type3 && e.type === 'type-3') return false;
     return true;
   });
 
