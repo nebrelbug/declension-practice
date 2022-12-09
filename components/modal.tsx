@@ -24,7 +24,7 @@ import { settingIsOn } from '../src/sentence-tools';
 
 import { SelectComponent } from './select';
 
-console.log(phraseOptionsRussian);
+// console.log(phraseOptionsRussian);
 
 export function SettingsModal({
   declensions,
