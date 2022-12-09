@@ -66,7 +66,10 @@ export default function Home() {
       </main>
 
       <footer className="w-full h-24 flex justify-center items-center border border-solid border-[#eaeaea]">
-        Created with&nbsp;<b>next.new</b>&nbsp;{/*by Ben Gubler*/}
+        Created with&nbsp;<b>next.new</b>&nbsp;by&nbsp;
+        <a href="https://bengubler.com">
+          <b>Ben Gubler</b>
+        </a>
       </footer>
     </div>
   );
