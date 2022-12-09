@@ -1,11 +1,10 @@
 import '../styles/globals.css';
-
-import { GoogleAnalytics } from 'nextjs-google-analytics';
+import { Analytics } from '@vercel/analytics/react';
 
 const MyApp = ({ Component, pageProps }) => {
   return (
     <>
-      <GoogleAnalytics />
+      <Analytics />
       <Component {...pageProps} />
     </>
   );

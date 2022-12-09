@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@vercel/analytics": "^0.1.5",
     "indefinite": "^2.4.1",
     "leva": "^0.9.27",
     "next": "^12.1.6",
