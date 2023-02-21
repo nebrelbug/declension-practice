@@ -33,7 +33,7 @@ export let feminineNouns = [
         'postele',
         false,
         'posteliach',
-        'postelami',
+        'posteľami',
       ],
     ],
     'bed',
