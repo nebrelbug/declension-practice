@@ -1,9 +1,9 @@
-import { useState, useRef, useEffect } from 'react';
-import { Input } from './input';
-import { SkipButton } from './modal-button';
+import { useEffect, useRef, useState } from "react"
+import { Input } from "./input"
+import { SkipButton } from "./modal-button"
 
 function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
 // const useClick = (callback) => {
@@ -26,14 +26,14 @@ function sleep(ms) {
 //   return ref;
 // };
 
-export function Quiz({ arrayOfPairs }) {
-  const [formValue, setFormValue] = useState('');
-  const [arrIndex, setArrIndex] = useState(0);
-  const [formState, setFormState] = useState('in-process');
-  const [errorMsg, setErrorMsg] = useState('');
-  const [score, setScore] = useState({ correct: 0, error: 0, skipped: 0 });
+export function Quiz({ arrayOfPairs, isRussian }) {
+  const [formValue, setFormValue] = useState("")
+  const [arrIndex, setArrIndex] = useState(0)
+  const [formState, setFormState] = useState("in-process")
+  const [errorMsg, setErrorMsg] = useState("")
+  const [score, setScore] = useState({ correct: 0, error: 0, skipped: 0 })
 
-  const inputReference = useRef(null);
+  const inputReference = useRef(null)
 
   /* useClick((e) => {
     inputReference.current.focus();
@@ -41,69 +41,73 @@ export function Quiz({ arrayOfPairs }) {
   }); */
 
   const focusInput = () => {
-    inputReference.current.focus();
+    inputReference.current.focus()
     // inputReference.current.setSelectionRange(0, 0);
-  };
+  }
 
   useEffect(() => {
-    focusInput();
-  }, []);
+    focusInput()
+  }, [])
 
   let incrementArrIndex = () => {
     setArrIndex((i) => {
       if (i < arrayOfPairs.length - 1) {
-        return i + 1;
+        return i + 1
       } else {
-        return 0;
+        return 0
       }
-    });
-  };
+    })
+  }
 
   async function handleSubmit(evt) {
-    evt.preventDefault();
-    if (
-      formValue
-        .trim()
-        .replace(/\u0301/g, '') // remove Russian stress marks
-        .replace(/\s\s+/g, ' ') // fix double spaces
-        .toLocaleLowerCase() ===
-      arrayOfPairs[arrIndex][1].trim().toLocaleLowerCase()
-    ) {
-      setFormState('correct');
+    evt.preventDefault()
+
+    let inputVal = formValue.trim().toLocaleLowerCase().replace(/\s\s+/g, " ") // fix double spaces
+
+    let targetVal = arrayOfPairs[arrIndex][1].trim().toLocaleLowerCase()
+
+    if (isRussian) {
+      // remove Russian stress marks
+      inputVal = inputVal.normalize("NFD").replace(/\u0301/g, "")
+      targetVal = targetVal.normalize("NFD").replace(/\u0301/g, "")
+    }
+
+    if (inputVal === targetVal) {
+      setFormState("correct")
       setScore((score) => {
-        return { ...score, correct: score.correct + 1 };
-      });
+        return { ...score, correct: score.correct + 1 }
+      })
 
-      await sleep(250);
+      await sleep(250)
 
-      incrementArrIndex();
-      setFormValue('');
-      setFormState('in-process');
+      incrementArrIndex()
+      setFormValue("")
+      setFormState("in-process")
 
-      focusInput();
+      focusInput()
       // inputReference.dispatchEvent(new Event('click'));
     } else {
-      setFormState('error');
+      setFormState("error")
       setScore((score) => {
-        return { ...score, error: score.error + 1 };
-      });
-      setErrorMsg(arrayOfPairs[arrIndex][1]);
+        return { ...score, error: score.error + 1 }
+      })
+      setErrorMsg(arrayOfPairs[arrIndex][1])
     }
   }
 
   async function skipToNext() {
-    setFormState('skipped');
+    setFormState("skipped")
     setScore((score) => {
-      return { ...score, skipped: score.skipped + 1 };
-    });
+      return { ...score, skipped: score.skipped + 1 }
+    })
 
-    await sleep(250);
+    await sleep(250)
 
-    incrementArrIndex();
-    setFormValue('');
-    setFormState('in-process');
+    incrementArrIndex()
+    setFormValue("")
+    setFormState("in-process")
 
-    focusInput();
+    focusInput()
     // inputReference.dispatchEvent(new Event('click'));
   }
 
@@ -112,7 +116,7 @@ export function Quiz({ arrayOfPairs }) {
       <h3 className="text-3xl text-center max-w-[90vw] absolute">
         {arrayOfPairs.length > 0
           ? arrayOfPairs[arrIndex][0]
-          : 'No sentences available'}
+          : "No sentences available"}
       </h3>
 
       <div className="mt-28 md:mt-40">
@@ -130,9 +134,9 @@ export function Quiz({ arrayOfPairs }) {
       <SkipButton onClick={skipToNext} />
 
       <p className="mt-2 md:mt-10 text-lg text-center">
-        Correct: {score.correct}, Incorrect: {score.error}, Skipped:{' '}
+        Correct: {score.correct}, Incorrect: {score.error}, Skipped:{" "}
         {score.skipped}
       </p>
     </div>
-  );
+  )
 }

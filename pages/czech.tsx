@@ -1,33 +1,33 @@
-import useLocalStorageState from 'use-local-storage-state';
+import useLocalStorageState from "use-local-storage-state"
 
-import { generateSentences } from '../src/czech/sentence-generators';
-import { shuffle } from '../src/utilities';
+import { generateSentences } from "../src/czech/sentence-generators"
 import {
-  version,
   defaultDeclensionsCzech,
   defaultSettingsCzech,
-} from '../src/default-config';
+  version
+} from "../src/default-config"
+import { shuffle } from "../src/utilities"
 
-import { PageLayout } from '../components/layout';
-import { Quiz } from '../components/quiz';
-import { SettingsModal } from '../components/modal';
+import { PageLayout } from "../components/layout"
+import { SettingsModal } from "../components/modal"
+import { Quiz } from "../components/quiz"
 
 export default function Home() {
   const [declensions, setDeclensions] = useLocalStorageState(
-    'czech-declensions' + version,
+    "czech-declensions" + version,
     {
-      defaultValue: defaultDeclensionsCzech,
+      defaultValue: defaultDeclensionsCzech
     }
-  );
+  )
 
   const [settings, setSettings] = useLocalStorageState(
-    'czech-settings' + version,
+    "czech-settings" + version,
     {
-      defaultValue: defaultSettingsCzech,
+      defaultValue: defaultSettingsCzech
     }
-  );
+  )
 
-  let res = generateSentences(declensions, settings);
+  let res = generateSentences(declensions, settings)
 
   return (
     <PageLayout title="Decline Czech" suffix="Czech Quiz" center>
@@ -38,7 +38,7 @@ export default function Home() {
         updateDeclensions={setDeclensions}
         updateSettings={setSettings}
       />
-      <Quiz arrayOfPairs={shuffle(res)} />
+      <Quiz arrayOfPairs={shuffle(res)} isRussian={false} />
     </PageLayout>
-  );
+  )
 }
