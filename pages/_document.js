@@ -1,5 +1,4 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
-import Script from "next/script";
 
 export default class MyDocument extends Document {
   render() {
@@ -35,7 +34,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
           {process.env.NODE_ENV === "production" && (
-            <Script
+            <script
               async
               src="https://umami.bengubler.com/script.js"
               data-website-id="4cab64e9-c4a0-4436-990d-663badcf3997"
