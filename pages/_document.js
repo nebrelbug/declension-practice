@@ -1,27 +1,10 @@
-import Document, { Html, Head, Main, NextScript } from "next/document"
+import Document, { Head, Html, Main, NextScript } from "next/document";
 
 export default class MyDocument extends Document {
   render() {
     return (
       <Html>
         <Head>
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-              page_path: window.location.pathname,
-            });
-          `
-            }}
-          />
-
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -50,8 +33,15 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          {process.env.NODE_ENV === "production" && (
+            <Script
+              async
+              src="https://umami.bengubler.com/script.js"
+              data-website-id="4cab64e9-c4a0-4436-990d-663badcf3997"
+            />
+          )}
         </body>
       </Html>
-    )
+    );
   }
 }
